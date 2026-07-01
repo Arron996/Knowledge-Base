@@ -1,0 +1,82 @@
+.obsidian/snippets/daily-report.css
+  s_a2cbdcae111477::t_4586ef2113f770 1-24
+Dashboard.md
+  s_a2cbdcae111477::t_87655b089d5d10 3-18,21-22,26,35,37,39
+  s_a2cbdcae111477::t_f9c5e8161c734c 36
+  s_a2cbdcae111477::t_2dabe051027a77 19-20
+Templates/daily-style-guide.md
+  s_a2cbdcae111477::t_9b0aefab957896 1-11,37-42,44-90,118-153,155,184-186,201,203-204,207-209
+  s_a2cbdcae111477::t_ef1def20804293 91-117
+  s_a2cbdcae111477::t_b15feb4018db59 206
+  s_a2cbdcae111477::t_6cc1c07519b0e3 161,163-164
+  s_a2cbdcae111477::t_a66857b3f238e9 210
+  s_a2cbdcae111477::t_a11b90543b363a 43
+  s_a2cbdcae111477::t_e08f3c0292bba8 12-36
+  s_a2cbdcae111477::t_0f85973bb9bfb8 180
+  s_a2cbdcae111477::t_afca9ba30ef490 154,156-160,162,165-179,181-183,187,200,202,205
+  s_a2cbdcae111477::t_3177450841e460 188-199
+.scripts/feishu-config.json
+  s_a2cbdcae111477::t_cdc16c098cd40a 1-27
+.scripts/format-daily-ref.py
+  s_a2cbdcae111477::t_0b9b657ec3de55 1-176
+Templates/daily-note.md
+  s_a2cbdcae111477::t_4606c81c798620 6-7,17-24,38-43,45-46
+  s_a2cbdcae111477::t_b09dbf23cbf31a 30-35
+.scripts/collect-feishu.py
+  s_a2cbdcae111477::t_2103d1dff8b991 1-133
+Daily/2026-06-30.md
+  s_a2cbdcae111477::t_dc705983da5fa2 6-7,17-75,92-93,107-110,118-121,134-139,147-151,153-154,156-168,170,172,174-175,177,179
+  s_a2cbdcae111477::t_7f1e8370a8990b 85-88
+Templates/topic-registry.yaml
+  s_a2cbdcae111477::t_e4e78085b1d757 1-61
+.scripts/collect-evening.py
+  s_a2cbdcae111477::t_6408765aecaefc 11,24,29-30,34-35,46-47,52,110,133,190-191,196,201,203,209-211,215,217-221,228-242
+  s_a2cbdcae111477::t_816075523c07e6 181-189
+  s_a2cbdcae111477::t_3cf5a1710ced8f 13
+Templates/weekly-note.md
+  s_a2cbdcae111477::t_a87b00628db3b8 28-31
+  s_a2cbdcae111477::t_0063b717895757 1-27
+Templates/automation-evening-instructions.md
+  s_a2cbdcae111477::t_db0b4c3c786360 1-20,23-37
+  s_a2cbdcae111477::t_55b52c387ad979 21-22
+Daily/2026-07-01.md
+  s_c6c1479077159f::t_968e3a8a539100 1-16,23-26,28-36,38,44,74-90,92-98
+  s_c6c1479077159f::t_439ded3fb49838 17-22
+  s_c6c1479077159f::t_3b290f7f1cda8d 27
+  s_1d867502bf8a5f::t_b6477da83af13a 39-40,42-43,45-73
+  s_c6c1479077159f::t_ff5bd6724e5c62 37,41
+  s_a2cbdcae111477::t_25c75f38b6e88f 99-122
+  s_c6c1479077159f::t_ef0cdd1f65beb9 91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "baea1355db924ca9d79264b23f5cf22a60236ca4",
+  "prompts": {},
+  "sessions": {
+    "s_1d867502bf8a5f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "627c6a5f-f441-4254-b68e-d84805945444",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_a2cbdcae111477": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f963b812-8da4-4ea2-adae-fe569bd61a17",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_c6c1479077159f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "309a958b-6c0a-4c74-ad03-f619b7e6282a",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
