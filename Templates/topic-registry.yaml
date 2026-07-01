@@ -10,16 +10,29 @@ topics:
       - name: 并发 COUNT 时间分片
       - name: 慢 SQL 索引 / 时间分片方案
 
+  - name: 415 complete 重试 & 转人工回系统
+    idevKeys: [GDS-9524, GDS-9525]
+    subs:
+      - name: Story 415 重试 complete
+      - name: 转人工订单转回系统
+
+  - name: 票台七月技改 · 杂项指派
+    idevKeys: [GDS-9534, GDS-9536]
+    subs:
+      - name: admin Redis 缓存切换
+      - name: 票台项目评比数据统计
+
   - name: Admin FE 订单排查体验优化
-    idevKeys: [GDS-9398, GDS-9462, GDS-9399, GDS-9400]
-    planFiles: [退票对齐_ui_优化, 退票对齐排查弹窗, 有效行程组件复用, 修复已退标识逻辑]
+    idevKeys: [GDS-9398, GDS-9462, GDS-9399, GDS-9400, GDS-9552]
+    planFiles: [退票对齐_ui_优化, 退票对齐排查弹窗, 有效行程组件复用, 修复已退标识逻辑, 退票对齐四项优化]
     subs:
       - name: Data Query + Ticket Log 退票对齐
       - name: 有效行程组件复用
+      - name: 退票对齐四项优化
 
   - name: 异常 / 供应配置 - 历史版本增强
     feishu: https://trip.larkenterprise.com/wiki/DxKSw6DIKi3MXbknvVsc3gkmnOg
-    idevKeys: [GDS-9456, GDS-9460]
+    idevKeys: [GDS-9456, GDS-9460, GDS-9520, GDS-9521]
     planFiles: [历史版本对比按钮, 异常配置_diff_对齐, 异常配置审批发布改造]
     subs:
       - name: 方案与交互设计

@@ -8,6 +8,7 @@
     "editTimeField": "iDev2 返回 lastUpdatedTime（非 edittime）；状态扭转也会更新该字段",
     "createdFilter": "createdTimeStart/End 按 Asia/Shanghai 当天 00:00~23:59 毫秒时间戳",
     "editedFilter": "拉取 creator=TR043507 近期 Issue，客户端过滤 lastUpdatedTime 在当天且 updaterObj.id=TR043507",
+    "assignedFilter": "executiveObj.id=TR043507 且 createtime 在当天且 creator≠TR043507 → assignedTodayOnly",
     "mcpIncludeFields": "title,issueKey,issueStatus,createtime,lastUpdatedTime,creatorObj,executiveObj,updaterObj,parentLinkObj"
   }
 }

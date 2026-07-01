@@ -135,7 +135,10 @@ frontmatter 建议：`cssclasses: [daily-report]`
 
 - `creator=TR043507`（**不要** zhaorun）
 - 时间：**Asia/Shanghai 当日**毫秒，禁止手写错误年份
-- 双路：`createdTimeStart/End` + 宽查后筛 `lastUpdatedTime` 当日且 `updaterObj.id=TR043507`
+- **三路合并**：
+  1. `createdTimeStart/End` + `creator=TR043507` → `createdToday`
+  2. `executiveObj.id=TR043507` + `createtime` 在当日 + `creator≠TR043507` → `assignedTodayOnly`（他人创建、今日指派给我）
+  3. 宽查 + `lastUpdatedTime` 在当日且 `executiveObj.id=TR043507`（或 `updaterObj.id=TR043507`），排除已在 1/2 → `updatedTodayOnly`
 
 ### 飞书查询（MCP）
 
