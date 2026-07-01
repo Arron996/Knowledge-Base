@@ -1,0 +1,27 @@
+Daily/2026-07-01.md
+  s_a2cbdcae111477::t_8aa4aaed848a01 13,17-49
+  s_a2cbdcae111477::t_6686a9e3d46ddf 154-172
+Templates/daily-style-guide.md
+  s_a2cbdcae111477::t_0065268d609f8a 138-141
+Templates/topic-registry.yaml
+  s_a2cbdcae111477::t_e2aed2ed57a966 13-24
+  s_a2cbdcae111477::t_cae2d6057c9b71 26-27,31,35
+.scripts/idev2-config.json
+  s_a2cbdcae111477::t_a23238236e58de 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "1523b03301c31dbc565fd2de9d3dc6ec0d58c94d",
+  "prompts": {},
+  "sessions": {
+    "s_a2cbdcae111477": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f963b812-8da4-4ea2-adae-fe569bd61a17",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
