@@ -1,0 +1,27 @@
+{
+  "openId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+  "ownerName": "Run Zhao (赵润)",
+  "mcpQueries": {
+    "createdToday": {
+      "tool": "search-doc",
+      "filters": {
+        "owners": ["ou_e9ac034797f74c9a496ed81ecae20d03"],
+        "create_time": "[TARGET_DATE, TARGET_DATE]",
+        "sort_rule": "CREATE_TIME"
+      }
+    },
+    "recentEdited": {
+      "tool": "search-doc",
+      "filters": {
+        "owners": ["ou_e9ac034797f74c9a496ed81ecae20d03"],
+        "sort_rule": "EDIT_TIME"
+      },
+      "pageSize": 20,
+      "clientFilter": "update_time 落在 TARGET_DATE 且 create_time 不在 TARGET_DATE → editedTodayOnly"
+    }
+  },
+  "notes": {
+    "editTimeField": "update_time",
+    "sidecarPath": "_staging/YYYY-MM-DD.feishu.json"
+  }
+}

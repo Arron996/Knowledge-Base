@@ -1,0 +1,61 @@
+# 技改名 ↔ 数据源映射，供晚间 Agent 聚合 staging 信号
+# planFiles 匹配 ~/.cursor/plans/*.plan.md 文件名前缀（不含 hash）
+
+topics:
+  - name: SLA 统计并发时间分片
+    feishu: https://trip.larkenterprise.com/wiki/AndbwwmYZicmJPk6pMocwwT6nsh
+    idevKeys: [GDS-9414, GDS-9416]
+    planFiles: [sla并发分片技改, sla慢sql飞书方案]
+    subs:
+      - name: 并发 COUNT 时间分片
+      - name: 慢 SQL 索引 / 时间分片方案
+
+  - name: Admin FE 订单排查体验优化
+    idevKeys: [GDS-9398, GDS-9462, GDS-9399, GDS-9400]
+    planFiles: [退票对齐_ui_优化, 退票对齐排查弹窗, 有效行程组件复用, 修复已退标识逻辑]
+    subs:
+      - name: Data Query + Ticket Log 退票对齐
+      - name: 有效行程组件复用
+
+  - name: 异常 / 供应配置 - 历史版本增强
+    feishu: https://trip.larkenterprise.com/wiki/DxKSw6DIKi3MXbknvVsc3gkmnOg
+    idevKeys: [GDS-9456, GDS-9460]
+    planFiles: [历史版本对比按钮, 异常配置_diff_对齐, 异常配置审批发布改造]
+    subs:
+      - name: 方案与交互设计
+      - name: 历史版本对比按钮（admin-fe）
+
+  - name: 七月 GDPR 删除 - 票台
+    feishu: https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd
+    idevKeys: [GDS-9461]
+    planFiles: [gdpr删除通知票台]
+    subs:
+      - name: 票台职责与邮件能力
+
+  - name: 乘客 certNo 本地加密下线
+    idevKeys: [GDS-9383, GDS-9459]
+    subs:
+      - name: 主需求推进
+      - name: 生产下线 Sub-task
+
+  - name: GDS-2971 TI 特殊退拆单票价
+    feishu: https://trip.larkenterprise.com/wiki/OBL7wVS0Gizi0QkudK3ckKtvnbf
+    planFiles: [子退票单金额透传]
+    subs:
+      - name: expectedSubRefundList 透传方案
+
+  - name: 2026 H2 票台 & Admin 规划
+    feishu: https://trip.larkenterprise.com/wiki/ZlCCwWI2CiMOIzkGUcUcX0H3nW3
+    subs:
+      - name: H2 规划文档
+
+  - name: Obsidian 日报 / 周报自动化
+    planFiles: [每日工作流自动化, 日报视觉美化]
+    subs:
+      - name: 方案设计与采集脚本
+
+  - name: 其他（排查，未立项）
+    subs:
+      - name: 欧星车次异常退
+      - name: 线上退票可退金额为 0
+      - name: Admin 跨洋 dataquery 调用链

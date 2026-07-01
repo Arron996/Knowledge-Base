@@ -8,8 +8,9 @@ import re
 import subprocess
 from datetime import date, datetime, time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
-VAULT_ROOT = Path("/Users/aaron/Documents/知识库")
+VAULT_ROOT = Path(__file__).resolve().parent.parent
 CURSOR_PROJECTS = Path.home() / ".cursor" / "projects"
 CURSOR_PLANS = Path.home() / ".cursor" / "plans"
 GIT_REPOS = [
@@ -20,18 +21,18 @@ GIT_REPOS = [
 ]
 GIT_AUTHOR = "zhaorun"
 IDEV2_CONFIG = VAULT_ROOT / ".scripts" / "idev2-config.json"
+TZ = ZoneInfo("Asia/Shanghai")
 
 
 def day_ms_bounds(target_day: date) -> tuple[int, int]:
     """Asia/Shanghai day range in epoch milliseconds."""
-    start = datetime.combine(target_day, time.min)
-    end = datetime.combine(target_day, time.max)
+    start = datetime.combine(target_day, time.min, tzinfo=TZ)
+    end = datetime.combine(target_day, time.max, tzinfo=TZ)
     return int(start.timestamp() * 1000), int(end.timestamp() * 1000)
 
 
-def load_idev2_sidecar(target_day: date) -> dict | None:
-    """Optional MCP/agent-produced iDev2 snapshot: _staging/YYYY-MM-DD.idev2.json"""
-    path = VAULT_ROOT / "_staging" / f"{target_day.isoformat()}.idev2.json"
+def load_sidecar(target_day: date, suffix: str) -> dict | None:
+    path = VAULT_ROOT / "_staging" / f"{target_day.isoformat()}.{suffix}.json"
     if not path.exists():
         return None
     try:
@@ -42,13 +43,13 @@ def load_idev2_sidecar(target_day: date) -> dict | None:
 
 def today_bounds() -> tuple[datetime, datetime]:
     d = date.today()
-    start = datetime.combine(d, time.min)
-    end = datetime.combine(d, time.max)
+    start = datetime.combine(d, time.min, tzinfo=TZ)
+    end = datetime.combine(d, time.max, tzinfo=TZ)
     return start, end
 
 
 def mtime_in_today(path: Path, start: datetime, end: datetime) -> bool:
-    ts = datetime.fromtimestamp(path.stat().st_mtime)
+    ts = datetime.fromtimestamp(path.stat().st_mtime, tz=TZ)
     return start <= ts <= end
 
 
@@ -106,7 +107,7 @@ def collect_cursor_chats(start: datetime, end: datetime) -> list[dict]:
                 "chatId": chat_id,
                 "project": project,
                 "title": title or "(无标题)",
-                "modifiedAt": datetime.fromtimestamp(path.stat().st_mtime).isoformat(timespec="seconds"),
+                "modifiedAt": datetime.fromtimestamp(path.stat().st_mtime, tz=TZ).isoformat(timespec="seconds"),
                 "transcript": str(path),
             }
         )
@@ -129,7 +130,7 @@ def collect_plans(start: datetime, end: datetime) -> list[dict]:
             {
                 "file": path.name,
                 "title": title,
-                "modifiedAt": datetime.fromtimestamp(path.stat().st_mtime).isoformat(timespec="seconds"),
+                "modifiedAt": datetime.fromtimestamp(path.stat().st_mtime, tz=TZ).isoformat(timespec="seconds"),
             }
         )
 
@@ -177,45 +178,68 @@ def collect_git_commits(target_day: date) -> list[dict]:
 
 
 def main() -> None:
-    start, end = today_bounds()
-    target = date.today().isoformat()
-    target_date = date.today()
-    idev2 = load_idev2_sidecar(target_date)
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", default=date.today().isoformat(), help="YYYY-MM-DD")
+    args = parser.parse_args()
+    target_date = date.fromisoformat(args.date)
+    start = datetime.combine(target_date, time.min, tzinfo=TZ)
+    end = datetime.combine(target_date, time.max, tzinfo=TZ)
+    target = target_date.isoformat()
+    idev2 = load_sidecar(target_date, "idev2")
+    feishu = load_sidecar(target_date, "feishu")
     day_start_ms, day_end_ms = day_ms_bounds(target_date)
 
     payload = {
         "date": target,
-        "collectedAt": datetime.now().isoformat(timespec="seconds"),
+        "collectedAt": datetime.now(TZ).isoformat(timespec="seconds"),
         "cursorChats": collect_cursor_chats(start, end),
         "plans": collect_plans(start, end),
         "git": collect_git_commits(target_date),
         "idev2": idev2,
+        "feishu": feishu,
         "queryHints": {
+            "timezone": "Asia/Shanghai",
             "idev2EmployeeId": "TR043507",
             "idev2CreatedTimeStart": day_start_ms,
             "idev2CreatedTimeEnd": day_end_ms,
             "idev2EditField": "lastUpdatedTime",
             "idev2Sidecar": f"_staging/{target}.idev2.json",
-            "idev2SidecarHint": "晚间由 Cursor Agent 写入；需 creator=工号 + lastUpdatedTime 过滤",
+            "feishuSidecar": f"_staging/{target}.feishu.json",
+            "idev2SidecarHint": "creator=工号 TR043507 + createtime 与 lastUpdatedTime 双路",
+            "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
         },
     }
 
+    notes = {}
     if idev2 is None:
-        payload["notes"] = {
-            "idev2": f"缺少 _staging/{target}.idev2.json，请用 MCP 按 lastUpdatedTime 补充",
-        }
+        notes["idev2"] = f"缺少 _staging/{target}.idev2.json，请用 MCP 按 lastUpdatedTime 补充"
+    if feishu is None:
+        notes["feishu"] = f"缺少 _staging/{target}.feishu.json，请运行 collect-feishu.py"
+    if notes:
+        payload["notes"] = notes
 
     staging_dir = VAULT_ROOT / "_staging"
     staging_dir.mkdir(parents=True, exist_ok=True)
     out = staging_dir / f"{target}.raw.json"
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {out}")
-    print(json.dumps({"counts": {
-        "cursorChats": len(payload["cursorChats"]),
-        "plans": len(payload["plans"]),
-        "gitRepos": len(payload["git"]),
-        "idev2Issues": (idev2 or {}).get("summary", {}).get("totalDistinct"),
-    }}, ensure_ascii=False))
+    print(
+        json.dumps(
+            {
+                "counts": {
+                    "cursorChats": len(payload["cursorChats"]),
+                    "plans": len(payload["plans"]),
+                    "gitRepos": len(payload["git"]),
+                    "idev2Issues": (idev2 or {}).get("summary", {}).get("totalDistinct"),
+                    "feishuCreated": (feishu or {}).get("summary", {}).get("createdCount"),
+                    "feishuEditedOnly": (feishu or {}).get("summary", {}).get("editedOnlyCount"),
+                }
+            },
+            ensure_ascii=False,
+        )
+    )
 
 
 if __name__ == "__main__":

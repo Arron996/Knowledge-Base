@@ -1,0 +1,24 @@
+/* Daily / Weekly 报告：Callout 内表格斑马纹与进度列 */
+.daily-report table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.4em 0;
+}
+
+.daily-report table tr:nth-child(even) td {
+  background: rgba(127, 127, 127, 0.08);
+}
+
+.daily-report table td,
+.daily-report table th {
+  padding: 0.35em 0.6em;
+}
+
+.daily-report table td:last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.daily-report .callout {
+  margin-bottom: 0.6em;
+}
