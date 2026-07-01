@@ -1,0 +1,45 @@
+.scripts/collect-evening.sh
+  s_0e01f2b5b23f13::t_5c8f1b22f97e67 1-3
+.scripts/collect-evening.py
+  s_0e01f2b5b23f13::t_b36e40ba127468 182-206
+  s_0e01f2b5b23f13::t_93ca896393d5e3 22-40
+  s_0e01f2b5b23f13::t_29e57f9f0b0332 217
+Templates/daily-note.md
+  s_8ce83ca8b0897a::t_0f0c786cefde48 16
+  s_8ce83ca8b0897a::t_02d078cdfcabc2 4-15,17-24
+.scripts/idev2-config.json
+  s_0e01f2b5b23f13::t_d1b102deb3bc01 1-13
+_staging/2026-06-30.idev2.json
+  s_0e01f2b5b23f13::t_f2d5cc50582469 1-30
+Daily/2026-06-30.md
+  s_8ce83ca8b0897a::t_1e32dd978a3c5e 8-15,36-43,45-46,55,73-76,80
+  s_0e01f2b5b23f13::t_0bf3ed1a4a0195 4
+  s_8ce83ca8b0897a::t_b86c8d14d6f2fb 34-35,44,47,60-72,79,90-91,93-108,111
+  s_8ce83ca8b0897a::t_6d28cbd258c908 82
+  s_8ce83ca8b0897a::t_2bdc56726496ea 87
+  s_0e01f2b5b23f13::t_7359e393cfd238 92,109-110,112-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.26-trip",
+  "base_commit_sha": "6818e60129536425839a10363c8e62426bdabebb",
+  "prompts": {},
+  "sessions": {
+    "s_0e01f2b5b23f13": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "be0e631d-6068-40d8-915f-6417dd9e7a2d",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_8ce83ca8b0897a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "d219a7e3-ea47-4db0-9a96-989a086c3c58",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
