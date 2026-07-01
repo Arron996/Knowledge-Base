@@ -9,7 +9,7 @@ import subprocess
 from datetime import date, datetime, time
 from pathlib import Path
 
-VAULT_ROOT = Path("/Users/aaron/Documents/知识库")
+VAULT_ROOT = Path(__file__).resolve().parent.parent
 CURSOR_PROJECTS = Path.home() / ".cursor" / "projects"
 CURSOR_PLANS = Path.home() / ".cursor" / "plans"
 GIT_REPOS = [

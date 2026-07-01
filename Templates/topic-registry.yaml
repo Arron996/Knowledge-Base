@@ -1,0 +1,73 @@
+# 技改进度表主题注册表 — 匹配顺序从上到下，先命中先归属
+topics:
+  - id: sla-time-split
+    label: SLA 统计并发时间分片
+    wiki: https://trip.larkenterprise.com/wiki/AndbwwmYZicmJPk6pMocwwT6nsh
+    keywords: [SLA, 时间分片, 并发, COUNT, GDS-9414, GDS-9416]
+    idev2: [GDS-9414, GDS-9416]
+
+  - id: admin-fe-order-query
+    label: Admin FE 订单排查体验优化
+    keywords: [Admin FE, 订单排查, Data Query, Ticket Log, 退票对齐, GDS-9398, GDS-9399, GDS-9400, GDS-9462]
+    idev2: [GDS-9398, GDS-9399, GDS-9400, GDS-9462]
+
+  - id: config-history-version
+    label: 异常 / 供应配置 - 历史版本增强
+    wiki: https://trip.larkenterprise.com/wiki/DxKSw6DIKi3MXbknvVsc3gkmnOg
+    sub_wiki: https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd
+    keywords: [历史版本, 供应配置, 异常配置, GDS-9456, GDS-9460]
+    idev2: [GDS-9456, GDS-9460]
+
+  - id: july-tech-debt
+    label: 票台七月技改
+    parent: GDS-9247
+    keywords: [七月技改, 票台技改]
+    idev2: [GDS-9247]
+
+  - id: gdpr-july
+    label: 七月 GDPR 删除 - 票台
+    keywords: [GDPR, 删除, 发邮件, GDS-9461]
+    idev2: [GDS-9461]
+
+  - id: certno-encrypt-offline
+    label: 乘客 certNo 本地加密下线
+    keywords: [certNo, 加密下线, GDS-9383, GDS-9459]
+    idev2: [GDS-9383, GDS-9459]
+
+  - id: ti-special-refund
+    label: GDS-2971 TI 特殊退拆单票价
+    wiki: https://trip.larkenterprise.com/wiki/OBL7wVS0Gizi0QkudK3ckKtvnbf
+    keywords: [TI, 特殊退, expectedSubRefundList, GDS-2971]
+    idev2: [GDS-2971]
+
+  - id: h2-planning
+    label: 2026 H2 票台 & Admin 规划
+    wiki: https://trip.larkenterprise.com/wiki/ZlCCwWI2CiMOIzkGUcUcX0H3nW3
+    keywords: [H2, 规划]
+
+  - id: obsidian-automation
+    label: Obsidian 日报 / 周报自动化
+    keywords: [Obsidian, 日报, 周报, collect-evening, 知识库]
+
+  - id: adhoc-investigation
+    label: 其他（排查，未立项）
+    keywords: [欧星, 异常退, dataquery, 跨洋, 可退金额为0]
+    catch_all: true
+
+status_icons:
+  done: "✅"
+  testing: "🧪"
+  in_progress: "🔄"
+  designing: "📐"
+  researching: "🔍"
+  scheduled: "📅"
+  not_started: "⬜"
+  doc_done: "📝"
+
+idev2_status_map:
+  已完成: "✅"
+  处理中: "🔄"
+  待处理: "⬜"
+  待排期: "📅"
+  测试中: "🧪"
+  设计中: "📐"
