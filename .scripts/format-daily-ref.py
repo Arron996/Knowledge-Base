@@ -64,6 +64,14 @@ def format_idev(idev: dict | None) -> str:
         title = item.get("title", "")
         status = item.get("status", "")
         rows.append(f"| {idev_icon(status)} | [{key}](https://idev2.ctripcorp.com/issueDetail/{key}) | {title} |")
+    for item in idev.get("assignedTodayOnly", []):
+        key = item.get("key", "")
+        title = item.get("title", "")
+        status = item.get("status", "")
+        note = item.get("note", "今日新指派")
+        rows.append(
+            f"| {idev_icon(status)} | [{key}](https://idev2.ctripcorp.com/issueDetail/{key}) | {title}（{note}） |"
+        )
     for item in idev.get("updatedTodayOnly", []):
         key = item.get("key", "")
         title = item.get("title", "")

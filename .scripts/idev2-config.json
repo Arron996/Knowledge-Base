@@ -3,12 +3,45 @@
   "productIds": [10002849],
   "parentIssueIds": ["8395325"],
   "parentIssueKeys": ["GDS-9247"],
+  "mcpQueries": {
+    "createdToday": {
+      "tool": "iDev2-issue-query",
+      "arguments": {
+        "creator": "TR043507",
+        "productIds": [10002849],
+        "size": 50,
+        "includeFields": "title,issueKey,issueStatus,createtime,lastUpdatedTime,creatorObj,executiveObj,updaterObj,parentLinkObj"
+      },
+      "timeArgs": ["createdTimeStart", "createdTimeEnd"]
+    },
+    "storyChildren": {
+      "tool": "iDev2-issue-query",
+      "arguments": {
+        "parentIssueId": "8395325",
+        "productIds": [10002849],
+        "size": 50,
+        "includeFields": "title,issueKey,issueStatus,createtime,lastUpdatedTime,creatorObj,executiveObj,updaterObj,parentLinkObj"
+      },
+      "note": "GDS-9247 子 Issue，主扫指派/更新（勿只依赖 related top100）"
+    },
+    "relatedWide": {
+      "tool": "iDev2-issue-query",
+      "arguments": {
+        "related": "TR043507",
+        "productIds": [10002849],
+        "size": 100,
+        "orderBy": "lastUpdatedTime desc",
+        "includeFields": "title,issueKey,issueStatus,createtime,lastUpdatedTime,creatorObj,executiveObj,updaterObj,parentLinkObj"
+      },
+      "note": "可选补漏：Story 子树外的指派/更新"
+    }
+  },
   "queryNotes": {
     "creatorField": "使用工号 TR043507，不要用 zhaorun",
     "editTimeField": "iDev2 返回 lastUpdatedTime（非 edittime）；状态扭转也会更新该字段",
     "createdFilter": "createdTimeStart/End 按 Asia/Shanghai 当天 00:00~23:59 毫秒时间戳",
-    "editedFilter": "拉取 creator=TR043507 近期 Issue，客户端过滤 lastUpdatedTime 在当天且 updaterObj.id=TR043507",
-    "assignedFilter": "executiveObj.id=TR043507 且 createtime 在当天且 creator≠TR043507 → assignedTodayOnly",
-    "mcpIncludeFields": "title,issueKey,issueStatus,createtime,lastUpdatedTime,creatorObj,executiveObj,updaterObj,parentLinkObj"
+    "assignedFilter": "executiveObj.id=TR043507 且 creator≠TR043507 且 lastUpdatedTime 在当天 → assignedTodayOnly",
+    "updatedFilter": "lastUpdatedTime 在当天且 executiveObj.id=TR043507（优先）或 updaterObj.id=TR043507，排除 createdToday/assignedTodayOnly → updatedTodayOnly",
+    "mergeScript": "collect-idev2.py --created-json ... --scan-json story.json [--scan-json related.json]"
   }
 }

@@ -207,7 +207,7 @@ def main() -> None:
             "idev2EditField": "lastUpdatedTime",
             "idev2Sidecar": f"_staging/{target}.idev2.json",
             "feishuSidecar": f"_staging/{target}.feishu.json",
-            "idev2SidecarHint": "creator=工号 TR043507 + createtime 与 lastUpdatedTime 双路",
+            "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
             "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
         },
     }

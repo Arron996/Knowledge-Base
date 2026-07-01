@@ -128,24 +128,36 @@ frontmatter 建议：`cssclasses: [daily-report]`
 | 文件 | 内容 |
 |------|------|
 | `_staging/YYYY-MM-DD.raw.json` | Cursor / Plan / Git + queryHints |
-| `_staging/YYYY-MM-DD.idev2.json` | iDev 创建 + lastUpdatedTime 扭转 |
+| `_staging/YYYY-MM-DD.idev2.json` | iDev 创建 + 今日新指派 + 指派给我今日更新 |
 | `_staging/YYYY-MM-DD.feishu.json` | 飞书 createdToday + editedTodayOnly |
 
 ### iDev2 查询（MCP）
 
 - `creator=TR043507`（**不要** zhaorun）
 - 时间：**Asia/Shanghai 当日**毫秒，禁止手写错误年份
-- **三路合并**：
+- **三路合并**（MCP 三次 → `collect-idev2.py`）：
   1. `createdTimeStart/End` + `creator=TR043507` → `createdToday`
-  2. `executiveObj.id=TR043507` + `createtime` 在当日 + `creator≠TR043507` → `assignedTodayOnly`（他人创建、今日指派给我）
-  3. 宽查 + `lastUpdatedTime` 在当日且 `executiveObj.id=TR043507`（或 `updaterObj.id=TR043507`），排除已在 1/2 → `updatedTodayOnly`
+  2. `parentIssueId=8395325`（GDS-9247 子项，**必选**）+ 可选 `related=TR043507` 补漏 → 客户端：`executiveObj.id=TR043507` 且 `creator≠TR043507` 且 `lastUpdatedTime` 当日 → `assignedTodayOnly`
+  3. 同 scan 源 → 客户端：`lastUpdatedTime` 在当日且 **`executiveObj.id=TR043507`（优先）** 或 `updaterObj.id=TR043507`，排除已在 1/2 → `updatedTodayOnly`
+
+合并命令：
+
+```bash
+python3 .scripts/collect-idev2.py --date YYYY-MM-DD --print-queries
+
+python3 .scripts/collect-idev2.py \
+  --date YYYY-MM-DD \
+  --created-json /tmp/idev-created.json \
+  --scan-json /tmp/idev-story.json \
+  --scan-json /tmp/idev-related.json
+```
 
 ### 飞书查询（MCP）
 
 1. **今日创建**：`create_time=[当天, 当天]` + `owners=[open_id]`
 2. **今日校订**：`sort_rule=EDIT_TIME` 拉近期，`update_time` 落在当天且 **非**当天创建 → `editedTodayOnly`
 
-合并命令：
+飞书合并命令：
 
 ```bash
 python3 .scripts/collect-feishu.py \
@@ -204,10 +216,11 @@ python3 .scripts/collect-feishu.py \
 
 ## 8. 晚间 Agent 检查清单
 
+- [ ] MCP 三路采 iDev2（`collect-idev2.py`，含 assignedTodayOnly / 指派给我今日更新）
 - [ ] 读 raw + idev2 + feishu sidecar
 - [ ] **若 Daily 已存在 → 先读全文，走 §6 合并规则**
 - [ ] **过滤** cursorChats：非工作/日常小问题不进正文与参考列表
 - [ ] git/iDev 空 → 走轻工作日规则
 - [ ] 聚合成技改 Callout（非数据源段落）
-- [ ] 参考区折叠；飞书区分「新建 / 校订」
+- [ ] 参考区折叠；飞书区分「新建 / 校订」；iDev 区分「新建 / 今日新指派 / 今日更新」
 - [ ] **保留**用户「明日待办」「待排期」勾选与分栏；昨日待排期滚动合并
