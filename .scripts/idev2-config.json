@@ -1,0 +1,13 @@
+{
+  "employeeId": "TR043507",
+  "productIds": [10002849],
+  "parentIssueIds": ["8395325"],
+  "parentIssueKeys": ["GDS-9247"],
+  "queryNotes": {
+    "creatorField": "使用工号 TR043507，不要用 zhaorun",
+    "editTimeField": "iDev2 返回 lastUpdatedTime（非 edittime）；状态扭转也会更新该字段",
+    "createdFilter": "createdTimeStart/End 按 Asia/Shanghai 当天 00:00~23:59 毫秒时间戳",
+    "editedFilter": "拉取 creator=TR043507 近期 Issue，客户端过滤 lastUpdatedTime 在当天且 updaterObj.id=TR043507",
+    "mcpIncludeFields": "title,issueKey,issueStatus,createtime,lastUpdatedTime,creatorObj,executiveObj,updaterObj,parentLinkObj"
+  }
+}

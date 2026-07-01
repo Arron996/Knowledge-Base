@@ -1,0 +1,288 @@
+{
+  "date": "2026-06-30",
+  "collectedAt": "2026-06-30T19:31:29",
+  "cursorChats": [
+    {
+      "chatId": "be0e631d-6068-40d8-915f-6417dd9e7a2d",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "我现在每天早上要看今天的事项安排，每天晚上要更新总结今天的工作，还要计划第二天的安排 你能不能每天晚上自动总结 和规划计划工作，这个怎么实现？做一个脚本 还是做一个应用？",
+      "modifiedAt": "2026-06-30T19:30:05",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/be0e631d-6068-40d8-915f-6417dd9e7a2d/be0e631d-6068-40d8-915f-6417dd9e7a2d.jsonl"
+    },
+    {
+      "chatId": "0184e555-8342-4aae-b7ab-3babe04f42ad",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/B3t3w8S2TiuXvDkXOoIcqyQHnYf 读下这个需求，票台要发邮件吗？票台要干什么，票台是不是没有发邮件的功能？",
+      "modifiedAt": "2026-06-30T19:20:30",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/0184e555-8342-4aae-b7ab-3babe04f42ad/0184e555-8342-4aae-b7ab-3babe04f42ad.jsonl"
+    },
+    {
+      "chatId": "902cca9d-bc50-465c-8993-a0daef175678",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "欧星有开车次异常退吗？线上",
+      "modifiedAt": "2026-06-30T19:17:27",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/902cca9d-bc50-465c-8993-a0daef175678/902cca9d-bc50-465c-8993-a0daef175678.jsonl"
+    },
+    {
+      "chatId": "c3b47143-58ec-4bd9-8274-ae68271556a9",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "/*100053253-SupplierSubOrderStatisticsDao.countBookingSuccessBySupplierAndTime[MSG_ID:100053253-0a71e61b-495135-393400]…",
+      "modifiedAt": "2026-06-30T19:17:05",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/c3b47143-58ec-4bd9-8274-ae68271556a9/c3b47143-58ec-4bd9-8274-ae68271556a9.jsonl"
+    },
+    {
+      "chatId": "42afa59c-fa2f-4b1b-9263-840772ee1826",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "现状订单gdpr流程是什么样子的 order system",
+      "modifiedAt": "2026-06-30T19:01:25",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/42afa59c-fa2f-4b1b-9263-840772ee1826/42afa59c-fa2f-4b1b-9263-840772ee1826.jsonl"
+    },
+    {
+      "chatId": "a0c28792-b733-48e6-a621-e4cb10b907fe",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "飞书mcp能给某个联系人 创建一个飞书任务吗",
+      "modifiedAt": "2026-06-30T18:13:48",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/a0c28792-b733-48e6-a621-e4cb10b907fe/a0c28792-b733-48e6-a621-e4cb10b907fe.jsonl"
+    },
+    {
+      "chatId": "f626389a-dba2-4846-8d7b-63b18f49bc29",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "1359045587196037 线上订单 我想问的是最终退票结果给到的可退金额为0正常吗 ，这是车次异常退 这个金额从哪里获取 是票台的原因吗？",
+      "modifiedAt": "2026-06-30T16:39:25",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/f626389a-dba2-4846-8d7b-63b18f49bc29/f626389a-dba2-4846-8d7b-63b18f49bc29.jsonl"
+    },
+    {
+      "chatId": "f963b812-8da4-4ea2-adae-fe569bd61a17",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "我现在每天早上要看今天的事项安排，每天晚上要更新总结今天的工作，还要计划第二天的安排 你能不能每天晚上自动总结 和规划计划工作，这个怎么实现？做一个脚本 还是做一个应用？",
+      "modifiedAt": "2026-06-30T16:14:32",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/f963b812-8da4-4ea2-adae-fe569bd61a17/f963b812-8da4-4ea2-adae-fe569bd61a17.jsonl"
+    },
+    {
+      "chatId": "7d70cb66-5ded-4b64-aba4-a04d8c9dc638",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "项目要开始H2的规划了，你可以看下H1的重要项目，参考一下票台，主要是票台和admin，然后提出一下下半年的规划和重要技改项目 https://trip.larkenterprise.com/wiki/YNujwPW09id32BkaMk…",
+      "modifiedAt": "2026-06-30T15:48:22",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/7d70cb66-5ded-4b64-aba4-a04d8c9dc638/7d70cb66-5ded-4b64-aba4-a04d8c9dc638.jsonl"
+    },
+    {
+      "chatId": "f313614c-7925-4691-a1c8-bbefbc017fbe",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "我想要这个有效行程组件能够复用，在dataquery和退票对齐页面，这个目的，现在退票对齐页面的有效行程没有标识退票信息状态",
+      "modifiedAt": "2026-06-30T15:26:24",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/f313614c-7925-4691-a1c8-bbefbc017fbe/f313614c-7925-4691-a1c8-bbefbc017fbe.jsonl"
+    },
+    {
+      "chatId": "f3fac621-e84d-4e1e-b9c6-e8dc9147ece2",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "/*100053253-SupplierSubOrderStatisticsDao.countBookingSuccessBySupplierAndTime[MSG_ID:100053253-0a71e61b-495135-393400]…",
+      "modifiedAt": "2026-06-30T15:25:36",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/f3fac621-e84d-4e1e-b9c6-e8dc9147ece2/f3fac621-e84d-4e1e-b9c6-e8dc9147ece2.jsonl"
+    },
+    {
+      "chatId": "de8ac42a-f4a0-4678-b034-331ff3c092d3",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "我想说的是，你新开聊天窗 生成的对话标题 能不能不要用英文，用中文，而且，会遇到多次对话后 跟开始的主题不对的情况，我希望标题能够多次对话后更新",
+      "modifiedAt": "2026-06-30T15:24:36",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/de8ac42a-f4a0-4678-b034-331ff3c092d3/de8ac42a-f4a0-4678-b034-331ff3c092d3.jsonl"
+    },
+    {
+      "chatId": "54643253-490d-43a3-af45-fcabafde5228",
+      "project": "empty-window",
+      "title": "异常配置和供应配置 的历史记录 我想新加按钮，每个发布版本，加个与上一版本对比，现在的diff是与线上对比，不够，而且得改个名，叫对比线上， 要新加一个对比前版本功能 看看好做吗",
+      "modifiedAt": "2026-06-30T14:33:38",
+      "transcript": "/Users/aaron/.cursor/projects/empty-window/agent-transcripts/54643253-490d-43a3-af45-fcabafde5228/54643253-490d-43a3-af45-fcabafde5228.jsonl"
+    },
+    {
+      "chatId": "16ea0b95-368a-4fff-b6b2-77d3bbec2231",
+      "project": "empty-window",
+      "title": "我想问idev创建技改story 的时候可以指定 parent对吧，可以选择审批人 直接进行发起审批吗，还是说要我手动去发起",
+      "modifiedAt": "2026-06-30T13:54:58",
+      "transcript": "/Users/aaron/.cursor/projects/empty-window/agent-transcripts/16ea0b95-368a-4fff-b6b2-77d3bbec2231/16ea0b95-368a-4fff-b6b2-77d3bbec2231.jsonl"
+    },
+    {
+      "chatId": "7f1fe6de-5c42-44ab-ae66-68204ae73fab",
+      "project": "empty-window",
+      "title": "https://mcndcb14rnzs.aiforce.cloud/app/app_1795b79jvq1/ 这种是怎么搭建的？数据来源于二手群的聊天，自动变成了看板",
+      "modifiedAt": "2026-06-30T13:49:49",
+      "transcript": "/Users/aaron/.cursor/projects/empty-window/agent-transcripts/7f1fe6de-5c42-44ab-ae66-68204ae73fab/7f1fe6de-5c42-44ab-ae66-68204ae73fab.jsonl"
+    },
+    {
+      "chatId": "576343fc-1f78-42ba-a046-cbaff5b4cfc8",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "admin后端为啥跨洋调用这个吗https://bat.fx.ctripcorp.com/trace/100053253-0a71e61b-495197-130730?sourceAppId=100053253&from=17827113…",
+      "modifiedAt": "2026-06-30T11:07:10",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/576343fc-1f78-42ba-a046-cbaff5b4cfc8/576343fc-1f78-42ba-a046-cbaff5b4cfc8.jsonl"
+    },
+    {
+      "chatId": "41953efd-269a-4cfb-af3a-1bdb880e6a22",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "在 /Users/aaron/IdeaProjects/gds-order-admin-be 实现 SLA 统计并发时间分片技改，不要改 plan 文件。 ## 任务 1. 新建 `SlaStatisticsTimeRange.java`…",
+      "modifiedAt": "2026-06-30T10:50:10",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/41953efd-269a-4cfb-af3a-1bdb880e6a22/41953efd-269a-4cfb-af3a-1bdb880e6a22.jsonl"
+    },
+    {
+      "chatId": "4d1c4912-db85-4dcf-a754-5d02646b498e",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "https://trip.larkenterprise.com/wiki/WOTCwI5FRimwApkGd7uco7SHnib https://trip.larkenterprise.com/wiki/XX8LwjLGui1v0bkqC…",
+      "modifiedAt": "2026-06-30T10:20:03",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/4d1c4912-db85-4dcf-a754-5d02646b498e/4d1c4912-db85-4dcf-a754-5d02646b498e.jsonl"
+    }
+  ],
+  "plans": [
+    {
+      "file": "gdpr删除通知票台_13a6129c.plan.md",
+      "title": "gdpr删除通知票台",
+      "modifiedAt": "2026-06-30T19:20:29"
+    },
+    {
+      "file": "gdpr删除通知票台_d71e835b.plan.md",
+      "title": "gdpr删除通知票台",
+      "modifiedAt": "2026-06-30T19:20:17"
+    },
+    {
+      "file": "欧星车次异常退查询_05c55f1e.plan.md",
+      "title": "欧星车次异常退查询",
+      "modifiedAt": "2026-06-30T19:17:26"
+    },
+    {
+      "file": "每日工作流自动化_c6724687.plan.md",
+      "title": "每日工作流自动化",
+      "modifiedAt": "2026-06-30T15:29:41"
+    },
+    {
+      "file": "历史版本对比按钮_92d8520f.plan.md",
+      "title": "历史版本对比按钮",
+      "modifiedAt": "2026-06-30T14:14:34"
+    },
+    {
+      "file": "sla并发分片技改_bea95729.plan.md",
+      "title": "sla并发分片技改",
+      "modifiedAt": "2026-06-30T10:50:16"
+    }
+  ],
+  "git": [
+    {
+      "repo": "gds-order-admin-be",
+      "commits": [
+        {
+          "hash": "16d54446",
+          "message": "Merge branch 'feature/20250629_slaParallelTimeSplit' into develop/base_20260421"
+        },
+        {
+          "hash": "3dd6e86c",
+          "message": "refactor: SLA分片改为flat异步提交并移除失败fallback"
+        },
+        {
+          "hash": "9b20c41f",
+          "message": "fix: 按 MR CR 修复 SLA 分片与对象拷贝"
+        },
+        {
+          "hash": "2891d878",
+          "message": "feat: SLA统计成功COUNT并发时间分片"
+        }
+      ]
+    },
+    {
+      "repo": "gds-ticketing-system",
+      "commits": [
+        {
+          "hash": "bd9acc7826",
+          "message": "Merge remote-tracking branch 'origin/master' into feature/20260615_exceptionJobTimeSplit"
+        },
+        {
+          "hash": "acd75dedb8",
+          "message": "Merge remote-tracking branch 'origin/master' into feature/20260615_exceptionJobTimeSplit"
+        }
+      ]
+    }
+  ],
+  "idev2": {
+    "date": "2026-06-30",
+    "collectedAt": "2026-06-30T19:35:00",
+    "query": {
+      "employeeId": "TR043507",
+      "createdTimeStart": 1782748800000,
+      "createdTimeEnd": 1782835199000,
+      "strategy": "createdToday + lastUpdatedToday(updater=TR043507)"
+    },
+    "createdToday": [
+      {
+        "key": "GDS-9398",
+        "title": "Admin FE 订单数据查询体验优化",
+        "status": "DONE"
+      },
+      {
+        "key": "GDS-9399",
+        "title": "Ticket Log 退票对齐排查工具",
+        "status": "开发中",
+        "parent": "GDS-9247"
+      },
+      {
+        "key": "GDS-9400",
+        "title": "Ticket Log 退票对齐排查工具",
+        "status": "TODO",
+        "type": "Sub-task"
+      },
+      {
+        "key": "GDS-9414",
+        "title": "SLA统计并发时间分片",
+        "status": "开发中",
+        "parent": "GDS-9247"
+      },
+      {
+        "key": "GDS-9416",
+        "title": "SLA统计并发时间分片",
+        "status": "TODO"
+      },
+      {
+        "key": "GDS-9456",
+        "title": "【前端】异常配置/供应配置 - 历史版本功能增强",
+        "status": "待敏捷排期"
+      },
+      {
+        "key": "GDS-9459",
+        "title": "生产下线 -乘客certNo本地加密下线 -2",
+        "status": "DOING",
+        "type": "Sub-task"
+      },
+      {
+        "key": "GDS-9460",
+        "title": "【前端】异常配置/供应配置 - 历史版本功能增强",
+        "status": "TODO"
+      },
+      {
+        "key": "GDS-9461",
+        "title": "七月【GDPR】删除供应商侧用户订单信息-票台",
+        "status": "DOING"
+      },
+      {
+        "key": "GDS-9462",
+        "title": "Admin FE 订单数据查询体验优化",
+        "status": "DONE"
+      }
+    ],
+    "updatedTodayOnly": [
+      {
+        "key": "GDS-9383",
+        "title": "乘客certNo本地加密下线",
+        "status": "开发中",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日扭转/编辑"
+      }
+    ],
+    "summary": {
+      "createdCount": 10,
+      "updatedOnlyCount": 1,
+      "totalDistinct": 11
+    }
+  },
+  "queryHints": {
+    "idev2EmployeeId": "TR043507",
+    "idev2CreatedTimeStart": 1782748800000,
+    "idev2CreatedTimeEnd": 1782835199999,
+    "idev2EditField": "lastUpdatedTime",
+    "idev2Sidecar": "_staging/2026-06-30.idev2.json",
+    "idev2SidecarHint": "晚间由 Cursor Agent 写入；需 creator=工号 + lastUpdatedTime 过滤"
+  }
+}
