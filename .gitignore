@@ -1,4 +1,14 @@
 .DS_Store
+
+# Obsidian 本地状态（窗口布局、缓存，不应入库）
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache
+
+# 自动化脚本临时输出（每日 iDev2 采集等，本地缓存即可）
+_staging/
+
+# 编辑器/系统临时文件
+*.tmp
+*.bak
+*~

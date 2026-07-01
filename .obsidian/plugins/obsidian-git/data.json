@@ -1,0 +1,22 @@
+{
+  "commitMessage": "更新知识库: {{date}}",
+  "autoCommitMessage": "自动备份: {{date}}",
+  "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
+  "autoSaveInterval": 0,
+  "autoPushInterval": 0,
+  "autoPullInterval": 0,
+  "autoCommitInterval": 30,
+  "autoPushOnCommit": true,
+  "disablePush": false,
+  "pullBeforePush": true,
+  "disablePopups": false,
+  "listChangedFilesInCommitMessage": true,
+  "showStatusBar": true,
+  "updateSubmodules": false,
+  "syncMethod": "merge",
+  "customMessageOnAutoBackup": false,
+  "autoBackupAfterFileChange": false,
+  "treeStructure": true,
+  "refreshSourceControl": true,
+  "baseBranch": "main"
+}
