@@ -55,6 +55,35 @@ def format_git(git_items: list[dict]) -> str:
     return "\n".join(lines).strip() + "\n"
 
 
+def format_gitlab(gitlab: dict | None) -> str:
+    if not gitlab:
+        return "（缺少 gitlab sidecar）\n"
+    merged = gitlab.get("mergedToday", [])
+    if not merged:
+        return "（今日无 MR 合入记录；本地 merge 仅见 Git commit）\n"
+    lines = []
+    for mr in merged:
+        title = mr.get("title", "")
+        project = mr.get("project", "")
+        url = mr.get("webUrl", "")
+        target = mr.get("targetBranch", "")
+        hint = mr.get("progressHint")
+        stage = mr.get("releaseStage", "")
+        suffix = ""
+        if hint:
+            suffix = f" · {hint}"
+        elif stage == "production":
+            suffix = " · 已发生产"
+        elif stage == "testing":
+            suffix = " · 测试中"
+        iid = mr.get("iid", "")
+        if url:
+            lines.append(f"- 🔀 [{project} !{iid}]({url}) → `{target}` · {title}{suffix}")
+        else:
+            lines.append(f"- 🔀 {project} !{iid} → `{target}` · {title}{suffix}")
+    return "\n".join(lines) + "\n"
+
+
 def format_idev(idev: dict | None) -> str:
     if not idev:
         return "（缺少 idev2 sidecar）\n"
@@ -126,10 +155,13 @@ def build_reference(target_day: date) -> str:
     raw = load_json(staging / f"{d}.raw.json") or {}
     idev = load_json(staging / f"{d}.idev2.json")
     feishu = load_json(staging / f"{d}.feishu.json")
+    gitlab = load_json(staging / f"{d}.gitlab.json")
     if isinstance(raw, dict) and idev is None:
         idev = raw.get("idev2")
     if isinstance(raw, dict) and feishu is None:
         feishu = raw.get("feishu")
+    if isinstance(raw, dict) and gitlab is None:
+        gitlab = raw.get("gitlab")
 
     chats = raw.get("cursorChats", []) if isinstance(raw, dict) else []
     plans = raw.get("plans", []) if isinstance(raw, dict) else []
@@ -155,6 +187,12 @@ def build_reference(target_day: date) -> str:
         "</details>",
         "",
         "<details>",
+        "<summary>🔀 GitLab MR 合入</summary>",
+        "",
+        format_gitlab(gitlab if isinstance(gitlab, dict) else None),
+        "</details>",
+        "",
+        "<details>",
         "<summary>📝 飞书文档</summary>",
         "",
         format_feishu(feishu if isinstance(feishu, dict) else None),
@@ -165,7 +203,7 @@ def build_reference(target_day: date) -> str:
         "",
         format_idev(idev if isinstance(idev, dict) else None),
         "",
-        f"详见 `_staging/{d}.idev2.json`、`_staging/{d}.feishu.json`",
+        f"详见 `_staging/{d}.idev2.json`、`_staging/{d}.feishu.json`、`_staging/{d}.gitlab.json`",
         "</details>",
     ]
     return "\n".join(parts)

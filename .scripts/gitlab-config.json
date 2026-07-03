@@ -1,0 +1,33 @@
+{
+  "username": "zhaorun",
+  "mcpQueries": {
+    "mergedAuthored": {
+      "tool": "list_user_merge_requests",
+      "arguments": {
+        "username": "zhaorun",
+        "role": "author",
+        "state": "merged",
+        "limit": 50
+      },
+      "clientFilter": "merged_at 落在 TARGET_DATE → mergedToday"
+    },
+    "reviewedOptional": {
+      "tool": "list_user_events",
+      "arguments": {
+        "username": "zhaorun",
+        "action_type": "approved",
+        "target_type": "merge_request",
+        "after": "TARGET_DATE",
+        "before": "TARGET_DATE_PLUS_1"
+      },
+      "note": "可选：今日 CR/Approve 的 MR"
+    }
+  },
+  "projectSlugMap": {
+    "128950": "gds-order-admin-be",
+    "128949": "gds-order-admin-fe",
+    "128948": "gds-ticketing-system"
+  },
+  "productionBranches": ["main", "master"],
+  "testingBranchPatterns": ["develop/base", "develop/"]
+}

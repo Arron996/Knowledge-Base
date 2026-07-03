@@ -189,6 +189,7 @@ def main() -> None:
     target = target_date.isoformat()
     idev2 = load_sidecar(target_date, "idev2")
     feishu = load_sidecar(target_date, "feishu")
+    gitlab = load_sidecar(target_date, "gitlab")
     day_start_ms, day_end_ms = day_ms_bounds(target_date)
 
     payload = {
@@ -199,6 +200,7 @@ def main() -> None:
         "git": collect_git_commits(target_date),
         "idev2": idev2,
         "feishu": feishu,
+        "gitlab": gitlab,
         "queryHints": {
             "timezone": "Asia/Shanghai",
             "idev2EmployeeId": "TR043507",
@@ -207,8 +209,10 @@ def main() -> None:
             "idev2EditField": "lastUpdatedTime",
             "idev2Sidecar": f"_staging/{target}.idev2.json",
             "feishuSidecar": f"_staging/{target}.feishu.json",
+            "gitlabSidecar": f"_staging/{target}.gitlab.json",
             "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
             "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
+            "gitlabSidecarHint": "list_user_merge_requests(author,merged) → merged_at 当日",
         },
     }
 
@@ -217,6 +221,8 @@ def main() -> None:
         notes["idev2"] = f"缺少 _staging/{target}.idev2.json，请用 MCP 按 lastUpdatedTime 补充"
     if feishu is None:
         notes["feishu"] = f"缺少 _staging/{target}.feishu.json，请运行 collect-feishu.py"
+    if gitlab is None:
+        notes["gitlab"] = f"缺少 _staging/{target}.gitlab.json，请运行 collect-gitlab.py"
     if notes:
         payload["notes"] = notes
 
@@ -235,6 +241,7 @@ def main() -> None:
                     "idev2Issues": (idev2 or {}).get("summary", {}).get("totalDistinct"),
                     "feishuCreated": (feishu or {}).get("summary", {}).get("createdCount"),
                     "feishuEditedOnly": (feishu or {}).get("summary", {}).get("editedOnlyCount"),
+                    "gitlabMerged": (gitlab or {}).get("summary", {}).get("mergedCount"),
                 }
             },
             ensure_ascii=False,

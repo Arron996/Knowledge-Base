@@ -57,6 +57,11 @@ topics:
     subs:
       - name: expectedSubRefundList 透传方案
 
+  - name: refundEvent 特殊事件退误清 subRefundId
+    planFiles: [refundevent_subrefundid]
+    subs:
+      - name: doSubRefundInfoModify 降级条件修复
+
   - name: 2026 H2 票台 & Admin 规划
     feishu: https://trip.larkenterprise.com/wiki/ZlCCwWI2CiMOIzkGUcUcX0H3nW3
     subs:
