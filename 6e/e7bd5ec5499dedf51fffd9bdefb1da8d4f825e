@@ -1,0 +1,87 @@
+.scripts/kb-run-with-env.sh
+  s_a2cbdcae111477::t_558ed59bbb2eae 1-10
+Templates/automation-evening-instructions.md
+  s_a2cbdcae111477::t_8cc3d8c3bdafc5 30-32
+  s_a2cbdcae111477::t_34f97b290f7746 63-74,76
+  s_a2cbdcae111477::t_e7ecc2b50e0a74 1,6,8,10-27,33,96-104,106-112
+  s_a2cbdcae111477::t_6ab1c16bd61a86 75
+.scripts/collect-evening.py
+  s_a2cbdcae111477::t_ddfacc9dc80064 192
+  ai_agent 224-225,244
+.scripts/evening-daily.sh
+  s_a2cbdcae111477::t_d1085ceff73252 1-40
+.scripts/gitlab-config.json
+  s_a2cbdcae111477::t_b8b281d904e378 30-32
+  s_a2cbdcae111477::t_eb69602394b638 1-29,33
+Dashboard.md
+  s_a2cbdcae111477::t_4d6c79a74ddcbc 11-12,14
+  s_a2cbdcae111477::t_557debaf0abc0a 19,23-33,47-48,52-65
+.scripts/setup.sh
+  s_a2cbdcae111477::t_e45a05cbb8d630 1-23
+.scripts/format-daily-ref.py
+  s_a2cbdcae111477::t_e7a18b743e5f96 70-78
+  s_a2cbdcae111477::t_16aaecf67317dd 163-164
+  s_a2cbdcae111477::t_1bec29429e0239 190-195
+  s_a2cbdcae111477::t_dce0f947c3dbfe 206
+  s_a2cbdcae111477::t_66eb5a7d9856e5 58-69,79-80,82,84-86
+  s_a2cbdcae111477::t_858c6f7fd9d1bc 158
+  s_a2cbdcae111477::t_dbda0ccd4a32d3 81,83
+Templates/automation-morning-instructions.md
+  s_a2cbdcae111477::t_8da2ab15f90811 1-55
+.scripts/launchd/com.zhaorun.kb-morning-todos.plist
+  s_a2cbdcae111477::t_55f4f1c5ca335a 1-30
+.scripts/env.example
+  s_a2cbdcae111477::t_9c18a60faeedca 1-2
+Templates/daily-note.md
+  s_a2cbdcae111477::t_037144f28c978f 26-31
+Templates/topic-registry.yaml
+  s_a2cbdcae111477::t_3e245e3bf05cdc 60-63
+Templates/daily-style-guide.md
+  s_a2cbdcae111477::t_9124f04bd78156 44,46-47,49,53-62
+  s_a2cbdcae111477::t_6f4409ff980336 102,104,106,108-112
+  s_a2cbdcae111477::t_a342ed3790a40f 207,209
+.scripts/roll-morning-todos.py
+  s_a2cbdcae111477::t_27df37327e1b6b 62
+  s_a2cbdcae111477::t_c23aa5572ad51d 1-61,63-130
+.gitignore
+  s_a2cbdcae111477::t_d8994e671aa7ef 11-13
+.scripts/workday.py
+  s_a2cbdcae111477::t_0db7250b26314f 1-59
+.scripts/kb-notify.sh
+  s_a2cbdcae111477::t_3873430e1e1bab 1-8
+.scripts/package.json
+  s_a2cbdcae111477::t_c7e64ee54c677f 1-8
+.scripts/requirements.txt
+  s_a2cbdcae111477::t_75af6d2c497422 1
+.scripts/merge-weekly.py
+  s_a2cbdcae111477::t_aa0cf8e9fa2fee 1-154
+.scripts/morning-todos.sh
+  s_a2cbdcae111477::t_a062097003f275 1-47
+.scripts/launchd/com.zhaorun.kb-evening-daily.plist
+  s_a2cbdcae111477::t_431d0a5e392e42 1-30
+.scripts/collect-gitlab.py
+  s_a2cbdcae111477::t_63fd872267f474 1-46,52-63,81-84,86-88,90,96-99,102-109,111-189
+  s_a2cbdcae111477::t_0abf5ab8dc2ab4 100-101,110
+  s_a2cbdcae111477::t_488545f28c97a1 47-51
+  s_a2cbdcae111477::t_a0c1dd3159cb8c 64-80,85,89,91-95
+.scripts/kb-evening-agent.mjs
+  s_a2cbdcae111477::t_c86572c58a6b45 1-94
+.scripts/install-launchd.sh
+  s_a2cbdcae111477::t_3f4756d91a073f 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "6ee7bd5ec5499dedf51fffd9bdefb1da8d4f825e",
+  "prompts": {},
+  "sessions": {
+    "s_a2cbdcae111477": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f963b812-8da4-4ea2-adae-fe569bd61a17",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
