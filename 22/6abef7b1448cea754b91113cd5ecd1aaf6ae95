@@ -1,0 +1,34 @@
+Daily/2026-07-03.md
+  s_afda4049a0b5be::t_35057e004845b1 52,57-58
+  s_e0a1a9ad64ba0b::t_56520ab2870a2d 85-92
+  s_afda4049a0b5be::t_8627572921ad41 22
+  s_afda4049a0b5be::t_c021260ad6a751 60-76
+  s_afda4049a0b5be::t_c8983137b90970 13
+  s_afda4049a0b5be::t_232650dcf5b2f7 99-100
+  s_afda4049a0b5be::t_ca367defa30f01 127,129-133,136,141,143-144,155,159,166,177-179,182-185,189-204,208-210,215
+  s_e0a1a9ad64ba0b::t_84bbd39d2377ad 115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "226abef7b1448cea754b91113cd5ecd1aaf6ae95",
+  "prompts": {},
+  "sessions": {
+    "s_afda4049a0b5be": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "agent-475f592a-df18-4b30-9949-a247cd4bd083",
+        "model": "unknown"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_e0a1a9ad64ba0b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a9f28dcb-a763-4f31-9e14-9a3933076a1c",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
