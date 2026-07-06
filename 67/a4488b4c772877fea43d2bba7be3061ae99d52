@@ -1,0 +1,21 @@
+Daily/2026-07-06.md
+  s_73e0c4c2ff8f75::t_d22da5c58deeb5 13
+  s_73e0c4c2ff8f75::t_c9fee18a8cb8b1 63-70
+  s_73e0c4c2ff8f75::t_2b44441f37ea11 162,164-171,173,180,187-198,205,212-221,226-228,230-232
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "67a4488b4c772877fea43d2bba7be3061ae99d52",
+  "prompts": {},
+  "sessions": {
+    "s_73e0c4c2ff8f75": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "agent-04370672-59fe-485b-9fa8-2b3e73594fb3",
+        "model": "unknown"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
