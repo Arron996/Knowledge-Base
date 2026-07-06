@@ -1,0 +1,34 @@
+Weekly/2026-W27-飞书表格.md
+  s_9f2e649d9e706c::t_25913ea5b369f1 1-46
+Weekly/2026-W27-票台周报.md
+  s_9f2e649d9e706c::t_e3e4dd7bb29363 1-8,10-11,14,18,21-22,24-25,27-29,38-40
+  s_9f2e649d9e706c::t_093a2eecda7da3 9,12-13,15-17,19-20,23,26,30-37,41-45
+Daily/2026-07-06.md
+  s_cff63f406dcc7c::t_5e6a13301a8ac6 1-101
+Weekly/2026-W27-表单粘贴.txt
+  s_9f2e649d9e706c::t_c49c08a45e726e 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "086a1ca9235d03e68cc2840626287e5f26c94e35",
+  "prompts": {},
+  "sessions": {
+    "s_9f2e649d9e706c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3afdd174-3a9a-4b70-80d9-f85adde8de1a",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_cff63f406dcc7c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8f091579-1fc1-41e9-9ada-9884c2de7d40",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
