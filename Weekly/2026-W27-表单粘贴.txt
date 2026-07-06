@@ -1,0 +1,20 @@
+📎 详细表格见飞书文档：（创建后粘贴链接，如 https://trip.larkenterprise.com/wiki/xxxx）
+
+—— 以下为表单内竖线摘要，领导可快速扫读 ——
+
+*本周工作*
+
+1. 415 complete 重试 & 转人工 | complete 失败无法重试、416 无法转回系统 | ✅已发生产
+2. GDS-2971 TI 特殊退拆单票价 | TI 特殊退子单票价未透传，退款金额不准 | ✅已发生产
+3. SLA 统计并发时间分片 | 大表 COUNT 慢查询拖垮 SLA 统计与告警 | ✅已完成
+4. Ticket Log 退票对齐排查工具 | 退票与 VC/票台不一致时排查慢 | ✅已完成
+5. refundEvent 误清 subRefundId + GDS-9637 立项 | 特殊事件退误降级清空子单，影响退票对账 | 👀待评审
+6. obtain 拦截 & Admin 手动置失败 | obtain 异常单难以及时拦截/置失败 | 🔄开发中
+
+*下周计划*
+
+1. GDS-9583 obtain 开发 | obtain 异常单拦截与人工置失败 | 🔴
+2. GDS-9637 评审后开分支 | 修复 refundEvent 误清 subRefundId | 🟡
+3. GDPR admin-fe 联调提 MR | 供应商 GDPR 通知字段上线 | 🟡
+4. 历史版本对比 admin-fe | 配置发布缺版本对比能力 | 🟡
+5. GDS-9552 评审跟进 | Ticket Log 退票四项对齐 | 🟢
