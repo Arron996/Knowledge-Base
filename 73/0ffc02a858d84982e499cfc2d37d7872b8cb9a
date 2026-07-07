@@ -1,0 +1,41 @@
+.scripts/install-launchd.sh
+  s_9f2e649d9e706c::t_874711a71a8d0f 2,8-10,14-26,30-31,33-39,54-56
+  s_a2cbdcae111477::t_de3cdd460a064d 11-13
+  s_9f2e649d9e706c::t_8debab6f4fb670 49-50
+.scripts/kb-run-with-env.sh
+  s_a2cbdcae111477::t_3caaecbc4644e2 2,8
+  s_a2cbdcae111477::t_b4da1e44b6035b 4-6
+.scripts/kb-load-secrets.sh
+  s_a2cbdcae111477::t_99b30648adbac0 1-17
+.scripts/env.example
+  s_a2cbdcae111477::t_82a0a2dca1ef37 1-12
+.scripts/morning-todos.sh
+  s_a2cbdcae111477::t_4ba8eaa4a38933 36-43,52-55
+.scripts/sync-launchd-api-key.sh
+  s_a2cbdcae111477::t_5cc3e663b7a1a1 15-16
+  s_a2cbdcae111477::t_0dd0daba35d8f3 1-14,17-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "730ffc02a858d84982e499cfc2d37d7872b8cb9a",
+  "prompts": {},
+  "sessions": {
+    "s_9f2e649d9e706c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3afdd174-3a9a-4b70-80d9-f85adde8de1a",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_a2cbdcae111477": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f963b812-8da4-4ea2-adae-fe569bd61a17",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
