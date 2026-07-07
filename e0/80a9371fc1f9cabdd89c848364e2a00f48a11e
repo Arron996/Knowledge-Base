@@ -1,0 +1,29 @@
+Daily/2026-07-06.md
+  s_cff63f406dcc7c::t_9521392a913cf3 73-88
+Daily/2026-07-07.md
+  s_99d7516ba8bcfe::t_85b5562169ee5f 13,17-75,77,81-86,92,96,100-104,109,115-134,137-187,189
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "e080a9371fc1f9cabdd89c848364e2a00f48a11e",
+  "prompts": {},
+  "sessions": {
+    "s_99d7516ba8bcfe": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "agent-8c518594-f2e0-47a9-b7df-699145450be9",
+        "model": "unknown"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_cff63f406dcc7c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8f091579-1fc1-41e9-9ada-9884c2de7d40",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
