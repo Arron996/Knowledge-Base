@@ -33,7 +33,14 @@ if [[ "$WEEKDAY" == "5" ]]; then
 fi
 
 cd "$VAULT"
-git pull --ff-only origin main
+
+git_pull_ok=0
+git pull --ff-only origin main || git_pull_ok=$?
+if [[ "$git_pull_ok" -ne 0 ]]; then
+  echo "WARN: git pull failed (rc=$git_pull_ok)"
+  notify_fail "git pull 失败，继续尝试 commit/push"
+fi
+
 git add Daily/ Weekly/
 MSG="morning: $TODAY todos"
 [[ "$WEEKDAY" == "5" ]] && MSG="$MSG + weekly"
@@ -42,6 +49,10 @@ if git diff --staged --quiet; then
 else
   git commit -m "$MSG"
 fi
-git push origin main
+
+if ! git push origin main; then
+  notify_fail "git push 失败，Daily 已在本地，请补 push"
+  exit 6
+fi
 
 echo "morning-todos OK"

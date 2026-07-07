@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# Load user secrets (CURSOR_API_KEY) for launchd jobs.
+# Load secrets for launchd jobs (launchd does NOT inherit Terminal/zsh env).
 set -a
-if [[ -f "${HOME}/.zshrc.local" ]]; then
-  # shellcheck disable=SC1091
-  source "${HOME}/.zshrc.local"
-fi
+# shellcheck disable=SC1091
+source "$(dirname "$0")/kb-load-secrets.sh"
+load_kb_secrets
 set +a
-export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${HOME}/bin:${PATH:-}"
 exec "$@"
