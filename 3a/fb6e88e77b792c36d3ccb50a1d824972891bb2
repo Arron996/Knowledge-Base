@@ -1,0 +1,26 @@
+Daily/2026-07-07.md
+  s_1d867502bf8a5f::t_0d2050c4d8109b 57
+  s_1d867502bf8a5f::t_bb5e3a45124ab3 117-118
+  s_1d867502bf8a5f::t_486b43cc0bc3bc 50
+  s_1d867502bf8a5f::t_bb5d61715682ae 194-204
+  s_1d867502bf8a5f::t_0645c9e73395c1 13
+  s_1d867502bf8a5f::t_9c8b56f53d3154 28-35
+Daily/2026-07-08.md
+  ai_agent 1-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.28-trip",
+  "base_commit_sha": "3afb6e88e77b792c36d3ccb50a1d824972891bb2",
+  "prompts": {},
+  "sessions": {
+    "s_1d867502bf8a5f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "627c6a5f-f441-4254-b68e-d84805945444",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
