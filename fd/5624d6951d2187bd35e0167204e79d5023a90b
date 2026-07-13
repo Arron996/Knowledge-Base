@@ -1,0 +1,45 @@
+Daily/2026-07-10.md
+  s_c1cce05cd53c31::t_8c2814540c5a74 57,61
+  s_c1cce05cd53c31::t_919e155a40ab51 67
+  s_c1cce05cd53c31::t_e209b08b515110 13,17-56,58-60,63,76-78,82,85,89-106,109-140,142
+Daily/2026-07-09.md
+  s_c1cce05cd53c31::t_3a4aefa09a5047 23,27
+  s_c1cce05cd53c31::t_51baf2a8206920 41
+Daily/2026-07-13.md
+  s_d8942243dc4108::t_5f56c685003eca 74
+  s_c1cce05cd53c31::t_8cf631db7d95c8 53-58
+  s_c1cce05cd53c31::t_495c46ac8f8386 59-63
+  s_1ef78e1386fd83::t_fc1d0dfee522af 13,17-51,65,69-70,78-81,87,90,94-142,145-169,171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.33-trip",
+  "base_commit_sha": "fd5624d6951d2187bd35e0167204e79d5023a90b",
+  "prompts": {},
+  "sessions": {
+    "s_1ef78e1386fd83": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "agent-d28659ee-14df-4c1e-8fac-165dbbd9f8d0",
+        "model": "unknown"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_c1cce05cd53c31": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "04af5a5f-d0ca-4710-a267-3f58930a8ec9",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_d8942243dc4108": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "d3819acd-0b0b-486a-9f34-ba654e69d2e6",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
