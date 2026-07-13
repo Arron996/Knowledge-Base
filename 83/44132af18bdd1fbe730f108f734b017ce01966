@@ -1,0 +1,22 @@
+Weekly/2026-W28-票台周报.md
+  s_d340850aec03bb::t_828135ed230f08 1-14,17,34,45-48
+  s_d340850aec03bb::t_d875ec6f678e2e 15-16,18-33,35-44
+Weekly/2026-W27-票台周报.md
+  s_d340850aec03bb::t_af7f63dfa24515 9-14,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.33-trip",
+  "base_commit_sha": "8344132af18bdd1fbe730f108f734b017ce01966",
+  "prompts": {},
+  "sessions": {
+    "s_d340850aec03bb": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7d70cb66-5ded-4b64-aba4-a04d8c9dc638",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
