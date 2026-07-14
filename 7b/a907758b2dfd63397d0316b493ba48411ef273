@@ -1,0 +1,160 @@
+领域/订单ID层级与批次号.md
+  s_6f5de691d9f5b9::t_d605d2c0938823 1-103
+工程/票台排障路径.md
+  s_6f5de691d9f5b9::t_7e6b48eb4fc84f 1-66
+.cursor/rules/kb-daily-todo.mdc
+  s_9f2e649d9e706c::t_bd3390ad441102 1-12
+工程/Offline前后端联调套路.md
+  s_6f5de691d9f5b9::t_75becd171e802d 1-82
+.scripts/morning-todos.sh
+  s_d340850aec03bb::t_a196acf8d80607 33
+  s_d340850aec03bb::t_8c82b828feabcf 47
+绩效/2026H1-半年报.md
+  s_6f5de691d9f5b9::t_dfa5908d392d41 357
+  s_6f5de691d9f5b9::t_7344d1128071ff 356
+workTool/README.md
+  s_f6494c98702a7c::t_1cb4e5ab85691b 4-5
+  s_f6494c98702a7c::t_997b046d017756 1,3,7,9,11-21,23-33,35-40
+.scripts/idev2-config.json
+  s_d340850aec03bb::t_3d817c586f4cbf 43-45
+Templates/automation-morning-instructions.md
+  s_d340850aec03bb::t_51f3c9a4db0e00 5,12
+  s_d340850aec03bb::t_de7db870ed60cf 22-24
+  s_d340850aec03bb::t_66e8718fee64a2 50
+.scripts/launchd/com.zhaorun.kb-evening-daily.plist
+  s_9f2e649d9e706c::t_02f03424a817f8 10,13
+  s_9f2e649d9e706c::t_6c8ffc256a64bc 14-18
+.scripts/merge-weekly-team.py
+  s_d340850aec03bb::t_187d5ce9c2bb28 125-127,133-157
+  s_d340850aec03bb::t_2008f612c2b50e 202
+  s_d340850aec03bb::t_801e8090998a4a 23-31
+  s_d340850aec03bb::t_4119a152e67fce 246
+  s_d340850aec03bb::t_533d171bdb9a88 1-22,32-108,128-132,158-201,206-245,247-265
+  s_d340850aec03bb::t_3b049888c3eb62 203-205
+  s_d340850aec03bb::t_fbbfd3cbc6f2fd 109-124
+绩效/2025H1-半年报.md
+  s_6f5de691d9f5b9::t_e99baeed47cdc1 1-86
+Templates/automation-evening-instructions.md
+  s_d340850aec03bb::t_cb57a2ad629ce9 94
+  s_d340850aec03bb::t_cd14297c36d389 55,57
+.scripts/launchd/com.zhaorun.kb-morning-todos.plist
+  s_9f2e649d9e706c::t_6155985f337eb7 10,13
+  s_9f2e649d9e706c::t_da133cb50795ad 14-18
+Templates/daily-style-guide.md
+  s_9f2e649d9e706c::t_34e06eb8b88ab8 224-233
+  s_d340850aec03bb::t_d2d4b14f72525e 145
+  s_d340850aec03bb::t_a5402421c33448 152,154-156
+  s_d340850aec03bb::t_79516bb73dca7e 210-216,218-220
+  s_d340850aec03bb::t_5ab3f2d8ce4da0 217
+workTool/辅助脚本.md
+  s_f6494c98702a7c::t_a6509fbe7c4904 1-29
+workTool/Cursor/UserRules.md
+  s_f6494c98702a7c::t_81932d29eae944 1-39
+.scripts/format-daily-ref.py
+  s_d340850aec03bb::t_e40710db45243f 110-120
+workTool/Cursor/Rules.md
+  s_f6494c98702a7c::t_ee7197ff78b1d8 1-47,49-63
+  s_f6494c98702a7c::t_43d0566ad638ba 48
+Dashboard.md
+  s_9f2e649d9e706c::t_20c71b9338c56a 55,60-61
+  s_9f2e649d9e706c::t_0d0b7fa4f40b41 57-59
+workTool/Codex对齐.md
+  s_f6494c98702a7c::t_d3ef79833bb391 1-27,29-30
+  s_f6494c98702a7c::t_2af0c4c9d3faf2 28
+Templates/topic-registry.yaml
+  s_cff63f406dcc7c::t_92c3ec5352dd40 34,42,44-46
+  s_c1cce05cd53c31::t_000a90571d0b9d 43
+import/yuque/笔记/work/WORK.md
+  s_6f5de691d9f5b9::t_87ebfb22759ff3 1-17
+workTool/Cursor/MCP.md
+  s_f6494c98702a7c::t_f29341fe7eaa63 1-62
+领域/通票X产品人工出退改.md
+  s_6f5de691d9f5b9::t_d0cb617d976c3b 1-86
+.scripts/collect-idev2.py
+  s_d340850aec03bb::t_837a5c1d914ffe 110-112,119-125,127,136-137,142,145-148,155-158,168-172,176,181
+  s_d340850aec03bb::t_5c788169c66823 50-67
+workTool/配置地图.md
+  s_f6494c98702a7c::t_b562c9f70b22b9 43
+  s_f6494c98702a7c::t_d9eeef0959e75f 17
+  s_f6494c98702a7c::t_6378f134242544 1-16,18-42,44-60
+Daily/2026-07-13.md
+  s_c1cce05cd53c31::t_bb3f25b255d14b 101
+  s_c1cce05cd53c31::t_0564e0b9a51fcd 47,51
+  s_c1cce05cd53c31::t_f22f9c99efc123 81
+绩效/2024H1-半年报.md
+  s_6f5de691d9f5b9::t_74e5cf5b71a047 120
+  s_6f5de691d9f5b9::t_d5adb0ecbf92df 1-119,121
+领域/退票可退维度问题集.md
+  s_6f5de691d9f5b9::t_391874e1b19fcf 1-99
+.scripts/kb-evening-agent.mjs
+  s_c1cce05cd53c31::t_17c222b26037b3 69-70,73,81-83
+workTool/自动化/日报周报定时任务.md
+  s_f6494c98702a7c::t_1a27579e009779 1-93
+workTool/Cursor/Skills.md
+  s_f6494c98702a7c::t_305f076bc56ce5 1-17,19-22,24,29-82
+  s_f6494c98702a7c::t_8ff937b0dee98a 83-88
+  s_f6494c98702a7c::t_5f54d67486017f 18,23,25-28
+workTool/Cursor/插件Hooks扩展.md
+  s_f6494c98702a7c::t_ab8e41673e6069 1-45
+领域/VCC实付对账模型.md
+  s_6f5de691d9f5b9::t_ad05d0d23d5775 1-114
+Templates/weekly-team-ticket-desk.md
+  s_d340850aec03bb::t_97e3449b845272 1-14,36-40
+  s_d340850aec03bb::t_4505bbd86597ac 15-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.33-trip",
+  "base_commit_sha": "7ba907758b2dfd63397d0316b493ba48411ef273",
+  "prompts": {},
+  "sessions": {
+    "s_6f5de691d9f5b9": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "9e345398-102f-4714-a68d-4d87f5ac4637",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_9f2e649d9e706c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3afdd174-3a9a-4b70-80d9-f85adde8de1a",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_c1cce05cd53c31": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "04af5a5f-d0ca-4710-a267-3f58930a8ec9",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_cff63f406dcc7c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8f091579-1fc1-41e9-9ada-9884c2de7d40",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_d340850aec03bb": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7d70cb66-5ded-4b64-aba4-a04d8c9dc638",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    },
+    "s_f6494c98702a7c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f4fa28a0-1aa8-47cc-a3a5-d9b2a2b9022b",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
