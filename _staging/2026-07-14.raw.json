@@ -1,0 +1,358 @@
+{
+  "date": "2026-07-14",
+  "collectedAt": "2026-07-14T19:12:28+08:00",
+  "cursorChats": [
+    {
+      "chatId": "0184e555-8342-4aae-b7ab-3babe04f42ad",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/B3t3w8S2TiuXvDkXOoIcqyQHnYf 读下这个需求，票台要发邮件吗？票台要干什么，票台是不是没有发邮件的功能？",
+      "modifiedAt": "2026-07-14T19:10:57+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/0184e555-8342-4aae-b7ab-3babe04f42ad/0184e555-8342-4aae-b7ab-3babe04f42ad.jsonl"
+    },
+    {
+      "chatId": "f4fa28a0-1aa8-47cc-a3a5-d9b2a2b9022b",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "你能不能把我电脑上的cursor用的所有rule和skill 还有其他什么配置的比如mcp，插件之类的，日报周报，定时任务什么的全部整理出来，写到我的obsidian知识库，新开一个文件夹 叫做workTool之类的 都是我积累的工具",
+      "modifiedAt": "2026-07-14T18:58:26+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/f4fa28a0-1aa8-47cc-a3a5-d9b2a2b9022b/f4fa28a0-1aa8-47cc-a3a5-d9b2a2b9022b.jsonl"
+    },
+    {
+      "chatId": "3534efcd-a7bb-4c48-901f-0b091636abd1",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "帮我看飞书文档，我记得有个教给应用开arex 流量回放功能的文档，好像是我写的，在票台文档里面 arex",
+      "modifiedAt": "2026-07-14T17:29:58+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/3534efcd-a7bb-4c48-901f-0b091636abd1/3534efcd-a7bb-4c48-901f-0b091636abd1.jsonl"
+    },
+    {
+      "chatId": "b93cb8b4-71ab-4d2e-ae0b-449d6573d392",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "我想新建个需求，卡单job 新增一种类型 delayRepay卡单，拉取状态在已提交，赔付中，的订单 /** 3 提交成功；赔付处理中，终态，回抛 result */ 这个应该写错了 不是终态，",
+      "modifiedAt": "2026-07-14T17:07:23+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b93cb8b4-71ab-4d2e-ae0b-449d6573d392/b93cb8b4-71ab-4d2e-ae0b-449d6573d392.jsonl"
+    },
+    {
+      "chatId": "65a0d682-d3fb-462a-b7dc-c8fd3e54872a",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "看下票台的gdpr表 有咩有数据了，三个idc的",
+      "modifiedAt": "2026-07-14T16:45:39+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/65a0d682-d3fb-462a-b7dc-c8fd3e54872a/65a0d682-d3fb-462a-b7dc-c8fd3e54872a.jsonl"
+    },
+    {
+      "chatId": "9a4cb74e-a42f-448e-af90-7bf5fe3b1ae5",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "看下票台的gdpr表 有咩有数据了，三个idc的",
+      "modifiedAt": "2026-07-14T16:22:22+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/9a4cb74e-a42f-448e-af90-7bf5fe3b1ae5/9a4cb74e-a42f-448e-af90-7bf5fe3b1ae5.jsonl"
+    },
+    {
+      "chatId": "e79040dc-3879-4d87-b7a7-10ea2e915cd7",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "我有个问题，票台的dalsecUtil，对空字符串的证件号也要加密吗，加密出来也不是空字符串，passport encrypt diff] idc=SGP orderId=1359046307268415 cause=encryptNot…",
+      "modifiedAt": "2026-07-14T15:35:29+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/e79040dc-3879-4d87-b7a7-10ea2e915cd7/e79040dc-3879-4d87-b7a7-10ea2e915cd7.jsonl"
+    },
+    {
+      "chatId": "63a4e932-1c90-45d7-bcfc-4a8bc8e0e14a",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "我有个问题，票台的dalsecUtil，对空字符串的证件号也要加密吗，加密出来也不是空字符串，passport encrypt diff] idc=SGP orderId=1359046307268415 cause=encryptNot…",
+      "modifiedAt": "2026-07-14T15:29:57+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/63a4e932-1c90-45d7-bcfc-4a8bc8e0e14a/63a4e932-1c90-45d7-bcfc-4a8bc8e0e14a.jsonl"
+    },
+    {
+      "chatId": "f6d76f31-2e85-4f92-ba63-daf36f397c24",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "看下be 怎么实现查汽船 redis数据吗",
+      "modifiedAt": "2026-07-14T13:39:13+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/f6d76f31-2e85-4f92-ba63-daf36f397c24/f6d76f31-2e85-4f92-ba63-daf36f397c24.jsonl"
+    },
+    {
+      "chatId": "df63a653-f9ad-40c0-8482-da4dd3b16e97",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://bat.fx.ctripcorp.com/trace/100045149-0a0e2c2c-495542-48753?from=1783951478272&to=1783951598272 这单是什么问题",
+      "modifiedAt": "2026-07-14T11:23:33+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/df63a653-f9ad-40c0-8482-da4dd3b16e97/df63a653-f9ad-40c0-8482-da4dd3b16e97.jsonl"
+    },
+    {
+      "chatId": "e7110075-01a6-4ffc-81e7-dd07662922c5",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "(无标题)",
+      "modifiedAt": "2026-07-14T11:22:21+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/e7110075-01a6-4ffc-81e7-dd07662922c5/e7110075-01a6-4ffc-81e7-dd07662922c5.jsonl"
+    },
+    {
+      "chatId": "39276d86-28aa-4636-8372-7c0124d0d555",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "(无标题)",
+      "modifiedAt": "2026-07-14T11:22:16+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/39276d86-28aa-4636-8372-7c0124d0d555/39276d86-28aa-4636-8372-7c0124d0d555.jsonl"
+    },
+    {
+      "chatId": "b470e0d0-d115-434b-ad2c-35af942a5b65",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "我有问题，现在有soa mcp 可以把java服务包装成服务供ai调用，但是也可以直接调http？比如createOrder,http://train.agent.skillloop.fat22.qa.nt.ctripcorp.com/g…",
+      "modifiedAt": "2026-07-14T11:03:28+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b470e0d0-d115-434b-ad2c-35af942a5b65/b470e0d0-d115-434b-ad2c-35af942a5b65.jsonl"
+    },
+    {
+      "chatId": "b41f9d33-f2d2-4c49-8a06-6f21ea892903",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "obtain拦截移除及admin手动置失败 这个分支要升一个版本，然后admin be也要升",
+      "modifiedAt": "2026-07-14T10:43:50+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b41f9d33-f2d2-4c49-8a06-6f21ea892903/b41f9d33-f2d2-4c49-8a06-6f21ea892903.jsonl"
+    },
+    {
+      "chatId": "1eac5333-c44a-4106-8dea-1cf68249bd74",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "Developer: Reload Window",
+      "modifiedAt": "2026-07-14T10:29:04+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/1eac5333-c44a-4106-8dea-1cf68249bd74/1eac5333-c44a-4106-8dea-1cf68249bd74.jsonl"
+    },
+    {
+      "chatId": "6c528208-892a-4dec-b4df-fec8cfdfae56",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "你好",
+      "modifiedAt": "2026-07-14T10:28:36+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/6c528208-892a-4dec-b4df-fec8cfdfae56/6c528208-892a-4dec-b4df-fec8cfdfae56.jsonl"
+    },
+    {
+      "chatId": "4923a85b-7a76-45e0-ab59-9bbf097c9844",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "【MID】 certNo 空值由空串变为 null，行为不一致（需业务确认） 位置: gds-ticketing-infrastructure/src/main/java/com/ctrip/train/global/rail/gds/t…",
+      "modifiedAt": "2026-07-14T10:17:41+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/4923a85b-7a76-45e0-ab59-9bbf097c9844/4923a85b-7a76-45e0-ab59-9bbf097c9844.jsonl"
+    }
+  ],
+  "plans": [
+    {
+      "file": "delayrepay卡单需求_ebbf363a.plan.md",
+      "title": "delayrepay卡单需求",
+      "modifiedAt": "2026-07-14T17:07:22+08:00"
+    }
+  ],
+  "git": [
+    {
+      "repo": "gds-order-admin-fe",
+      "commits": [
+        {
+          "hash": "17bf545a",
+          "message": "Merge remote-tracking branch 'origin/main' into feature/20250702_obtainInterceptOptimize"
+        }
+      ]
+    },
+    {
+      "repo": "gds-order-admin-be",
+      "commits": [
+        {
+          "hash": "84b28fbf",
+          "message": "Merge branch 'feature/20250702_obtainInterceptOptimize' into 'master'"
+        },
+        {
+          "hash": "88bc688b",
+          "message": "chore: 升级gds-ticketing-api至1.1.87以支持obtain手动置失败"
+        }
+      ]
+    },
+    {
+      "repo": "gds-ticketing-system",
+      "commits": [
+        {
+          "hash": "f91cc8d004",
+          "message": "Merge remote-tracking branch 'origin/master' into feature/20250629_removePassportLocalEncrypt"
+        },
+        {
+          "hash": "98cd0c4dc0",
+          "message": "Merge branch 'feature/20250702_obtainInterceptOptimize' into 'master'"
+        },
+        {
+          "hash": "2d79c479d3",
+          "message": "chore: 升级版本至1.1.87以发布obtain手动置失败API"
+        }
+      ]
+    }
+  ],
+  "idev2": {
+    "date": "2026-07-14",
+    "collectedAt": "2026-07-14T19:12:07+08:00",
+    "query": {
+      "employeeId": "TR043507",
+      "createdTimeStart": 1783958400000,
+      "createdTimeEnd": 1784044799999,
+      "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+    },
+    "createdToday": [],
+    "delegatedToday": [],
+    "assignedTodayOnly": [
+      {
+        "key": "GDS-10065",
+        "title": "英铁LNER-Delay Repay自动赔款--票台",
+        "status": "TODO",
+        "parent": "GDS-9891",
+        "note": "他人创建，今日指派 TR043507"
+      },
+      {
+        "key": "GDS-10066",
+        "title": "Iryo+Ouigo - 订后加购行李额（票台）",
+        "status": "TODO",
+        "parent": "GDS-3949",
+        "note": "他人创建，今日指派 TR043507"
+      }
+    ],
+    "updatedTodayOnly": [
+      {
+        "key": "GDS-9383",
+        "title": "乘客certNo本地加密下线",
+        "status": "开发中",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日有进展（指派给我）"
+      }
+    ],
+    "summary": {
+      "createdCount": 0,
+      "delegatedCount": 0,
+      "assignedOnlyCount": 2,
+      "updatedOnlyCount": 1,
+      "totalDistinct": 3
+    }
+  },
+  "feishu": {
+    "date": "2026-07-14",
+    "collectedAt": "2026-07-14T19:12:11+08:00",
+    "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+    "createdToday": [
+      {
+        "id": "Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+        "title": "缺陷复盘：票台供应配置回滚异常（treit / 2026-07-14）",
+        "url": "https://trip.larkenterprise.com/wiki/Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+        "docType": "DOCX",
+        "createTime": "2026-07-14T16:18+08:00",
+        "updateTime": "2026-07-14T16:45+08:00"
+      }
+    ],
+    "editedTodayOnly": [
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "GDS-9787 票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-14T17:35+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-14T17:26+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "XrEIwD7Nli99UBkaxracc57Snyd",
+        "title": "【GDPR】票台删除通知技术方案",
+        "url": "https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd",
+        "docType": "DOCX",
+        "createTime": "2026-06-26T13:47+08:00",
+        "updateTime": "2026-07-14T15:50+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "touchedToday": [
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "GDS-9787 票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-14T17:35+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-14T17:26+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+        "title": "缺陷复盘：票台供应配置回滚异常（treit / 2026-07-14）",
+        "url": "https://trip.larkenterprise.com/wiki/Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+        "docType": "DOCX",
+        "createTime": "2026-07-14T16:18+08:00",
+        "updateTime": "2026-07-14T16:45+08:00"
+      },
+      {
+        "id": "XrEIwD7Nli99UBkaxracc57Snyd",
+        "title": "【GDPR】票台删除通知技术方案",
+        "url": "https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd",
+        "docType": "DOCX",
+        "createTime": "2026-06-26T13:47+08:00",
+        "updateTime": "2026-07-14T15:50+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "summary": {
+      "createdCount": 1,
+      "editedOnlyCount": 3,
+      "touchedCount": 4
+    },
+    "queryNotes": {
+      "createdFilter": "create_time=[2026-07-14, 2026-07-14]",
+      "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-14"
+    }
+  },
+  "gitlab": {
+    "date": "2026-07-14",
+    "collectedAt": "2026-07-14T19:12:12+08:00",
+    "username": "zhaorun",
+    "mergedToday": [
+      {
+        "iid": 199,
+        "title": "GDS-9583 chore: 升级gds-ticketing-api至1.1.87支持obtain手动置失败",
+        "project": "gds-order-admin-be",
+        "sourceBranch": "feature/20250702_obtainInterceptOptimize",
+        "targetBranch": "master",
+        "webUrl": "http://git.dev.sh.ctripcorp.com/global-rail-gds/gds-order-admin-be/-/merge_requests/199",
+        "mergedAt": "2026-07-14T11:13:15.526+08:00",
+        "topicKey": "GDS-9583",
+        "releaseStage": "production",
+        "progressHint": "已发生产"
+      },
+      {
+        "iid": 1497,
+        "title": "GDS-9583 feat: obtain拦截移除及admin手动置失败",
+        "project": "gds-ticketing-system",
+        "sourceBranch": "feature/20250702_obtainInterceptOptimize",
+        "targetBranch": "master",
+        "webUrl": "http://git.dev.sh.ctripcorp.com/global-rail-gds/gds-ticketing-system/-/merge_requests/1497",
+        "mergedAt": "2026-07-14T10:41:49.474+08:00",
+        "topicKey": "GDS-9583",
+        "releaseStage": "production",
+        "progressHint": "已发生产"
+      }
+    ],
+    "summary": {
+      "mergedCount": 2
+    },
+    "queryNotes": {
+      "source": "list_user_merge_requests(role=author,state=merged)",
+      "filter": "merged_at 落在 2026-07-14（Asia/Shanghai）"
+    }
+  },
+  "queryHints": {
+    "timezone": "Asia/Shanghai",
+    "idev2EmployeeId": "TR043507",
+    "idev2CreatedTimeStart": 1783958400000,
+    "idev2CreatedTimeEnd": 1784044799999,
+    "idev2EditField": "lastUpdatedTime",
+    "idev2Sidecar": "_staging/2026-07-14.idev2.json",
+    "feishuSidecar": "_staging/2026-07-14.feishu.json",
+    "gitlabSidecar": "_staging/2026-07-14.gitlab.json",
+    "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
+    "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
+    "gitlabSidecarHint": "list_user_merge_requests(author,merged) → merged_at 当日"
+  }
+}

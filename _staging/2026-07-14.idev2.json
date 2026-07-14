@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-14",
+  "collectedAt": "2026-07-14T19:12:07+08:00",
+  "query": {
+    "employeeId": "TR043507",
+    "createdTimeStart": 1783958400000,
+    "createdTimeEnd": 1784044799999,
+    "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+  },
+  "createdToday": [],
+  "delegatedToday": [],
+  "assignedTodayOnly": [
+    {
+      "key": "GDS-10065",
+      "title": "英铁LNER-Delay Repay自动赔款--票台",
+      "status": "TODO",
+      "parent": "GDS-9891",
+      "note": "他人创建，今日指派 TR043507"
+    },
+    {
+      "key": "GDS-10066",
+      "title": "Iryo+Ouigo - 订后加购行李额（票台）",
+      "status": "TODO",
+      "parent": "GDS-3949",
+      "note": "他人创建，今日指派 TR043507"
+    }
+  ],
+  "updatedTodayOnly": [
+    {
+      "key": "GDS-9383",
+      "title": "乘客certNo本地加密下线",
+      "status": "开发中",
+      "parent": "GDS-9247",
+      "note": "非今日创建，今日有进展（指派给我）"
+    }
+  ],
+  "summary": {
+    "createdCount": 0,
+    "delegatedCount": 0,
+    "assignedOnlyCount": 2,
+    "updatedOnlyCount": 1,
+    "totalDistinct": 3
+  }
+}

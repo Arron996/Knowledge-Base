@@ -1,0 +1,90 @@
+{
+  "date": "2026-07-14",
+  "collectedAt": "2026-07-14T19:12:11+08:00",
+  "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+  "createdToday": [
+    {
+      "id": "Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+      "title": "缺陷复盘：票台供应配置回滚异常（treit / 2026-07-14）",
+      "url": "https://trip.larkenterprise.com/wiki/Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+      "docType": "DOCX",
+      "createTime": "2026-07-14T16:18+08:00",
+      "updateTime": "2026-07-14T16:45+08:00"
+    }
+  ],
+  "editedTodayOnly": [
+    {
+      "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "title": "GDS-9787 票台 Arex 覆盖进度",
+      "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "docType": "DOCX",
+      "createTime": "2026-07-10T15:19+08:00",
+      "updateTime": "2026-07-14T17:35+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+      "title": "票台 Arex 回放失败问题分析与排查",
+      "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+      "docType": "DOCX",
+      "createTime": "2026-07-13T11:21+08:00",
+      "updateTime": "2026-07-14T17:26+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "XrEIwD7Nli99UBkaxracc57Snyd",
+      "title": "【GDPR】票台删除通知技术方案",
+      "url": "https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd",
+      "docType": "DOCX",
+      "createTime": "2026-06-26T13:47+08:00",
+      "updateTime": "2026-07-14T15:50+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "touchedToday": [
+    {
+      "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "title": "GDS-9787 票台 Arex 覆盖进度",
+      "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "docType": "DOCX",
+      "createTime": "2026-07-10T15:19+08:00",
+      "updateTime": "2026-07-14T17:35+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+      "title": "票台 Arex 回放失败问题分析与排查",
+      "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+      "docType": "DOCX",
+      "createTime": "2026-07-13T11:21+08:00",
+      "updateTime": "2026-07-14T17:26+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+      "title": "缺陷复盘：票台供应配置回滚异常（treit / 2026-07-14）",
+      "url": "https://trip.larkenterprise.com/wiki/Gg0vwS6nIiTsdLkDhDgcF1A7nD0",
+      "docType": "DOCX",
+      "createTime": "2026-07-14T16:18+08:00",
+      "updateTime": "2026-07-14T16:45+08:00"
+    },
+    {
+      "id": "XrEIwD7Nli99UBkaxracc57Snyd",
+      "title": "【GDPR】票台删除通知技术方案",
+      "url": "https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd",
+      "docType": "DOCX",
+      "createTime": "2026-06-26T13:47+08:00",
+      "updateTime": "2026-07-14T15:50+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "summary": {
+    "createdCount": 1,
+    "editedOnlyCount": 3,
+    "touchedCount": 4
+  },
+  "queryNotes": {
+    "createdFilter": "create_time=[2026-07-14, 2026-07-14]",
+    "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-14"
+  }
+}

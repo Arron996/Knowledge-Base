@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-14",
+  "collectedAt": "2026-07-14T19:12:12+08:00",
+  "username": "zhaorun",
+  "mergedToday": [
+    {
+      "iid": 199,
+      "title": "GDS-9583 chore: 升级gds-ticketing-api至1.1.87支持obtain手动置失败",
+      "project": "gds-order-admin-be",
+      "sourceBranch": "feature/20250702_obtainInterceptOptimize",
+      "targetBranch": "master",
+      "webUrl": "http://git.dev.sh.ctripcorp.com/global-rail-gds/gds-order-admin-be/-/merge_requests/199",
+      "mergedAt": "2026-07-14T11:13:15.526+08:00",
+      "topicKey": "GDS-9583",
+      "releaseStage": "production",
+      "progressHint": "已发生产"
+    },
+    {
+      "iid": 1497,
+      "title": "GDS-9583 feat: obtain拦截移除及admin手动置失败",
+      "project": "gds-ticketing-system",
+      "sourceBranch": "feature/20250702_obtainInterceptOptimize",
+      "targetBranch": "master",
+      "webUrl": "http://git.dev.sh.ctripcorp.com/global-rail-gds/gds-ticketing-system/-/merge_requests/1497",
+      "mergedAt": "2026-07-14T10:41:49.474+08:00",
+      "topicKey": "GDS-9583",
+      "releaseStage": "production",
+      "progressHint": "已发生产"
+    }
+  ],
+  "summary": {
+    "mergedCount": 2
+  },
+  "queryNotes": {
+    "source": "list_user_merge_requests(role=author,state=merged)",
+    "filter": "merged_at 落在 2026-07-14（Asia/Shanghai）"
+  }
+}
