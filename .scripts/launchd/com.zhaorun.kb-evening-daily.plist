@@ -7,11 +7,15 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/aaron/Documents/知识库/.scripts/kb-run-with-env.sh</string>
-    <string>/Users/aaron/Documents/知识库/.scripts/evening-daily.sh</string>
+    <string>/Users/aaron/bin/kb-evening-launch.sh</string>
   </array>
   <key>WorkingDirectory</key>
-  <string>/Users/aaron/Documents/知识库</string>
+  <string>/Users/aaron</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
   <key>StartCalendarInterval</key>
   <array>
     <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>

@@ -31,12 +31,19 @@ topics:
       - name: 退票对齐四项优化
 
   - name: 异常 / 供应配置 - 历史版本增强
+    status: done
     feishu: https://trip.larkenterprise.com/wiki/DxKSw6DIKi3MXbknvVsc3gkmnOg
     idevKeys: [GDS-9456, GDS-9460, GDS-9520, GDS-9521]
     planFiles: [历史版本对比按钮, 异常配置_diff_对齐, 异常配置审批发布改造]
     subs:
       - name: 方案与交互设计
       - name: 历史版本对比按钮（admin-fe）
+
+  - name: 异常配置平台 · 审核弹窗优化
+    status: delegated
+    planFiles: [异常配置审核弹窗修复]
+    subs:
+      - name: 处理方式换行 + 描述假 diff 修复
 
   - name: 七月 GDPR 删除 - 票台
     feishu: https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd

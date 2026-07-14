@@ -30,6 +30,7 @@ fi
 if [[ "$WEEKDAY" == "5" ]]; then
   WEEK="$(date +%G-W%V)"
   python3 "$SCRIPT_DIR/merge-weekly.py" --date "$TODAY" --week "$WEEK"
+  python3 "$SCRIPT_DIR/merge-weekly-team.py" --date "$TODAY" --week "$WEEK" || true
 fi
 
 cd "$VAULT"
@@ -43,7 +44,7 @@ fi
 
 git add Daily/ Weekly/
 MSG="morning: $TODAY todos"
-[[ "$WEEKDAY" == "5" ]] && MSG="$MSG + weekly"
+[[ "$WEEKDAY" == "5" ]] && MSG="$MSG + weekly + team-weekly"
 if git diff --staged --quiet; then
   echo "nothing to commit"
 else

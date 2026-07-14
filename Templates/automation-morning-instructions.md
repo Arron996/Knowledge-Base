@@ -2,14 +2,14 @@
 
 工作目录：`/Users/aaron/Documents/知识库`
 
-**不调用 SDK**（平日）；周五 Weekly 由 `merge-weekly.py` 纯 Python 合并。
+**不调用 SDK**（平日）；周五 Weekly 由 `merge-weekly.py` + `merge-weekly-team.py` 纯 Python 合并。
 
 ## 调度
 
 | 时间 | 脚本 | 产出 |
 |------|------|------|
 | 工作日 09:00 | `morning-todos.sh` | `Daily/{今天}.md` → `## 📋 今日计划` |
-| 周五 09:00 | 同上 + `merge-weekly.py` | `Weekly/YYYY-Www.md`（Mon–Thu Daily） |
+| 周五 09:00 | 同上 + `merge-weekly.py` + `merge-weekly-team.py` | `Weekly/YYYY-Www.md` + `Weekly/YYYY-Www-票台周报.md`（Mon–Thu Daily） |
 
 晚间 Daily 由 **19:00** `evening-daily.sh` + SDK Agent 负责，见 [`automation-evening-instructions.md`](automation-evening-instructions.md)。
 
@@ -19,7 +19,9 @@
 2. `roll-morning-todos.py --from $SOURCE --to 今天`
    - 来源 `## 📋 明日待办` 未勾选项 → 目标 `## 📋 今日计划`
    - 来源 `## 🗂️ 待排期` 未勾选项 → 目标 `## 🗂️ 待排期`（去重合并）
-3. **若周五**：`merge-weekly.py --date 今天` — 合并本周 Mon..Thu Daily 技改进展
+3. **若周五**：
+   - `merge-weekly.py --date 今天` — 合并本周 Mon..Thu Daily 技改进展 → 个人周报
+   - `merge-weekly-team.py --date 今天` — 票台小组周报草稿（已存在则 skip）
 4. `git commit` + `push origin main`
 
 ## 上一工作日规则（workday.py）
@@ -45,6 +47,7 @@ python3 .scripts/roll-morning-todos.py --from "$SOURCE" --to 2026-07-06
 
 # 周五 Weekly
 python3 .scripts/merge-weekly.py --date 2026-07-03
+python3 .scripts/merge-weekly-team.py --date 2026-07-03
 ```
 
 ## launchd

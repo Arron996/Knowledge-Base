@@ -52,14 +52,17 @@ LIMIT 14
 
 ### 手动补跑
 
+**Cursor 里记待办 / 补进度**：发 **`更新日报，……`** 即可。
+
+```
+更新日报，待排期：🔵 xxx
+更新日报，明日待办：🟡 xxx
+```
+
 ```bash
 # 晚间 Daily
 bash /Users/aaron/Documents/知识库/.scripts/evening-daily.sh 2026-07-02
 
 # 早间待办（跨周末自动取上一工作日）
 bash /Users/aaron/Documents/知识库/.scripts/morning-todos.sh
-
-# 仅滚待办
-SOURCE=$(python3 /Users/aaron/Documents/知识库/.scripts/workday.py --prev 2026-07-06)
-python3 /Users/aaron/Documents/知识库/.scripts/roll-morning-todos.py --from "$SOURCE" --to 2026-07-06
 ```

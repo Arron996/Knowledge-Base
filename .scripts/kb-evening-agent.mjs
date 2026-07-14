@@ -66,9 +66,11 @@ async function main() {
   console.error(`[kb-evening-agent] starting for ${targetDate}...`);
 
   try {
+    // composer-2.5 在 local/cloud 均可能直接 error；auto 经实测可稳定完成晚间日报
+    const modelId = process.env.KB_AGENT_MODEL || "auto";
     const result = await Agent.prompt(prompt, {
       apiKey,
-      model: { id: "composer-2.5" },
+      model: { id: modelId },
       local: {
         cwd: VAULT,
         settingSources: ["all"],
@@ -76,7 +78,9 @@ async function main() {
     });
 
     if (result.status === "error") {
-      console.error(`[kb-evening-agent] run failed: ${result.id ?? "unknown"}`);
+      console.error(
+        `[kb-evening-agent] run failed: ${result.id ?? "unknown"} model=${modelId} durationMs=${result.durationMs ?? "?"}`,
+      );
       process.exit(2);
     }
     console.error(`[kb-evening-agent] done: ${result.status}`);

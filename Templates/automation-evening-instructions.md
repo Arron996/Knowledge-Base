@@ -52,9 +52,9 @@ python3 .scripts/collect-idev2.py \
 
 | 路 | MCP 参数 | sidecar 字段 |
 |----|----------|--------------|
-| ① 我创建 | `creator=TR043507` + 当日 `createdTimeStart/End` | `createdToday` |
+| ① 我创建 | `creator=TR043507` + 当日 `createdTimeStart/End` | 客户端：`executive=我` → `createdToday`；`creator=我且executive≠我` → `delegatedToday`（**不计入**日报/周报） |
 | ② 今日指派给我 | `parentIssueId=8395325`（GDS-9247 子项）+ 客户端：`executiveObj.id=TR043507` 且 `creator≠TR043507` 且 `lastUpdatedTime` 当日 | `assignedTodayOnly` |
-| ③ 指派给我且今日有更新 | 同 scan 源 + 客户端：`lastUpdatedTime` 当日且 `executiveObj.id=TR043507`（或 `updaterObj=TR043507`），排除 ①② | `updatedTodayOnly` |
+| ③ 指派给我且今日有更新 | 同 scan 源 + 客户端：`executiveObj.id=TR043507` 且 `lastUpdatedTime` 当日，排除 ①② | `updatedTodayOnly` |
 
 **勿只依赖** `related=TR043507` top100（会漏 GDS-9534 等）；**必须**含 Story 子项查询。
 
@@ -91,7 +91,7 @@ python3 .scripts/collect-gitlab.py --date YYYY-MM-DD --merged-json /tmp/gitlab-m
 
 - 技改维度 + 业务进度语言；Callout 分块 + 2 列表
 - 正文禁止：分支名、commit hash、MR 编号、Story Issue 堆砌
-- 工程明细仅在 `<details>` 参考区；iDev 参考区须含 **新建 / 今日新指派 / 今日更新** 三类
+- 工程明细仅在 `<details>` 参考区；iDev 参考区须含 **新建 / 今日新指派 / 今日更新** 三类；`delegatedToday` 单独标注「不计入我的 iDev」
 
 ## SDK 与环境
 

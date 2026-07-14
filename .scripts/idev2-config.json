@@ -40,8 +40,9 @@
     "creatorField": "使用工号 TR043507，不要用 zhaorun",
     "editTimeField": "iDev2 返回 lastUpdatedTime（非 edittime）；状态扭转也会更新该字段",
     "createdFilter": "createdTimeStart/End 按 Asia/Shanghai 当天 00:00~23:59 毫秒时间戳",
-    "assignedFilter": "executiveObj.id=TR043507 且 creator≠TR043507 且 lastUpdatedTime 在当天 → assignedTodayOnly",
-    "updatedFilter": "lastUpdatedTime 在当天且 executiveObj.id=TR043507（优先）或 updaterObj.id=TR043507，排除 createdToday/assignedTodayOnly → updatedTodayOnly",
+    "myIssueRule": "我的 iDev = executiveObj.id=TR043507（指派人是我）；我创建但指派他人 → delegatedToday，不计入日报/周报",
+    "assignedFilter": "executive=我 且 creator≠我 且 lastUpdatedTime 在当天 → assignedTodayOnly",
+    "updatedFilter": "executive=我 且 lastUpdatedTime 在当天，排除 createdToday/assignedTodayOnly → updatedTodayOnly",
     "mergeScript": "collect-idev2.py --created-json ... --scan-json story.json [--scan-json related.json]"
   }
 }

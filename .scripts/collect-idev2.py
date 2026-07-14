@@ -47,6 +47,24 @@ def norm_status(issue_status: object) -> str:
     return str(issue_status) if issue_status else "?"
 
 
+def executive_id(record: dict) -> str | None:
+    return (record.get("executiveObj") or {}).get("id")
+
+
+def creator_id(record: dict) -> str | None:
+    return (record.get("creatorObj") or {}).get("id")
+
+
+def is_my_issue(record: dict, employee_id: str) -> bool:
+    """我的 iDev = 指派人是我。"""
+    return executive_id(record) == employee_id
+
+
+def is_delegated_by_me(record: dict, employee_id: str) -> bool:
+    """我创建但指派给他人 — 不计入我的 iDev / 本周工作。"""
+    return creator_id(record) == employee_id and executive_id(record) != employee_id
+
+
 def slim_issue(record: dict, note: str | None = None) -> dict:
     item = {
         "key": record.get("issueKey", ""),
@@ -89,17 +107,24 @@ def build_sidecar(
     day_str = target_day.isoformat()
 
     created_today: list[dict] = []
+    delegated_today: list[dict] = []
+    assigned_today_only: list[dict] = []
+    updated_today_only: list[dict] = []
     seen_keys: set[str] = set()
 
     for record in created_records:
         key = record.get("issueKey")
         if not key:
             continue
+        if is_delegated_by_me(record, employee_id):
+            delegated_today.append(
+                slim_issue(record, note="我创建但指派他人，不计入我的 iDev")
+            )
+            continue
+        if not is_my_issue(record, employee_id):
+            continue
         seen_keys.add(key)
-        created_today.append(slim_issue(record))
-
-    assigned_today_only: list[dict] = []
-    updated_today_only: list[dict] = []
+        created_today.append(slim_issue(record, note="今日创建，指派给我"))
 
     for record in scan_records:
         key = record.get("issueKey")
@@ -108,31 +133,29 @@ def build_sidecar(
 
         createtime = record.get("createtime") or 0
         last_updated = record.get("lastUpdatedTime") or 0
-        executive_id = (record.get("executiveObj") or {}).get("id")
-        creator_id = (record.get("creatorObj") or {}).get("id")
-        updater_id = (record.get("updaterObj") or {}).get("id")
+        exec_id = executive_id(record)
+        cre_id = creator_id(record)
 
         if not in_day(last_updated, start, end):
             continue
 
-        if in_day(createtime, start, end) and creator_id == employee_id:
+        if not is_my_issue(record, employee_id):
             continue
 
-        if executive_id == employee_id and creator_id != employee_id:
+        if in_day(createtime, start, end) and cre_id == employee_id:
+            continue
+
+        if cre_id != employee_id:
             assigned_today_only.append(
                 slim_issue(record, note=f"他人创建，今日指派 {employee_id}")
             )
             seen_keys.add(key)
             continue
 
-        if executive_id == employee_id:
-            updated_today_only.append(
-                slim_issue(record, note="非今日创建，今日有进展（指派给我）")
-            )
-            seen_keys.add(key)
-        elif updater_id == employee_id:
-            updated_today_only.append(slim_issue(record, note="非今日创建，今日更新"))
-            seen_keys.add(key)
+        updated_today_only.append(
+            slim_issue(record, note="非今日创建，今日有进展（指派给我）")
+        )
+        seen_keys.add(key)
 
     return {
         "date": day_str,
@@ -142,16 +165,20 @@ def build_sidecar(
             "createdTimeStart": start,
             "createdTimeEnd": end,
             "strategy": (
-                "createdToday(creator=employee) + "
-                "scan(storyChildren+related): assignedTodayOnly(executive=employee,creator≠) + "
-                "updatedTodayOnly(executive=employee|updater=employee,lastUpdatedTime)"
+                "myIssue=executiveObj.id=employee; "
+                "createdToday(今日创建且指派给我); "
+                "delegatedToday(我创建指派他人,排除); "
+                "assignedTodayOnly(他人创建今日指派给我); "
+                "updatedTodayOnly(指派给我且今日lastUpdatedTime)"
             ),
         },
         "createdToday": created_today,
+        "delegatedToday": delegated_today,
         "assignedTodayOnly": assigned_today_only,
         "updatedTodayOnly": updated_today_only,
         "summary": {
             "createdCount": len(created_today),
+            "delegatedCount": len(delegated_today),
             "assignedOnlyCount": len(assigned_today_only),
             "updatedOnlyCount": len(updated_today_only),
             "totalDistinct": len(seen_keys),

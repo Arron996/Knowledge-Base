@@ -107,6 +107,17 @@ def format_idev(idev: dict | None) -> str:
         status = item.get("status", "")
         note = item.get("note", "今日扭转")
         rows.append(f"| {idev_icon(status)} | [{key}](https://idev2.ctripcorp.com/issueDetail/{key}) | {title}（{note}） |")
+    delegated = idev.get("delegatedToday", [])
+    if delegated:
+        rows.append("")
+        rows.append("**我创建但指派他人（不计入我的 iDev）**")
+        for item in delegated:
+            key = item.get("key", "")
+            title = item.get("title", "")
+            status = item.get("status", "")
+            rows.append(
+                f"| {idev_icon(status)} | [{key}](https://idev2.ctripcorp.com/issueDetail/{key}) | {title} |"
+            )
     if not rows:
         return "（今日无 iDev 记录）\n"
     header = "| 状态 | Issue | 标题 |\n| --- | --- | --- |\n"

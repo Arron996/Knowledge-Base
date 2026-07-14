@@ -142,17 +142,18 @@ frontmatter 建议：`cssclasses: [daily-report]`
 | 文件 | 内容 |
 |------|------|
 | `_staging/YYYY-MM-DD.raw.json` | Cursor / Plan / Git + queryHints |
-| `_staging/YYYY-MM-DD.idev2.json` | iDev 创建 + 今日新指派 + 指派给我今日更新 |
+| `_staging/YYYY-MM-DD.idev2.json` | iDev：指派给我（created / assigned / updated）+ 我创建指派他人（delegated，仅参考） |
 | `_staging/YYYY-MM-DD.feishu.json` | 飞书 createdToday + editedTodayOnly |
 
 ### iDev2 查询（MCP）
 
 - `creator=TR043507`（**不要** zhaorun）
 - 时间：**Asia/Shanghai 当日**毫秒，禁止手写错误年份
+- **我的 iDev 归属**：`executiveObj.id=TR043507`（**指派人是我**）。我创建但指派他人 → `delegatedToday`，**不计入**日报正文 / 票台周报「本周工作」。
 - **三路合并**（MCP 三次 → `collect-idev2.py`）：
-  1. `createdTimeStart/End` + `creator=TR043507` → `createdToday`
-  2. `parentIssueId=8395325`（GDS-9247 子项，**必选**）+ 可选 `related=TR043507` 补漏 → 客户端：`executiveObj.id=TR043507` 且 `creator≠TR043507` 且 `lastUpdatedTime` 当日 → `assignedTodayOnly`
-  3. 同 scan 源 → 客户端：`lastUpdatedTime` 在当日且 **`executiveObj.id=TR043507`（优先）** 或 `updaterObj.id=TR043507`，排除已在 1/2 → `updatedTodayOnly`
+  1. `createdTimeStart/End` + `creator=TR043507` → 客户端：`executive=我` → `createdToday`；`creator=我且executive≠我` → `delegatedToday`（排除）
+  2. `parentIssueId=8395325`（GDS-9247 子项，**必选**）+ 可选 `related=TR043507` 补漏 → 客户端：`executive=我` 且 `creator≠我` 且 `lastUpdatedTime` 当日 → `assignedTodayOnly`
+  3. 同 scan 源 → 客户端：`executive=我` 且 `lastUpdatedTime` 在当日，排除已在 1/2 → `updatedTodayOnly`（**不再**用 `updater=我` 兜底）
 
 合并命令：
 
@@ -206,9 +207,29 @@ python3 .scripts/collect-feishu.py \
 
 ### 周报（周五 9:00 早间脚本）
 
-由 `merge-weekly.py` 合并**本周 Mon..Thu** Daily（周五 9:00 时周五 Daily 尚未生成）；进度取**最新一天**；`## 📋 下周计划` 合并各日 **明日待办** 中未完成项；`待排期` **不进**周报必做列表，可选在周报末尾 `## 🗂️ 持续待排期` 列最新一天快照。周五当天进展由**当晚 19:00 Daily** 记录。
+**个人周报** `Weekly/YYYY-Www.md`：由 `merge-weekly.py` 合并**本周 Mon..Thu** Daily（周五 9:00 时周五 Daily 尚未生成）；进度取**最新一天**；`## 📋 下周计划` 合并各日 **明日待办** 中未完成项；`待排期` **不进**周报必做列表，可选在周报末尾 `## 🗂️ 持续待排期` 列最新一天快照。周五当天进展由**当晚 19:00 Daily** 记录。
+
+**票台小组周报** `Weekly/YYYY-Www-票台周报.md`：周五同期由 `merge-weekly-team.py` 生成草稿（模板 [`weekly-team-ticket-desk.md`](weekly-team-ticket-desk.md)）。规则：
+
+| 区块 | 规则 |
+|------|------|
+| **重点项目进度** | 组内 H2 重点项目，**由人工维护**；自动化默认占位「暂未确定」。用户后续口头更新后写入。 |
+| **本周工作** | 按 **Admin 优化升级 / Bug 修复 / 功能增强 / 需求·方案 / 线上排查** 分块；每块内有序列表；标题链飞书/iDev，括号内 GDS 链 idev2；iDev 指派给我均写此处；不重复上周已结项。 |
+| **下周计划** | 来源个人周报 `## 📋 下周计划` + 本周 Daily「明日待办」去重；待排期不进此列表。 |
+
+已存在 `-票台周报.md` 时脚本默认 skip；手改后勿 `--force` 覆盖。
 
 ## 7. 手动补录 prompt
+
+**最短触发词**：`更新日报`（或 `更新 daily`）= 按本 style-guide 更新 `Daily/{今天}.md`，§6 合并，禁止覆盖用户勾选。
+
+```
+更新日报，待排期：🔵 …
+更新日报，明日待办：🟡 …
+更新日报，技改进展：…
+```
+
+等价完整写法：
 
 ```
 按 Templates/daily-style-guide.md 更新今日 Daily，补充：……
