@@ -1,0 +1,284 @@
+{
+  "date": "2026-07-16",
+  "collectedAt": "2026-07-17T00:49:03+08:00",
+  "cursorChats": [
+    {
+      "chatId": "0184e555-8342-4aae-b7ab-3babe04f42ad",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/B3t3w8S2TiuXvDkXOoIcqyQHnYf 读下这个需求，票台要发邮件吗？票台要干什么，票台是不是没有发邮件的功能？",
+      "modifiedAt": "2026-07-16T17:30:40+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/0184e555-8342-4aae-b7ab-3babe04f42ad/0184e555-8342-4aae-b7ab-3babe04f42ad.jsonl"
+    },
+    {
+      "chatId": "b93cb8b4-71ab-4d2e-ae0b-449d6573d392",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "我想新建个需求，卡单job 新增一种类型 delayRepay卡单，拉取状态在已提交，赔付中，的订单 /** 3 提交成功；赔付处理中，终态，回抛 result */ 这个应该写错了 不是终态，",
+      "modifiedAt": "2026-07-16T17:19:06+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b93cb8b4-71ab-4d2e-ae0b-449d6573d392/b93cb8b4-71ab-4d2e-ae0b-449d6573d392.jsonl"
+    },
+    {
+      "chatId": "3534efcd-a7bb-4c48-901f-0b091636abd1",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "帮我看飞书文档，我记得有个教给应用开arex 流量回放功能的文档，好像是我写的，在票台文档里面 arex",
+      "modifiedAt": "2026-07-16T16:24:03+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/3534efcd-a7bb-4c48-901f-0b091636abd1/3534efcd-a7bb-4c48-901f-0b091636abd1.jsonl"
+    },
+    {
+      "chatId": "9a4cb74e-a42f-448e-af90-7bf5fe3b1ae5",
+      "project": "Users-aaron-IdeaProjects-gds-order-admin-fe",
+      "title": "看下票台的gdpr表 有咩有数据了，三个idc的",
+      "modifiedAt": "2026-07-16T14:50:06+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-order-admin-fe/agent-transcripts/9a4cb74e-a42f-448e-af90-7bf5fe3b1ae5/9a4cb74e-a42f-448e-af90-7bf5fe3b1ae5.jsonl"
+    },
+    {
+      "chatId": "23ab2ca8-50e3-4528-b5c7-4b02f0b5ed6c",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "http://admin.order.gds.train.ctripcorp.com/order/log?orderId=1359046664802436&type=ticketLog 为啥这单krpas卡退票没有出现在卡单job 里面",
+      "modifiedAt": "2026-07-16T14:43:52+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/23ab2ca8-50e3-4528-b5c7-4b02f0b5ed6c/23ab2ca8-50e3-4528-b5c7-4b02f0b5ed6c.jsonl"
+    },
+    {
+      "chatId": "444eb6e3-afbd-4774-afdc-04500f4759fa",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "50203891631 33330701393 33330708853 33330709953 能拉到这些krail的子单号对应的主单吗，日期应该是7月11号左右",
+      "modifiedAt": "2026-07-16T14:04:58+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/444eb6e3-afbd-4774-afdc-04500f4759fa/444eb6e3-afbd-4774-afdc-04500f4759fa.jsonl"
+    },
+    {
+      "chatId": "22f8a557-431a-4dfa-a1bc-8b4234da9f3f",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/EWWnwKVocir9UxkRj6fcKaMfnRb 这个需求 供应说要走改签流程，我觉得应该走x产品生单流程。。",
+      "modifiedAt": "2026-07-16T11:29:24+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/22f8a557-431a-4dfa-a1bc-8b4234da9f3f/22f8a557-431a-4dfa-a1bc-8b4234da9f3f.jsonl"
+    },
+    {
+      "chatId": "6f65e8ed-02ff-41a8-b6a8-3ccf0702b2b3",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/EWWnwKVocir9UxkRj6fcKaMfnRb 这个需求 供应说要走改签流程，我觉得应该走x产品生单流程。。",
+      "modifiedAt": "2026-07-16T11:29:15+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/6f65e8ed-02ff-41a8-b6a8-3ccf0702b2b3/6f65e8ed-02ff-41a8-b6a8-3ccf0702b2b3.jsonl"
+    }
+  ],
+  "plans": [
+    {
+      "file": "x产品gdpr支持_0ad9a814.plan.md",
+      "title": "x产品gdpr支持",
+      "modifiedAt": "2026-07-16T16:58:45+08:00"
+    },
+    {
+      "file": "gdpr方案测试验证步骤_6389ba00.plan.md",
+      "title": "gdpr方案测试验证步骤",
+      "modifiedAt": "2026-07-16T16:24:49+08:00"
+    },
+    {
+      "file": "gdpr方案测试验证步骤_5c0a5ab4.plan.md",
+      "title": "gdpr方案测试验证步骤",
+      "modifiedAt": "2026-07-16T16:15:49+08:00"
+    },
+    {
+      "file": "delayrepay卡单需求_ebbf363a.plan.md",
+      "title": "delayrepay卡单需求",
+      "modifiedAt": "2026-07-16T14:42:21+08:00"
+    }
+  ],
+  "git": [],
+  "idev2": {
+    "date": "2026-07-16",
+    "collectedAt": "2026-07-17T00:48:42+08:00",
+    "query": {
+      "employeeId": "TR043507",
+      "createdTimeStart": 1784131200000,
+      "createdTimeEnd": 1784217599999,
+      "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+    },
+    "createdToday": [
+      {
+        "key": "GDS-10181",
+        "title": "【GDPR】X通票+汽船删除通知补充",
+        "status": "DOING",
+        "parent": "GDS-8745",
+        "note": "今日创建，指派给我"
+      },
+      {
+        "key": "GDS-10174",
+        "title": "GDS-10100 BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+        "status": "DOING",
+        "parent": "GDS-10173",
+        "note": "今日创建，指派给我"
+      },
+      {
+        "key": "GDS-10173",
+        "title": "GDS-10173 BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+        "status": "开发中",
+        "parent": "GDS-9247",
+        "note": "今日创建，指派给我"
+      }
+    ],
+    "delegatedToday": [],
+    "assignedTodayOnly": [
+      {
+        "key": "GDS-10065",
+        "title": "英铁LNER-Delay Repay自动赔款--票台",
+        "status": "DOING",
+        "parent": "GDS-9891",
+        "note": "他人创建，今日指派 TR043507"
+      }
+    ],
+    "updatedTodayOnly": [],
+    "summary": {
+      "createdCount": 3,
+      "delegatedCount": 0,
+      "assignedOnlyCount": 1,
+      "updatedOnlyCount": 0,
+      "totalDistinct": 4
+    }
+  },
+  "feishu": {
+    "date": "2026-07-16",
+    "collectedAt": "2026-07-17T00:48:44+08:00",
+    "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+    "createdToday": [
+      {
+        "id": "JDqnwFmueicbKKkPXo6cGglfnve",
+        "title": "GDS-10173 BlockAlert DELAY_REPAY 卡单告警",
+        "url": "https://trip.larkenterprise.com/wiki/JDqnwFmueicbKKkPXo6cGglfnve",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T17:18+08:00",
+        "updateTime": "2026-07-16T17:18+08:00"
+      },
+      {
+        "id": "GvVXwlR1jipmNTk0YDJcPXXDnSb",
+        "title": "【GDPR】X通票+汽船删除通知补充方案",
+        "url": "https://trip.larkenterprise.com/wiki/GvVXwlR1jipmNTk0YDJcPXXDnSb",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T15:58+08:00",
+        "updateTime": "2026-07-16T15:58+08:00"
+      },
+      {
+        "id": "Y7ikwIVthizqaRkpCSKceAzEnBb",
+        "title": "知识问答",
+        "url": "https://trip.larkenterprise.com/wiki/Y7ikwIVthizqaRkpCSKceAzEnBb",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T10:44+08:00",
+        "updateTime": "2026-07-16T10:44+08:00"
+      }
+    ],
+    "editedTodayOnly": [
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-16T16:30+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "XrEIwD7Nli99UBkaxracc57Snyd",
+        "title": "【GDPR】票台删除通知技术方案",
+        "url": "https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd",
+        "docType": "DOCX",
+        "createTime": "2026-06-26T13:47+08:00",
+        "updateTime": "2026-07-16T14:29+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "GDS-9787 票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-16T13:51+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "touchedToday": [
+      {
+        "id": "JDqnwFmueicbKKkPXo6cGglfnve",
+        "title": "GDS-10173 BlockAlert DELAY_REPAY 卡单告警",
+        "url": "https://trip.larkenterprise.com/wiki/JDqnwFmueicbKKkPXo6cGglfnve",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T17:18+08:00",
+        "updateTime": "2026-07-16T17:18+08:00"
+      },
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-16T16:30+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "GvVXwlR1jipmNTk0YDJcPXXDnSb",
+        "title": "【GDPR】X通票+汽船删除通知补充方案",
+        "url": "https://trip.larkenterprise.com/wiki/GvVXwlR1jipmNTk0YDJcPXXDnSb",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T15:58+08:00",
+        "updateTime": "2026-07-16T15:58+08:00"
+      },
+      {
+        "id": "XrEIwD7Nli99UBkaxracc57Snyd",
+        "title": "【GDPR】票台删除通知技术方案",
+        "url": "https://trip.larkenterprise.com/wiki/XrEIwD7Nli99UBkaxracc57Snyd",
+        "docType": "DOCX",
+        "createTime": "2026-06-26T13:47+08:00",
+        "updateTime": "2026-07-16T14:29+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "GDS-9787 票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-16T13:51+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "Y7ikwIVthizqaRkpCSKceAzEnBb",
+        "title": "知识问答",
+        "url": "https://trip.larkenterprise.com/wiki/Y7ikwIVthizqaRkpCSKceAzEnBb",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T10:44+08:00",
+        "updateTime": "2026-07-16T10:44+08:00"
+      }
+    ],
+    "summary": {
+      "createdCount": 3,
+      "editedOnlyCount": 3,
+      "touchedCount": 6
+    },
+    "queryNotes": {
+      "createdFilter": "create_time=[2026-07-16, 2026-07-16]",
+      "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-16"
+    }
+  },
+  "gitlab": {
+    "date": "2026-07-16",
+    "collectedAt": "2026-07-17T00:48:49+08:00",
+    "username": "zhaorun",
+    "mergedToday": [],
+    "summary": {
+      "mergedCount": 0
+    },
+    "queryNotes": {
+      "source": "list_user_merge_requests(role=author,state=merged)",
+      "filter": "merged_at 落在 2026-07-16（Asia/Shanghai）"
+    }
+  },
+  "queryHints": {
+    "timezone": "Asia/Shanghai",
+    "idev2EmployeeId": "TR043507",
+    "idev2CreatedTimeStart": 1784131200000,
+    "idev2CreatedTimeEnd": 1784217599999,
+    "idev2EditField": "lastUpdatedTime",
+    "idev2Sidecar": "_staging/2026-07-16.idev2.json",
+    "feishuSidecar": "_staging/2026-07-16.feishu.json",
+    "gitlabSidecar": "_staging/2026-07-16.gitlab.json",
+    "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
+    "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
+    "gitlabSidecarHint": "list_user_merge_requests(author,merged) → merged_at 当日"
+  }
+}
