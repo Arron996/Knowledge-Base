@@ -1,0 +1,19 @@
+Daily/2026-07-16.md
+  s_cae67188ab1929::t_f01554faa3b4eb 13,17-35,37,41-42,46-48,52-53,72-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.34-trip",
+  "base_commit_sha": "c8b2785693fb982bc2a8724cb9c17aabbe42b337",
+  "prompts": {},
+  "sessions": {
+    "s_cae67188ab1929": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6a9f-8735-7a50-8400-9cb56a12244b",
+        "model": "gpt-5.4"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
