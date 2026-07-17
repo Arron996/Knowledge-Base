@@ -1,0 +1,332 @@
+{
+  "date": "2026-07-17",
+  "collectedAt": "2026-07-17T19:38:53+08:00",
+  "cursorChats": [
+    {
+      "chatId": "581c4895-2ace-480b-b87f-b6c6faec1e42",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/VBqgwdGMgi6ChfkJDZ5ceiDOnqf?from=space_search 这是我之前完成的一个技改，之前手写的，现在我想让你看看下 可不可以修改 …",
+      "modifiedAt": "2026-07-17T18:59:58+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/581c4895-2ace-480b-b87f-b6c6faec1e42/581c4895-2ace-480b-b87f-b6c6faec1e42.jsonl"
+    },
+    {
+      "chatId": "a47c1a20-e0b0-4d14-9e60-46ffb8e60ee5",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "https://trip.larkenterprise.com/wiki/WgLPwWy4Pi9A1XkbkfGcNDt1nje?from=space_search 看下会这个 之前不是说要做个异常配置+供应商配置 火车票+汽船的 ai工…",
+      "modifiedAt": "2026-07-17T18:55:50+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/a47c1a20-e0b0-4d14-9e60-46ffb8e60ee5/a47c1a20-e0b0-4d14-9e60-46ffb8e60ee5.jsonl"
+    },
+    {
+      "chatId": "6b55c2fe-4e47-47e1-be71-3299a579e90e",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system-block-alert",
+      "title": "我想新建个需求，卡单job 新增一种类型 delayRepay卡单，拉取状态在已提交，赔付中，的订单 /** 3 提交成功；赔付处理中，终态，回抛 result */ 这个应该写错了 不是终态，",
+      "modifiedAt": "2026-07-17T18:42:08+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system-block-alert/agent-transcripts/6b55c2fe-4e47-47e1-be71-3299a579e90e/6b55c2fe-4e47-47e1-be71-3299a579e90e.jsonl"
+    },
+    {
+      "chatId": "3534efcd-a7bb-4c48-901f-0b091636abd1",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "帮我看飞书文档，我记得有个教给应用开arex 流量回放功能的文档，好像是我写的，在票台文档里面 arex",
+      "modifiedAt": "2026-07-17T16:49:14+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/3534efcd-a7bb-4c48-901f-0b091636abd1/3534efcd-a7bb-4c48-901f-0b091636abd1.jsonl"
+    },
+    {
+      "chatId": "b8318147-df08-4148-9fa9-8736cb7314c3",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "我想问的是现在uktis有卡单，但是只有凌晨发了一次，最近都没发什么情况，这单也是一直卡的http://admin.order.gds.train.ctripcorp.com/railTicket/ticketingBackendList…",
+      "modifiedAt": "2026-07-17T15:46:22+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b8318147-df08-4148-9fa9-8736cb7314c3/b8318147-df08-4148-9fa9-8736cb7314c3.jsonl"
+    },
+    {
+      "chatId": "8b5e69db-facc-4487-be0e-623c4964886a",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "https://bat.fws.qa.nt.ctripcorp.com/trace/100051894-0a7783df-495630-14472?from=1784270022190&to=1784270142190 分析下trace …",
+      "modifiedAt": "2026-07-17T15:24:20+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/8b5e69db-facc-4487-be0e-623c4964886a/8b5e69db-facc-4487-be0e-623c4964886a.jsonl"
+    },
+    {
+      "chatId": "669cbb0d-aff6-4c38-9ab5-8e34c4fe66a6",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "这个会话开始ti 的delayRepay 需求https://idev2.ctripcorp.com/team/10002849/issue/1152?issueKey=GDS-9172 这是供应的契约 https://trip.lark…",
+      "modifiedAt": "2026-07-17T15:11:18+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/669cbb0d-aff6-4c38-9ab5-8e34c4fe66a6/669cbb0d-aff6-4c38-9ab5-8e34c4fe66a6.jsonl"
+    },
+    {
+      "chatId": "00084408-2d13-48d5-8c46-a2ddc5354e72",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "gdpr deletion notify failed, orderId=1134745865079909, orderItemId=49865215098, supplier=itntv, reason=gdpr privacy con…",
+      "modifiedAt": "2026-07-17T14:33:18+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/00084408-2d13-48d5-8c46-a2ddc5354e72/00084408-2d13-48d5-8c46-a2ddc5354e72.jsonl"
+    },
+    {
+      "chatId": "b93cb8b4-71ab-4d2e-ae0b-449d6573d392",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "我想新建个需求，卡单job 新增一种类型 delayRepay卡单，拉取状态在已提交，赔付中，的订单 /** 3 提交成功；赔付处理中，终态，回抛 result */ 这个应该写错了 不是终态，",
+      "modifiedAt": "2026-07-17T11:33:28+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b93cb8b4-71ab-4d2e-ae0b-449d6573d392/b93cb8b4-71ab-4d2e-ae0b-449d6573d392.jsonl"
+    },
+    {
+      "chatId": "0184e555-8342-4aae-b7ab-3babe04f42ad",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/B3t3w8S2TiuXvDkXOoIcqyQHnYf 读下这个需求，票台要发邮件吗？票台要干什么，票台是不是没有发邮件的功能？",
+      "modifiedAt": "2026-07-17T11:27:01+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/0184e555-8342-4aae-b7ab-3babe04f42ad/0184e555-8342-4aae-b7ab-3babe04f42ad.jsonl"
+    },
+    {
+      "chatId": "23ab2ca8-50e3-4528-b5c7-4b02f0b5ed6c",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "http://admin.order.gds.train.ctripcorp.com/order/log?orderId=1359046664802436&type=ticketLog 为啥这单krpas卡退票没有出现在卡单job 里面",
+      "modifiedAt": "2026-07-17T10:23:49+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/23ab2ca8-50e3-4528-b5c7-4b02f0b5ed6c/23ab2ca8-50e3-4528-b5c7-4b02f0b5ed6c.jsonl"
+    }
+  ],
+  "plans": [
+    {
+      "file": "异常配置agent轻量方案_04ec1d69.plan.md",
+      "title": "异常配置agent轻量方案",
+      "modifiedAt": "2026-07-17T17:19:24+08:00"
+    },
+    {
+      "file": "ti接入delayrepay_87b5a6cc.plan.md",
+      "title": "ti接入delayrepay",
+      "modifiedAt": "2026-07-17T14:19:21+08:00"
+    },
+    {
+      "file": "delayrepay卡单需求_ebbf363a.plan.md",
+      "title": "delayrepay卡单需求",
+      "modifiedAt": "2026-07-17T11:05:55+08:00"
+    }
+  ],
+  "git": [
+    {
+      "repo": "gds-order-admin-be",
+      "commits": [
+        {
+          "hash": "19805e8c",
+          "message": "feat: 异常配置 Agent 只读 Baiji SOA（list/pending）"
+        }
+      ]
+    },
+    {
+      "repo": "gds-ticketing-system",
+      "commits": [
+        {
+          "hash": "71e7c8ca8e",
+          "message": "chore: restore master file content after merge format noise"
+        },
+        {
+          "hash": "a34dc09265",
+          "message": "Merge remote-tracking branch 'origin/master' into feature/20260716_gdprXPassBusNotify"
+        },
+        {
+          "hash": "41bd063f64",
+          "message": "refactor: 火车已有 GDPR 候选时跳过汽船 RPC"
+        },
+        {
+          "hash": "3d9facbdbe",
+          "message": "feat: GDPR 删除通知补充 X 通票与汽船子单"
+        }
+      ]
+    }
+  ],
+  "idev2": {
+    "date": "2026-07-17",
+    "collectedAt": "2026-07-17T19:38:39+08:00",
+    "query": {
+      "employeeId": "TR043507",
+      "createdTimeStart": 1784217600000,
+      "createdTimeEnd": 1784303999999,
+      "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+    },
+    "createdToday": [],
+    "delegatedToday": [],
+    "assignedTodayOnly": [],
+    "updatedTodayOnly": [
+      {
+        "key": "GDS-10173",
+        "title": "GDS-10173 BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+        "status": "待敏捷排期",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日有进展（指派给我）"
+      },
+      {
+        "key": "GDS-10174",
+        "title": "BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+        "status": "DOING",
+        "parent": "GDS-10173",
+        "note": "非今日创建，今日有进展（指派给我）"
+      }
+    ],
+    "summary": {
+      "createdCount": 0,
+      "delegatedCount": 0,
+      "assignedOnlyCount": 0,
+      "updatedOnlyCount": 2,
+      "totalDistinct": 2
+    }
+  },
+  "feishu": {
+    "date": "2026-07-17",
+    "collectedAt": "2026-07-17T19:38:40+08:00",
+    "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+    "createdToday": [
+      {
+        "id": "IeRXwjVnViehy3kY1eFc5MlXnDg",
+        "title": "ApplyRefund契约改造（加强版）",
+        "url": "https://trip.larkenterprise.com/wiki/IeRXwjVnViehy3kY1eFc5MlXnDg",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T18:59+08:00",
+        "updateTime": "2026-07-17T19:00+08:00"
+      },
+      {
+        "id": "UJQJwKZCNiK1klkQtN9cjv0fnph",
+        "title": "ApplyRefund契约改造（润色版）",
+        "url": "https://trip.larkenterprise.com/wiki/UJQJwKZCNiK1klkQtN9cjv0fnph",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T18:51+08:00",
+        "updateTime": "2026-07-17T18:51+08:00"
+      },
+      {
+        "id": "V5a3wW2boigPbQkNafzcY5dVnSb",
+        "title": "异常配置智能助手：HTTP + Skill 轻量方案",
+        "url": "https://trip.larkenterprise.com/wiki/V5a3wW2boigPbQkNafzcY5dVnSb",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T17:20+08:00",
+        "updateTime": "2026-07-17T17:39+08:00"
+      },
+      {
+        "id": "CpefwUq3yiKsWJkWPdCc3G38nMd",
+        "title": "GDS-10173 BlockAlert 卡单告警增强（DELAY_REPAY + 特殊X退票）",
+        "url": "https://trip.larkenterprise.com/wiki/CpefwUq3yiKsWJkWPdCc3G38nMd",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T10:23+08:00",
+        "updateTime": "2026-07-17T11:12+08:00"
+      }
+    ],
+    "editedTodayOnly": [
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-17T16:05+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "JDqnwFmueicbKKkPXo6cGglfnve",
+        "title": "GDS-10173 BlockAlert DELAY_REPAY 卡单告警",
+        "url": "https://trip.larkenterprise.com/wiki/JDqnwFmueicbKKkPXo6cGglfnve",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T17:18+08:00",
+        "updateTime": "2026-07-17T11:13+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "GDS-9787 票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-17T10:00+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "touchedToday": [
+      {
+        "id": "IeRXwjVnViehy3kY1eFc5MlXnDg",
+        "title": "ApplyRefund契约改造（加强版）",
+        "url": "https://trip.larkenterprise.com/wiki/IeRXwjVnViehy3kY1eFc5MlXnDg",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T18:59+08:00",
+        "updateTime": "2026-07-17T19:00+08:00"
+      },
+      {
+        "id": "UJQJwKZCNiK1klkQtN9cjv0fnph",
+        "title": "ApplyRefund契约改造（润色版）",
+        "url": "https://trip.larkenterprise.com/wiki/UJQJwKZCNiK1klkQtN9cjv0fnph",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T18:51+08:00",
+        "updateTime": "2026-07-17T18:51+08:00"
+      },
+      {
+        "id": "V5a3wW2boigPbQkNafzcY5dVnSb",
+        "title": "异常配置智能助手：HTTP + Skill 轻量方案",
+        "url": "https://trip.larkenterprise.com/wiki/V5a3wW2boigPbQkNafzcY5dVnSb",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T17:20+08:00",
+        "updateTime": "2026-07-17T17:39+08:00"
+      },
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-17T16:05+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "JDqnwFmueicbKKkPXo6cGglfnve",
+        "title": "GDS-10173 BlockAlert DELAY_REPAY 卡单告警",
+        "url": "https://trip.larkenterprise.com/wiki/JDqnwFmueicbKKkPXo6cGglfnve",
+        "docType": "DOCX",
+        "createTime": "2026-07-16T17:18+08:00",
+        "updateTime": "2026-07-17T11:13+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "CpefwUq3yiKsWJkWPdCc3G38nMd",
+        "title": "GDS-10173 BlockAlert 卡单告警增强（DELAY_REPAY + 特殊X退票）",
+        "url": "https://trip.larkenterprise.com/wiki/CpefwUq3yiKsWJkWPdCc3G38nMd",
+        "docType": "DOCX",
+        "createTime": "2026-07-17T10:23+08:00",
+        "updateTime": "2026-07-17T11:12+08:00"
+      },
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "GDS-9787 票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-17T10:00+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "summary": {
+      "createdCount": 4,
+      "editedOnlyCount": 3,
+      "touchedCount": 7
+    },
+    "queryNotes": {
+      "createdFilter": "create_time=[2026-07-17, 2026-07-17]",
+      "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-17"
+    }
+  },
+  "gitlab": {
+    "date": "2026-07-17",
+    "collectedAt": "2026-07-17T19:38:41+08:00",
+    "username": "zhaorun",
+    "mergedToday": [],
+    "summary": {
+      "mergedCount": 0
+    },
+    "queryNotes": {
+      "source": "list_user_merge_requests(role=author,state=merged)",
+      "filter": "merged_at 落在 2026-07-17（Asia/Shanghai）"
+    }
+  },
+  "queryHints": {
+    "timezone": "Asia/Shanghai",
+    "idev2EmployeeId": "TR043507",
+    "idev2CreatedTimeStart": 1784217600000,
+    "idev2CreatedTimeEnd": 1784303999999,
+    "idev2EditField": "lastUpdatedTime",
+    "idev2Sidecar": "_staging/2026-07-17.idev2.json",
+    "feishuSidecar": "_staging/2026-07-17.feishu.json",
+    "gitlabSidecar": "_staging/2026-07-17.gitlab.json",
+    "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
+    "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
+    "gitlabSidecarHint": "list_user_merge_requests(author,merged) → merged_at 当日"
+  }
+}

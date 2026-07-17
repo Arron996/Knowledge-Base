@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-17",
+  "collectedAt": "2026-07-17T19:38:39+08:00",
+  "query": {
+    "employeeId": "TR043507",
+    "createdTimeStart": 1784217600000,
+    "createdTimeEnd": 1784303999999,
+    "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+  },
+  "createdToday": [],
+  "delegatedToday": [],
+  "assignedTodayOnly": [],
+  "updatedTodayOnly": [
+    {
+      "key": "GDS-10173",
+      "title": "GDS-10173 BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+      "status": "待敏捷排期",
+      "parent": "GDS-9247",
+      "note": "非今日创建，今日有进展（指派给我）"
+    },
+    {
+      "key": "GDS-10174",
+      "title": "BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+      "status": "DOING",
+      "parent": "GDS-10173",
+      "note": "非今日创建，今日有进展（指派给我）"
+    }
+  ],
+  "summary": {
+    "createdCount": 0,
+    "delegatedCount": 0,
+    "assignedOnlyCount": 0,
+    "updatedOnlyCount": 2,
+    "totalDistinct": 2
+  }
+}

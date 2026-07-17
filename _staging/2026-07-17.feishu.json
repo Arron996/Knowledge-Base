@@ -1,0 +1,138 @@
+{
+  "date": "2026-07-17",
+  "collectedAt": "2026-07-17T19:38:40+08:00",
+  "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+  "createdToday": [
+    {
+      "id": "IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "title": "ApplyRefund契约改造（加强版）",
+      "url": "https://trip.larkenterprise.com/wiki/IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T18:59+08:00",
+      "updateTime": "2026-07-17T19:00+08:00"
+    },
+    {
+      "id": "UJQJwKZCNiK1klkQtN9cjv0fnph",
+      "title": "ApplyRefund契约改造（润色版）",
+      "url": "https://trip.larkenterprise.com/wiki/UJQJwKZCNiK1klkQtN9cjv0fnph",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T18:51+08:00",
+      "updateTime": "2026-07-17T18:51+08:00"
+    },
+    {
+      "id": "V5a3wW2boigPbQkNafzcY5dVnSb",
+      "title": "异常配置智能助手：HTTP + Skill 轻量方案",
+      "url": "https://trip.larkenterprise.com/wiki/V5a3wW2boigPbQkNafzcY5dVnSb",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T17:20+08:00",
+      "updateTime": "2026-07-17T17:39+08:00"
+    },
+    {
+      "id": "CpefwUq3yiKsWJkWPdCc3G38nMd",
+      "title": "GDS-10173 BlockAlert 卡单告警增强（DELAY_REPAY + 特殊X退票）",
+      "url": "https://trip.larkenterprise.com/wiki/CpefwUq3yiKsWJkWPdCc3G38nMd",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T10:23+08:00",
+      "updateTime": "2026-07-17T11:12+08:00"
+    }
+  ],
+  "editedTodayOnly": [
+    {
+      "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+      "title": "票台 Arex 回放失败问题分析与排查",
+      "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+      "docType": "DOCX",
+      "createTime": "2026-07-13T11:21+08:00",
+      "updateTime": "2026-07-17T16:05+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "JDqnwFmueicbKKkPXo6cGglfnve",
+      "title": "GDS-10173 BlockAlert DELAY_REPAY 卡单告警",
+      "url": "https://trip.larkenterprise.com/wiki/JDqnwFmueicbKKkPXo6cGglfnve",
+      "docType": "DOCX",
+      "createTime": "2026-07-16T17:18+08:00",
+      "updateTime": "2026-07-17T11:13+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "title": "GDS-9787 票台 Arex 覆盖进度",
+      "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "docType": "DOCX",
+      "createTime": "2026-07-10T15:19+08:00",
+      "updateTime": "2026-07-17T10:00+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "touchedToday": [
+    {
+      "id": "IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "title": "ApplyRefund契约改造（加强版）",
+      "url": "https://trip.larkenterprise.com/wiki/IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T18:59+08:00",
+      "updateTime": "2026-07-17T19:00+08:00"
+    },
+    {
+      "id": "UJQJwKZCNiK1klkQtN9cjv0fnph",
+      "title": "ApplyRefund契约改造（润色版）",
+      "url": "https://trip.larkenterprise.com/wiki/UJQJwKZCNiK1klkQtN9cjv0fnph",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T18:51+08:00",
+      "updateTime": "2026-07-17T18:51+08:00"
+    },
+    {
+      "id": "V5a3wW2boigPbQkNafzcY5dVnSb",
+      "title": "异常配置智能助手：HTTP + Skill 轻量方案",
+      "url": "https://trip.larkenterprise.com/wiki/V5a3wW2boigPbQkNafzcY5dVnSb",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T17:20+08:00",
+      "updateTime": "2026-07-17T17:39+08:00"
+    },
+    {
+      "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+      "title": "票台 Arex 回放失败问题分析与排查",
+      "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+      "docType": "DOCX",
+      "createTime": "2026-07-13T11:21+08:00",
+      "updateTime": "2026-07-17T16:05+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "JDqnwFmueicbKKkPXo6cGglfnve",
+      "title": "GDS-10173 BlockAlert DELAY_REPAY 卡单告警",
+      "url": "https://trip.larkenterprise.com/wiki/JDqnwFmueicbKKkPXo6cGglfnve",
+      "docType": "DOCX",
+      "createTime": "2026-07-16T17:18+08:00",
+      "updateTime": "2026-07-17T11:13+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "CpefwUq3yiKsWJkWPdCc3G38nMd",
+      "title": "GDS-10173 BlockAlert 卡单告警增强（DELAY_REPAY + 特殊X退票）",
+      "url": "https://trip.larkenterprise.com/wiki/CpefwUq3yiKsWJkWPdCc3G38nMd",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T10:23+08:00",
+      "updateTime": "2026-07-17T11:12+08:00"
+    },
+    {
+      "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "title": "GDS-9787 票台 Arex 覆盖进度",
+      "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "docType": "DOCX",
+      "createTime": "2026-07-10T15:19+08:00",
+      "updateTime": "2026-07-17T10:00+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "summary": {
+    "createdCount": 4,
+    "editedOnlyCount": 3,
+    "touchedCount": 7
+  },
+  "queryNotes": {
+    "createdFilter": "create_time=[2026-07-17, 2026-07-17]",
+    "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-17"
+  }
+}
