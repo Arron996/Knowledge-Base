@@ -107,11 +107,20 @@ def issue_keys(text: str) -> tuple[str, ...]:
     return tuple(sorted({m.upper() for m in re.findall(r"GDS-\d+", text, flags=re.IGNORECASE)}))
 
 
+def first_url(text: str) -> str | None:
+    m = re.search(r"\((https?://[^)]+)\)", text)
+    return m.group(1) if m else None
+
+
 def canonical_callout_key(title: str, block: str) -> str:
+    url = first_url(title)
+    if url:
+        return f"url:{url}"
     keys = issue_keys(f"{title}\n{block}")
     if keys:
         return "|".join(keys)
     title_plain = normalize_inline(title)
+    title_plain = re.sub(r"^GDS-\d+\s*", "", title_plain, flags=re.IGNORECASE)
     title_plain = re.sub(r"\s*[·•]\s*飞书$", "", title_plain, flags=re.IGNORECASE)
     return title_plain.casefold()
 
