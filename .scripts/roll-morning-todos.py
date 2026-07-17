@@ -37,6 +37,8 @@ def checkbox_lines(body: str | None, unchecked_only: bool = True) -> list[str]:
             continue
         if unchecked_only and s.startswith("- [x]"):
             continue
+        if "<!-- agent:" in s:
+            continue
         lines.append(s)
     return lines
 
@@ -111,6 +113,11 @@ def roll(source: date, target: date) -> None:
     existing_backlog = checkbox_lines(extract_section(content, SECTION_BACKLOG), unchecked_only=False)
     merged_backlog = merge_checkbox_lists(existing_backlog, backlog_in)
     content = upsert_section(content, SECTION_BACKLOG, merged_backlog)
+
+    # New daily notes come from a template containing placeholder checkboxes.
+    # Normalize untouched sections once so placeholders do not leak into later merges.
+    existing_tomorrow = checkbox_lines(extract_section(content, SECTION_TOMORROW), unchecked_only=False)
+    content = upsert_section(content, SECTION_TOMORROW, existing_tomorrow)
 
     tgt_path.parent.mkdir(parents=True, exist_ok=True)
     tgt_path.write_text(content, encoding="utf-8")

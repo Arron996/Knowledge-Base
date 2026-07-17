@@ -85,8 +85,53 @@ def extract_callouts(progress: str) -> list[tuple[str, str]]:
         block = m.group(1).strip()
         title_m = re.match(r"> \[!\w+\]-\s*(.+)", block)
         title = title_m.group(1).strip() if title_m else block[:60]
+        if is_placeholder_callout(title, block):
+            continue
         blocks.append((title, block))
     return blocks
+
+
+def strip_comments(text: str) -> str:
+    return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL).strip()
+
+
+def normalize_inline(text: str) -> str:
+    text = strip_comments(text)
+    text = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r"\1", text)
+    text = re.sub(r"[*_`]", "", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def issue_keys(text: str) -> tuple[str, ...]:
+    return tuple(sorted({m.upper() for m in re.findall(r"GDS-\d+", text, flags=re.IGNORECASE)}))
+
+
+def canonical_callout_key(title: str, block: str) -> str:
+    keys = issue_keys(f"{title}\n{block}")
+    if keys:
+        return "|".join(keys)
+    title_plain = normalize_inline(title)
+    title_plain = re.sub(r"\s*[·•]\s*飞书$", "", title_plain, flags=re.IGNORECASE)
+    return title_plain.casefold()
+
+
+def is_placeholder_callout(title: str, block: str) -> bool:
+    probe = f"{title}\n{block}"
+    return (
+        "<!-- agent:" in probe
+        or "Templates/daily-style-guide.md" in probe
+        or "agent:topic-1-title" in probe
+        or "agent:topic-1-rows" in probe
+    )
+
+
+def display_title(title: str) -> tuple[str, str | None]:
+    link_m = re.search(r"\[([^\]]+)\]\((https?://[^)]+)\)", title)
+    plain = normalize_inline(title)
+    plain = re.sub(r"\s*[·•]\s*飞书$", "", plain, flags=re.IGNORECASE).strip()
+    url = link_m.group(2) if link_m else None
+    return plain, url
 
 
 def latest_status_from_callout(block: str) -> str | None:
@@ -118,10 +163,10 @@ def format_work_line(n: int, title: str, block: str) -> str:
     if not status:
         return ""
     status_tail = status.split("—", 1)[-1].strip()
-    link_m = re.search(r"\[([^\]]+)\]\((https?://[^)]+)\)", title)
-    if link_m:
-        return f"{n}. [{link_m.group(1)}]({link_m.group(2)}) — {status_tail}"
-    return f"{n}. {title} — {status_tail}"
+    plain_title, url = display_title(title)
+    if url:
+        return f"{n}. [{plain_title}]({url}) — {status_tail}"
+    return f"{n}. {plain_title} — {status_tail}"
 
 
 def is_prior_done(title: str, block: str) -> bool:
@@ -165,7 +210,7 @@ def todo_lines(body: str | None) -> list[str]:
         s = line.strip()
         if s.startswith("- [ ]"):
             item = re.sub(r"^\-\s*\[\s\]\s*", "", s).strip()
-            if item and item not in out:
+            if item and "<!-- agent:" not in item and item not in out:
                 out.append(item)
     return out
 
@@ -175,7 +220,7 @@ def build_team_week(anchor: date, week: str | None = None) -> Path:
     monday, end_day, date_range = week_date_range(anchor)
 
     # Collect callouts from Mon..anchor daily + personal weekly
-    callout_map: dict[str, str] = {}
+    callout_map: dict[str, tuple[str, str]] = {}
     days: list[date] = []
     d = monday
     while d <= end_day:
@@ -190,30 +235,25 @@ def build_team_week(anchor: date, week: str | None = None) -> Path:
         if not progress:
             continue
         for title, block in extract_callouts(progress):
-            callout_map[title] = block
+            callout_map[canonical_callout_key(title, block)] = (title, block)
 
-    pw = personal_weekly_path(week)
-    if pw.exists():
-        progress = extract_section(pw.read_text(encoding="utf-8"), "## 📊 技改进展")
-        if progress:
-            for title, block in extract_callouts(progress):
-                callout_map[title] = block
-
-    work_md = render_categorized_work(callout_map)
+    work_md = render_categorized_work({title: block for title, block in callout_map.values()})
     work_count = len(re.findall(r"^\d+\. ", work_md, flags=re.MULTILINE))
 
     next_week: list[str] = []
+    pw = personal_weekly_path(week)
     if pw.exists():
         for item in todo_lines(extract_section(pw.read_text(encoding="utf-8"), "## 📋 下周计划")):
             if item not in next_week:
                 next_week.append(item)
-    for day in reversed(days):
-        path = daily_path(day)
-        if not path.exists():
-            continue
-        for item in todo_lines(extract_section(path.read_text(encoding="utf-8"), "## 📋 明日待办")):
-            if item not in next_week:
-                next_week.append(item)
+    elif days:
+        for day in reversed(days):
+            path = daily_path(day)
+            if not path.exists():
+                continue
+            for item in todo_lines(extract_section(path.read_text(encoding="utf-8"), "## 📋 明日待办")):
+                if item not in next_week:
+                    next_week.append(item)
 
     next_md = "\n".join(f"{i + 1}. {x}" for i, x in enumerate(next_week[:8])) if next_week else "1. （待补充）"
 
