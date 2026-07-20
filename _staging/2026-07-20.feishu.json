@@ -1,0 +1,104 @@
+{
+  "date": "2026-07-20",
+  "collectedAt": "2026-07-20T19:13:35+08:00",
+  "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+  "createdToday": [
+    {
+      "id": "QFniwo2zDiBIB0kbT8RcCoxOnDd",
+      "title": "GDS-9172 票台DelayRepay对订单契约",
+      "url": "https://trip.larkenterprise.com/wiki/QFniwo2zDiBIB0kbT8RcCoxOnDd",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T15:21+08:00",
+      "updateTime": "2026-07-20T15:27+08:00"
+    },
+    {
+      "id": "Rq20wBlv8i7yfBkFOkdcjhYsnbf",
+      "title": "GDS-9172 TI自助DelayRepay 票台技术方案",
+      "url": "https://trip.larkenterprise.com/wiki/Rq20wBlv8i7yfBkFOkdcjhYsnbf",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T14:57+08:00",
+      "updateTime": "2026-07-20T15:22+08:00"
+    },
+    {
+      "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "title": "票台7月技改 - 异常配置智能助手（Baiji SOA + Skill）",
+      "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T10:35+08:00",
+      "updateTime": "2026-07-20T14:04+08:00"
+    }
+  ],
+  "editedTodayOnly": [
+    {
+      "id": "V5a3wW2boigPbQkNafzcY5dVnSb",
+      "title": "异常配置智能助手：HTTP + Skill 轻量方案",
+      "url": "https://trip.larkenterprise.com/wiki/V5a3wW2boigPbQkNafzcY5dVnSb",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T17:20+08:00",
+      "updateTime": "2026-07-20T10:35+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "title": "ApplyRefund契约改造（加强版）",
+      "url": "https://trip.larkenterprise.com/wiki/IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T18:59+08:00",
+      "updateTime": "2026-07-20T10:18+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "touchedToday": [
+    {
+      "id": "QFniwo2zDiBIB0kbT8RcCoxOnDd",
+      "title": "GDS-9172 票台DelayRepay对订单契约",
+      "url": "https://trip.larkenterprise.com/wiki/QFniwo2zDiBIB0kbT8RcCoxOnDd",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T15:21+08:00",
+      "updateTime": "2026-07-20T15:27+08:00"
+    },
+    {
+      "id": "Rq20wBlv8i7yfBkFOkdcjhYsnbf",
+      "title": "GDS-9172 TI自助DelayRepay 票台技术方案",
+      "url": "https://trip.larkenterprise.com/wiki/Rq20wBlv8i7yfBkFOkdcjhYsnbf",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T14:57+08:00",
+      "updateTime": "2026-07-20T15:22+08:00"
+    },
+    {
+      "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "title": "票台7月技改 - 异常配置智能助手（Baiji SOA + Skill）",
+      "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T10:35+08:00",
+      "updateTime": "2026-07-20T14:04+08:00"
+    },
+    {
+      "id": "V5a3wW2boigPbQkNafzcY5dVnSb",
+      "title": "异常配置智能助手：HTTP + Skill 轻量方案",
+      "url": "https://trip.larkenterprise.com/wiki/V5a3wW2boigPbQkNafzcY5dVnSb",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T17:20+08:00",
+      "updateTime": "2026-07-20T10:35+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "title": "ApplyRefund契约改造（加强版）",
+      "url": "https://trip.larkenterprise.com/wiki/IeRXwjVnViehy3kY1eFc5MlXnDg",
+      "docType": "DOCX",
+      "createTime": "2026-07-17T18:59+08:00",
+      "updateTime": "2026-07-20T10:18+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "summary": {
+    "createdCount": 3,
+    "editedOnlyCount": 2,
+    "touchedCount": 5
+  },
+  "queryNotes": {
+    "createdFilter": "create_time=[2026-07-20, 2026-07-20]",
+    "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-20"
+  }
+}
