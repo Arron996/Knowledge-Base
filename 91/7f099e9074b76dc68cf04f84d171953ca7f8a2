@@ -1,0 +1,25 @@
+_staging/2026-07-20.raw.json
+  ai_agent 1-328
+_staging/2026-07-20.feishu.json
+  ai_agent 1-104
+_staging/2026-07-20.idev2.json
+  ai_agent 1-51
+Daily/2026-07-20.md
+  s_bf2df03b9c82af::t_031b263cfb59ee 13,17-38,40,44,54-57,75-143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.34-trip",
+  "base_commit_sha": "917f099e9074b76dc68cf04f84d171953ca7f8a2",
+  "prompts": {},
+  "sessions": {
+    "s_bf2df03b9c82af": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7f2f-e249-7803-bb07-e095aa0dd8e7",
+        "model": "gpt-5.4"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
