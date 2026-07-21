@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-21",
+  "collectedAt": "2026-07-21T19:12:19+08:00",
+  "username": "zhaorun",
+  "mergedToday": [],
+  "summary": {
+    "mergedCount": 0
+  },
+  "queryNotes": {
+    "source": "list_user_merge_requests(role=author,state=merged)",
+    "filter": "merged_at 落在 2026-07-21（Asia/Shanghai）"
+  }
+}

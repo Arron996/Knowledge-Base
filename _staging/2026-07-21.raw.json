@@ -1,0 +1,202 @@
+{
+  "date": "2026-07-21",
+  "collectedAt": "2026-07-21T19:12:19+08:00",
+  "cursorChats": [
+    {
+      "chatId": "b3fb1631-9157-44a1-809d-57b5ea99d91e",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "这个会话开始ti 的delayRepay 需求https://idev2.ctripcorp.com/team/10002849/issue/1152?issueKey=GDS-9172 这是供应的契约 https://trip.lark…",
+      "modifiedAt": "2026-07-21T19:11:17+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/b3fb1631-9157-44a1-809d-57b5ea99d91e/b3fb1631-9157-44a1-809d-57b5ea99d91e.jsonl"
+    },
+    {
+      "chatId": "eee9e0f0-2a11-43fe-bdeb-e1842f04cc71",
+      "project": "empty-window",
+      "title": "nihao",
+      "modifiedAt": "2026-07-21T19:10:02+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/empty-window/agent-transcripts/eee9e0f0-2a11-43fe-bdeb-e1842f04cc71/eee9e0f0-2a11-43fe-bdeb-e1842f04cc71.jsonl"
+    },
+    {
+      "chatId": "1b4847ab-9f4e-4d11-8faf-24719e696334",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "参考一个线上环境的delayRepay订单，mock一下走一下测试环境的delayRepay,参考http调用生单流程",
+      "modifiedAt": "2026-07-21T10:09:23+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/1b4847ab-9f4e-4d11-8faf-24719e696334/1b4847ab-9f4e-4d11-8faf-24719e696334.jsonl"
+    }
+  ],
+  "plans": [],
+  "git": [
+    {
+      "repo": "gds-ticketing-system",
+      "commits": [
+        {
+          "hash": "c5c955bb5a",
+          "message": "Merge remote-tracking branch 'origin/master' into feature/20260720_tiDelayRepay"
+        }
+      ]
+    }
+  ],
+  "idev2": {
+    "date": "2026-07-21",
+    "collectedAt": "2026-07-21T19:12:19+08:00",
+    "query": {
+      "employeeId": "TR043507",
+      "createdTimeStart": 1784563200000,
+      "createdTimeEnd": 1784649599999,
+      "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+    },
+    "createdToday": [],
+    "delegatedToday": [],
+    "assignedTodayOnly": [],
+    "updatedTodayOnly": [
+      {
+        "key": "GDS-10236",
+        "title": "异常配置智能助手：Baiji SOA + Skill（一期）",
+        "status": "待评审",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日有进展（指派给我）"
+      }
+    ],
+    "summary": {
+      "createdCount": 0,
+      "delegatedCount": 0,
+      "assignedOnlyCount": 0,
+      "updatedOnlyCount": 1,
+      "totalDistinct": 1
+    }
+  },
+  "feishu": {
+    "date": "2026-07-21",
+    "collectedAt": "2026-07-21T19:12:19+08:00",
+    "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+    "createdToday": [
+      {
+        "id": "Kb9AwN2k0i4FUPkfujUcqZf5nYg",
+        "title": "Untitled document",
+        "url": "https://trip.larkenterprise.com/wiki/Kb9AwN2k0i4FUPkfujUcqZf5nYg",
+        "docType": "DOCX",
+        "createTime": "2026-07-21T15:11+08:00",
+        "updateTime": "2026-07-21T15:11+08:00"
+      }
+    ],
+    "editedTodayOnly": [
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-21T17:39+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-21T17:00+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "QFniwo2zDiBIB0kbT8RcCoxOnDd",
+        "title": "GDS-9172 票台DelayRepay对订单契约",
+        "url": "https://trip.larkenterprise.com/wiki/QFniwo2zDiBIB0kbT8RcCoxOnDd",
+        "docType": "DOCX",
+        "createTime": "2026-07-20T15:21+08:00",
+        "updateTime": "2026-07-21T16:58+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "title": "异常配置智能助手（Baiji SOA + Skill）",
+        "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "docType": "DOCX",
+        "createTime": "2026-07-20T10:35+08:00",
+        "updateTime": "2026-07-21T15:47+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "touchedToday": [
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-21T17:39+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "N9Iewbpxticr7lkkyInc2aBOn9f",
+        "title": "票台 Arex 回放失败问题分析与排查",
+        "url": "https://trip.larkenterprise.com/wiki/N9Iewbpxticr7lkkyInc2aBOn9f",
+        "docType": "DOCX",
+        "createTime": "2026-07-13T11:21+08:00",
+        "updateTime": "2026-07-21T17:00+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "QFniwo2zDiBIB0kbT8RcCoxOnDd",
+        "title": "GDS-9172 票台DelayRepay对订单契约",
+        "url": "https://trip.larkenterprise.com/wiki/QFniwo2zDiBIB0kbT8RcCoxOnDd",
+        "docType": "DOCX",
+        "createTime": "2026-07-20T15:21+08:00",
+        "updateTime": "2026-07-21T16:58+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "title": "异常配置智能助手（Baiji SOA + Skill）",
+        "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "docType": "DOCX",
+        "createTime": "2026-07-20T10:35+08:00",
+        "updateTime": "2026-07-21T15:47+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "Kb9AwN2k0i4FUPkfujUcqZf5nYg",
+        "title": "Untitled document",
+        "url": "https://trip.larkenterprise.com/wiki/Kb9AwN2k0i4FUPkfujUcqZf5nYg",
+        "docType": "DOCX",
+        "createTime": "2026-07-21T15:11+08:00",
+        "updateTime": "2026-07-21T15:11+08:00"
+      }
+    ],
+    "summary": {
+      "createdCount": 1,
+      "editedOnlyCount": 4,
+      "touchedCount": 5
+    },
+    "queryNotes": {
+      "createdFilter": "create_time=[2026-07-21, 2026-07-21]",
+      "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-21"
+    }
+  },
+  "gitlab": {
+    "date": "2026-07-21",
+    "collectedAt": "2026-07-21T19:12:19+08:00",
+    "username": "zhaorun",
+    "mergedToday": [],
+    "summary": {
+      "mergedCount": 0
+    },
+    "queryNotes": {
+      "source": "list_user_merge_requests(role=author,state=merged)",
+      "filter": "merged_at 落在 2026-07-21（Asia/Shanghai）"
+    }
+  },
+  "queryHints": {
+    "timezone": "Asia/Shanghai",
+    "idev2EmployeeId": "TR043507",
+    "idev2CreatedTimeStart": 1784563200000,
+    "idev2CreatedTimeEnd": 1784649599999,
+    "idev2EditField": "lastUpdatedTime",
+    "idev2Sidecar": "_staging/2026-07-21.idev2.json",
+    "feishuSidecar": "_staging/2026-07-21.feishu.json",
+    "gitlabSidecar": "_staging/2026-07-21.gitlab.json",
+    "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
+    "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
+    "gitlabSidecarHint": "list_user_merge_requests(author,merged) → merged_at 当日"
+  }
+}
