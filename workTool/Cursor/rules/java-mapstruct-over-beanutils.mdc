@@ -1,0 +1,71 @@
+---
+description: Java 对象拷贝优先简单 MapStruct（单参、无 interface 内逻辑），禁止 BeanUtils；复杂转换用 Assembler/Util
+globs: **/*.java
+alwaysApply: false
+---
+
+# Java 对象拷贝：简单 MapStruct，不用 BeanUtils
+
+## 立场
+
+- **不一刀切禁用 MapStruct**：简单、同构字段拷贝用 MapStruct 仍优于反射。
+- **限制滥用**：多参数、`expression`、interface 内 `default`/辅助方法等写法易在编译期/运行期产生意料之外行为，**新代码禁止**。
+
+适用 **gds-order-admin-be**、**gds-ticketing-system**、**gds-bus-ticketing-system** 等工作区 Java 项目。出票系统项目约定中的交叉引用见 **`ticketing-system-project-conventions.mdc`** §9。
+
+## 允许（简单 MapStruct）
+
+- **单入参 → 单出参**：`Target toTarget(Source source)`；`List` 重载由 MapStruct 自动生成即可。
+- **声明式字段映射**：`@Mapping(source = "...", target = "...")`、`ignore = true`、嵌套路径 `source = "a.b"`。
+- **组合简单 Mapper**：`@Mapper(uses = {OtherMapping.class})`，被 `uses` 的 Mapper 也须符合本规则。
+- **调用方式**：`XxxMapping.INSTANCE.toTarget(source)`，放在各项目约定的 `mapping` 包。
+
+```java
+@Mapper(uses = {ClientMetaMapping.class})
+public interface PostChangeMapping {
+    PostChangeMapping INSTANCE = Mappers.getMapper(PostChangeMapping.class);
+
+    @Mapping(target = "orderItemId", ignore = true)
+    InnerConfirmPostChangeRequest reqMap(ConfirmPostChangeRequest request);
+}
+```
+
+## 禁止（新代码）
+
+| 禁止项 | 说明 |
+|--------|------|
+| **多参数转换** | 如 `toEntity(Domain d, Long orderId, String udl)`；额外上下文在 **调用方** 赋值，或先组一个单参 DTO/Context 再映射 |
+| **interface 内转换逻辑** | 不在 `@Mapper` interface 写 `default` 方法、`static` 辅助方法、业务判断 |
+| **`expression = "java(...)"`** | 字段转换逻辑放到 **Util / Assembler**（普通 class），Mapper 只做同名字段或显式 `source`/`target` |
+| **BeanUtils 业务拷贝** | `BeanUtils.copyProperties` 及同类反射拷贝 |
+
+## 复杂场景怎么做
+
+- 枚举/日期/嵌套对象组装、多步转换 → **Assembler** 或 **Util**（普通 class），内部可调用简单 `XxxMapping.INSTANCE.copy(...)` 做同构拷贝。
+- 仅 1～2 个字段且完全无对应源字段：调用方 `set`，或 Assembler 里手写，**不要**为这点逻辑塞进 Mapper interface。
+
+```java
+// ✅ GOOD — 多上下文在 Assembler，Mapper 仍单参
+GdsPassenger passenger = SupplierPassengerMapping.INSTANCE.entityToDomain(entity);
+passenger.setOrderId(orderId);
+passenger.setSubBatchId(subBatchId);
+
+// ❌ BAD — 多参 + interface 内 expression/辅助方法
+SupplierOrderPassenger toEntity(GdsPassenger p, Long orderId, Long subBatchId, String udl);
+```
+
+## 与 BeanUtils 对比
+
+| BeanUtils | 简单 MapStruct |
+|-----------|----------------|
+| 运行时反射，字段变更编译期不可见 | 编译期生成，映射字段显式 |
+| 隐式拷贝全部属性 | 意图清晰，便于 Code Review |
+
+## 存量代码
+
+- 已有复杂 Mapper（多参、`expression`、interface 内方法）**不强制重构**；触达时优先收口到 Assembler/Util，勿复制该风格到新文件。
+
+## Code Review 检查项
+
+- 新增 `BeanUtils.copyProperties` 用于业务拷贝 → 改为简单 MapStruct 或 Assembler。
+- 新增多参 Mapper 方法、`default` 方法、`expression = "java(...)"` → 建议拆分。

@@ -12,7 +12,7 @@ created: 2026-07-08
 
 # 通票 X 产品人工出退改
 
-> PASS 等 X 产品人工运维链路。Offline 出票列表日均约 50 单（2024 H1）。
+> PASS 等 X 产品人工运维链路。Offline 出票列表日均约 50 单（2024 H2）。
 
 页面：[Offline 通票出票](https://offline.globalrail.train.ctripcorp.com/#/ticket-list)
 
@@ -83,4 +83,4 @@ created: 2026-07-08
 
 - [[工程/Offline前后端联调套路]]
 - [[领域/订单ID层级与批次号]]
-- [[绩效/2024H1-半年报]]
+- [[绩效/2024H2-半年报]]

@@ -1,0 +1,16 @@
+---
+description: FAT 测试环境快速定位 Aaron 的订单号并输出 Admin 票台日志链接。用户说刚下单、捞订单号、测试环境订单、admin log、ticketLog 时使用；Read 后按 ../skills/fat-order-lookup/SKILL.md 执行。
+alwaysApply: false
+---
+
+# FAT 测试订单快速定位
+
+用户在 **FAT/测试环境** 要 **订单号**、**Admin 日志链接**，或说 **刚下单 / 捞单 / createRequest** 时：
+
+1. Read `/Users/aaron/IdeaProjects/.cursor/skills/fat-order-lookup/SKILL.md`
+2. **有 orderId** → Admin MCP 校验后直接拼 ticketLog URL
+3. **无 orderId** → BAT MCP：`bat-global-helper` → `bat-clog`（`appId=100045149`，`env=fws`，`message=createOrder req`，`queryLargeFields=on`），按 **邮箱前缀 / uid** 匹配 `createRequest`，禁止仅按时间猜最近一单
+4. 从 CLOG attribute `_subEnv_` 拼 Admin host（默认 `fat22`），`stage` 列表见 skill
+5. 回复：订单号 + 行程摘要 + **Admin 票台日志** markdown 链接
+
+默认锚点：`zhaorun@trip.com`（CLOG 前缀 `zhH6Qun`）、uid `_TRXX1cp43t01bbki`；用户指定则以用户为准。

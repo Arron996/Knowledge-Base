@@ -1,0 +1,17 @@
+---
+description: Captain 镜像审批与 UAT/PRO 发布。用户要 Captain 发布、填 iDev、UAT/PRO 部署、忽略发布规范时使用；Read 后按 ../skills/captain-release/SKILL.md 执行。
+alwaysApply: false
+---
+
+# Captain 发布
+
+用户要 **Captain 发布**、**UAT/PRO 部署**、**填 iDev**、**镜像审批**、**忽略发布规范**、**跳过金丝雀** 时：
+
+1. Read `/Users/aaron/IdeaProjects/.cursor/skills/captain-release/SKILL.md`
+2. admin-fe 常量见同目录 `apps/admin-fe.md`
+3. MCP **user-captain-mcp**：查镜像/分组/发布用 `get_*`，部署用 `deploy`
+4. iDev 号：优先**对话上下文**，其次关联 MR **title**，再次 MR `description`（GitLab MCP），再次 iDev search；测试卡点试 `iDev2-issue-transition-statuses` + `iDev2-issue-update-status`
+5. **填 iDev、镜像 UAT/PRO 审批** — Captain UI 手动，MCP 不能替代
+6. **PRO deploy 须用户确认**；admin-fe PRO 默认 `ignore_release_control` + `skip_smoking: true`
+
+与 F2B 关系：代码合 base / MR 完成后，镜像由 CI 构建，再走本 playbook 发布 UAT/PRO。

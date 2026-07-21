@@ -1,0 +1,50 @@
+---
+description: iDev2 MCP 创建/更新 issue 约定。用户要求建卡、克隆 issue、更新描述或指派时使用。
+alwaysApply: false
+---
+
+# iDev2 MCP 约定
+
+## 描述格式（必须）
+
+iDev issue 的 `content` **不支持 Markdown**，`##`、`**`、反引号等会原样展示。
+
+- **禁止**：Markdown 标题、列表、加粗、代码块
+- **使用**：HTML 富文本，与同空间已有技改卡一致
+
+### 推荐写法
+
+- 段落：`<p data-line-height="1.75" style="line-height: 1.75;">正文</p>`
+- 小标题/强调：`<strong>背景</strong>` 放在独立 `<p>` 内
+- 列表：多条各用一个 `<p>`，前缀 `1.` / `2.` 或 `-`
+- 链接：`<a href="https://...">链接文字</a>`
+
+### 示例
+
+```html
+<p data-line-height="1.75" style="line-height: 1.75;"><strong>背景</strong></p>
+<p data-line-height="1.75" style="line-height: 1.75;">票台 obtain 存在到达时间拦截，需移除。</p>
+<p data-line-height="1.75" style="line-height: 1.75;"><strong>期望</strong></p>
+<p data-line-height="1.75" style="line-height: 1.75;">1. 移除票台侧拦截，继续调 VC 取票</p>
+<p data-line-height="1.75" style="line-height: 1.75;">2. VC 失败按返回 code 处理</p>
+```
+
+参考：`GDS-9562`、`GDS-9583`。
+
+## 建卡约定（摘要）
+
+- **技改**：挂当月「票台 {N}月技改」父 issue（如 `GDS-9247`），`cardTypeId=6`，`issueType=Story`
+- **空间**：用户未指定时先确认；勿在 GDS 顶层随意建卡
+- **克隆**：描述顶部标注来源 issue 链接；技改克隆改挂当月父 issue
+
+## GDS Story 必填字段（避免 `iDev2-issue-create` 失败）
+
+第一次建卡即带上，不要等 API 报错再补：
+
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| `pdRoleIds` | `[713]` | 业务组 GDS-票台 |
+| `fields.customfield_7112` | 影响面文案 | **禁止**用中文键 `影响面`；报错 `customfield_7112 is required` 即此项缺失或键名错误 |
+| `content` | HTML | 见上文描述格式 |
+
+建卡前可调 `iDev2-product-required-fields`（`product: GDS`，`issueTypeId: 4`）核对必填项。

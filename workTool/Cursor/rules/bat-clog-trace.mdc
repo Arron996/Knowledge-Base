@@ -1,0 +1,14 @@
+---
+description: 用 BAT MCP 按 appId+环境+message 查 CLOG 并输出 trace 链接。用户要 trace 链接、按 message 查日志、验证 FAT 请求时使用；Read 后按 ../skills/bat-clog-trace/SKILL.md 执行。
+alwaysApply: false
+---
+
+# BAT CLOG → Trace
+
+用户要 **trace 链接**、**按 message 查某应用日志**、或 **验证某次 FAT 请求** 时：
+
+1. Read `/Users/aaron/IdeaProjects/.cursor/skills/bat-clog-trace/SKILL.md`
+2. 使用 MCP **user-bat-mcp-function**：先 `bat-global-helper`，再 `bat-clog`，按需 `bat-trace`
+3. 从 `messageId` 拼链接返回用户（fws：`https://bat.fws.qa.nt.ctripcorp.com/trace/{messageId}`）
+
+有 `orderId` 的订单排障仍优先 gds-rail-triage playbook。

@@ -1,0 +1,18 @@
+---
+description: 票台生单/出票高影响改动的生产发布观察。动 createOrder/obtainTicket/乘客映射/状态机/拦截校验，或写相关 plan 时：先问用户要不要包含发布监控方案；确认后按 skill 拉发布集群订单做断言校验。
+alwaysApply: false
+---
+
+# GDS 生产发布观察
+
+命中以下任一：
+
+- 用户要**发布后观察 / 线上验证 / 灰度观察 / 拉发布集群订单**
+- 改动 **createOrder / obtainTicket / 乘客映射 / 状态机 / 拦截校验**
+- **写 plan** 且涉及主流程**生单 / 出票**
+
+则：
+
+1. **先问用户**要不要包含「生产发布监控观察」方案（由用户决定，不默认强加）
+2. 用户同意或明确要求观察时，Read 并执行  
+   `/Users/aaron/IdeaProjects/.cursor/skills/gds-prod-release-observe/SKILL.md`

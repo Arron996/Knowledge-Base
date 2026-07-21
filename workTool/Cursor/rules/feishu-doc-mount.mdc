@@ -1,0 +1,56 @@
+---
+description: 飞书文档挂载目录；用户要求创建/写入飞书技改、需求、技术方案文档时使用
+---
+
+# 飞书文档挂载位置
+
+**适用范围**：用户要求通过飞书 MCP 新建或写入文档时参考本规则。
+
+**默认位置**：未说明文档类型、也未指定挂载位置时 → **个人知识库**（`create-doc` 用 `wiki_space: my_library`；`md2feishu` 不传 `parent_document`）。
+
+**按类型挂载**：用户明确要求写**技改** / **技术方案** / **需求**文档时 → 挂到下列 Wiki 父节点。用户指定了其他位置时以用户为准。
+
+## 父节点
+
+| 文档类型 | 父节点 | node_token |
+|----------|--------|------------|
+| 技改 / 技术方案 | [技改项](https://trip.larkenterprise.com/wiki/BRWnwk9YNihMjEkRezqc4ZShnee) | `BRWnwk9YNihMjEkRezqc4ZShnee` |
+| 需求 | [需求项](https://trip.larkenterprise.com/wiki/NW9swjwHViStajklmlQcMUEynjc) | `NW9swjwHViStajklmlQcMUEynjc` |
+
+## MCP 参数
+
+**feishu-doc-mcp → create-doc**
+
+- 技改 / 技术方案：`wiki_node`: `BRWnwk9YNihMjEkRezqc4ZShnee`（或完整 URL）
+- 需求：`wiki_node`: `NW9swjwHViStajklmlQcMUEynjc`
+
+**feishu2md → md2feishu**
+
+- 技改 / 技术方案：`parent_document`: `https://trip.larkenterprise.com/wiki/BRWnwk9YNihMjEkRezqc4ZShnee`
+- 需求：`parent_document`: `https://trip.larkenterprise.com/wiki/NW9swjwHViStajklmlQcMUEynjc`
+
+`wiki_node` / `folder_token` / `wiki_space` 互斥。
+
+| 场景 | 挂载 |
+|------|------|
+| 未指定类型与位置 | 个人知识库 `my_library` |
+| 明确为技改 / 技术方案 | [技改项](https://trip.larkenterprise.com/wiki/BRWnwk9YNihMjEkRezqc4ZShnee) |
+| 明确为需求 | [需求项](https://trip.larkenterprise.com/wiki/NW9swjwHViStajklmlQcMUEynjc) |
+| 用户指定其他位置 | 以用户为准 |
+
+## 正文模板
+
+章节结构见 `tech-transformation-template.mdc`；可用 `feishu2md` 拉取官方模板：
+
+- [技改需求模板](https://trip.larkenterprise.com/wiki/Xgc9wLMVRiZH1kkzIJccoaAMn0E)
+- [技术方案模板](https://trip.larkenterprise.com/wiki/AbKbwN8iMiKF4bkGPmGcls9Wnvh)
+
+## 示例
+
+```json
+{
+  "title": "票台7月技改 - XXX",
+  "wiki_node": "BRWnwk9YNihMjEkRezqc4ZShnee",
+  "markdown": "..."
+}
+```

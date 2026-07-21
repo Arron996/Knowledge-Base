@@ -1,0 +1,12 @@
+---
+description: 知识库内会话：记待办写 Daily，不写飞书
+alwaysApply: true
+---
+
+# 待办写入 Daily
+
+见 IdeaProjects 同级规则 `kb-daily-todo.mdc` 全文；本仓库执行要点：
+
+- 待办 / 待排期 → `Daily/{今天}.md` 的 `## 📋 明日待办` 或 `## 🗂️ 待排期`
+- 读 `Templates/daily-style-guide.md` §3.1、§6 后再改
+- **禁止**把待办写进飞书 Wiki（除非用户明确要求更新某份方案正文）

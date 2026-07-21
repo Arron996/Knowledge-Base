@@ -1,0 +1,399 @@
+---
+description: F2B 操作手册。用户要求 F2B/提交/推送/合 base/MR/MRCC/Code Review 时必须 Read。含分步 zsh、worktree merge、§2.1 MR 创建、GitLab MCP 评审。分支约定见 git-f2b-branch-policy.mdc。
+alwaysApply: false
+---
+
+# F2B 操作手册
+
+本文档由 `git-f2b-router.mdc` 调度；执行 git/MR 操作前 Read 本文。分支与流程约定见 **`git-f2b-branch-policy.mdc`**。
+
+当用户要求「按 rules 提交」「F2B 流程」「合并到 base」等时，按本手册对 **各相关项目** 依次执行（默认 admin-fe → admin-be → 火车出票 → 汽船出票，见 §四）。
+
+当用户要求 **MR / Code Review** 时，按 **第六章** 使用 **GitLab MCP** 拉取 MR 与 diff，并将评审 **提交到 MR 讨论区**，不要仅在对话中输出。
+
+**MRCC**：创建 MR（§2.1 命令行，**禁止 MCP 建 MR**）+ Code Review + Comment（第六章 MCP）。
+
+若用户明确 **只对火车出票** 执行 F2B：跳过 admin-fe、admin-be、汽船；§3～§5 操作 **`develop/base_20260528_bt3`**，不是 `master`。
+
+若用户明确 **只对汽船出票** 执行 F2B：跳过其他项目；§3～§5 操作 **`feature/base_v1`**，不是 `main`。**禁止**合入 `develop/base`。
+
+---
+
+## 三、分步命令（各项目分别执行）
+
+### 1. Commit（在各自功能分支上）
+
+```zsh
+# 1) admin-fe
+cd /Users/aaron/IdeaProjects/gds-order-admin-fe
+git status
+git add <需要提交的文件>
+git commit -m "feat: 简短中文说明本次改动"
+
+# 2) admin-be
+cd /Users/aaron/IdeaProjects/gds-order-admin-be
+git status
+git add <需要提交的文件>
+git commit -m "feat: 简短中文说明本次改动"
+
+# 3) 火车出票
+cd /Users/aaron/IdeaProjects/gds-ticketing-system
+git status
+git add <需要提交的文件>
+git commit -m "feat: 简短中文说明本次改动"
+
+# 4) 汽船出票
+cd /Users/aaron/IdeaProjects/gds-bus-ticketing-system
+git status
+git add <需要提交的文件>
+git commit -m "feat: 简短中文说明本次改动"
+```
+
+### 2. Push 功能分支（第一次 push 不自动创建 MR）
+
+```zsh
+# 1) admin-fe：首次 push 只推送功能分支
+cd /Users/aaron/IdeaProjects/gds-order-admin-fe
+git push -u origin <FEATURE_BRANCH>
+
+# 2) admin-be：首次 push 只推送功能分支
+cd /Users/aaron/IdeaProjects/gds-order-admin-be
+git push -u origin <FEATURE_BRANCH>
+
+# 3) 火车出票：首次 push 只推送功能分支
+cd /Users/aaron/IdeaProjects/gds-ticketing-system
+git push -u origin <FEATURE_BRANCH>
+
+# 4) 汽船出票：首次 push 只推送功能分支
+cd /Users/aaron/IdeaProjects/gds-bus-ticketing-system
+git push -u origin <FEATURE_BRANCH>
+```
+
+若该分支已 push 过，只需普通 push：`git push origin <FEATURE_BRANCH>`。只有用户明确要求创建 MR 时，才按 **§2.1** 用命令行创建 MR（**禁止**使用 MCP 创建 MR）。
+
+### 2.1 创建 MR（命令行；禁止 MCP 创建）
+
+**创建方式优先级（Agent 必须按此顺序，不得绕路）**：
+
+| 优先级 | 方式 | 适用场景 |
+|--------|------|----------|
+| **1（首选）** | **`git push` push options** | 功能分支**首次 push**，或用户要求建 MR 时**直接**用带 MR 选项的 push |
+| **2（补救）** | **`glab mr create`** | 分支**已普通 push 过**，需补建 MR，且本机 `glab` 已对 `git.dev.sh.ctripcorp.com` 完成 `glab auth login` |
+| **3（兜底）** | 推送输出中的 **「To create a merge request, visit: …」** 链接，或浏览器 `/-/merge_requests/new` | 无 push options、glab 未配置时，向用户给出链接 |
+
+**Agent 行为（必须遵守）**：
+
+- **禁止**在未尝试 push options 的情况下先执行 `glab`（本机常未配置 `git.dev.sh.ctripcorp.com`，会导致无谓报错与绕路）。
+- **禁止**使用 GitLab MCP 的 **`create_merge_request`**（或等价 MCP 工具）创建 MR。Bot 创建的 MR 可能导致 **无权限合并**或与团队策略冲突。
+- **禁止**为**仅触发 MR 创建**而打空提交（`git commit --allow-empty`）；分支已 push 时用 **glab mr create** 补建，或输出 Web 新建链接。
+- 用户同时要求 **F2B + 建 MR** 时：在 **§2 Push** 步骤**一次性**使用下方 push options，不要先普通 push 再另建 MR。
+- **iDev 号（必须）**：创建 MR 时 **标题必须包含 iDev issue Key**（如 `GDS-9247`、`TRAIN-1234`）。格式：`{iDevKey} feat: 简短中文标题` 或 `{iDevKey} fix: …`（Key 放最前，与类型前缀、中文说明之间空格分隔）。iDev Key 来源优先级：① 对话上下文 / 用户指定；② iDev MCP 按技改/需求/分支关键词搜索；③ 仍无法确定时**先问用户**，不得留空建 MR。description 可补充详情与 iDev 链接，但**不能替代标题中的 Key**。description **须答 AI 变更「三问」**（改了什么/怎么验证/风险与回滚），章节结构与示例见 **`gitlab-mr-description.mdc`**。
+- **auto-merge + 删源分支（必须）**：无论 push options 还是 glab，建 MR **必须**同时带自动合入与删源分支参数；建完后 **必须** `glab mr view` 确认，缺失则立即补救（见下文 §2.1 细则）。
+
+**首选：GitLab `git push` push options**（需远端 GitLab 允许接收 push options；目标分支须显式指定；火车出票 / admin-be 多为 `master`，admin-fe / 汽船出票为 `main`）：
+
+```zsh
+cd /Users/aaron/IdeaProjects/gds-ticketing-system
+git push -u origin feature/yyyyMMdd_简述 \
+  -o merge_request.create \
+  -o merge_request.target=master \
+  -o merge_request.title="GDS-9247 fix: 简短中文标题" \
+  -o merge_request.assign=zhaorun \
+  -o merge_request.remove_source_branch \
+  -o merge_request.merge_when_pipeline_succeeds
+```
+
+admin-fe 示例（目标 `main`）：
+
+```zsh
+cd /Users/aaron/IdeaProjects/gds-order-admin-fe
+git push -u origin feature/yyyyMMdd_简述 \
+  -o merge_request.create \
+  -o merge_request.target=main \
+  -o merge_request.title="GDS-9247 feat: 简短中文标题" \
+  -o merge_request.assign=zhaorun \
+  -o merge_request.remove_source_branch \
+  -o merge_request.merge_when_pipeline_succeeds
+```
+
+- **Assignee（必须）**：创建 MR 时 **必须** 指定 Assignee 为 **`zhaorun`**（User ID `21135`），否则无法合并。push options 用 `-o merge_request.assign=zhaorun`；glab 用 `--assignee zhaorun`；若 MR 已创建但未设 Assignee，用 GitLab MCP `edit_merge_request` 补设 `assignee_ids: "21135"`。
+- **标题 iDev Key（必须）**：与上条同级；`merge_request.title` / `glab --title` 须含 iDev Key，见上文 **iDev 号（必须）**。已建 MR 标题缺 Key 时，用 GitLab MCP `edit_merge_request` 补全标题。
+- **审批后自动合入 + 删源分支（必须）**：建 MR 时 **必须** 同时带上删源分支与自动合入选项，不得省略：
+  - push options：`-o merge_request.remove_source_branch` **与** `-o merge_request.merge_when_pipeline_succeeds`（或新版 `merge_request.auto_merge`）
+  - glab：`--remove-source-branch` **与** `--auto-merge`
+  - GitLab 在 **CI 通过且审批满足** 后自动 merge 并删源分支，无需手点 Merge
+- **glab `--auto-merge` 常见 405**：`glab mr create --auto-merge`（或 MR 刚建完就调 `glab mr merge --auto-merge`）可能返回 **405 Method Not Allowed**；MR 通常 **已创建成功**，只是 `merge_when_pipeline_succeeds` 仍为 false。**不算建 MR 失败**，勿因此删 MR 重建。根因：GitLab merge API 在 **CI 未 success 或审批未满足** 时拒绝挂 auto-merge。
+- **auto-merge 补救时机**：仅当 **CI success + 审批满足 + mergeable** 后再执行 `glab mr merge <iid> --auto-merge -y --repo <owner/project>`，或跑下方 `mr-auto-merge-approved.sh`；创建瞬间 **勿反复重试** merge API（会继续 405）。
+- **建 MR 后确认（必须）**：MR 创建完成后 **必须** 执行 `glab mr view <iid> --repo <owner/project>`（或 GitLab MCP `get_merge_request`）核对：
+  - Assignee 为 `zhaorun`
+  - `remove source branch` / `force_remove_source_branch` 已开启
+  - 已启用 auto-merge（`merge when pipeline succeeds`）；若缺失，按 **auto-merge 补救时机** 在 CI/审批就绪后补 `glab mr merge <iid> --auto-merge -y --repo <owner/project>`，或在回复中说明待 CI/审批后由脚本/人工合并；**push options 建 MR 时 flag 缺失** 才考虑重建 MR
+- **已建 MR 的补救脚本**：`.cursor/scripts/mr-auto-merge-approved.sh` 扫描 assignee 为当前用户的 opened MR，对 **已 approve、CI success、mergeable** 的执行 `glab mr merge -d`。先 `--dry-run` 预览，再执行；可用 `--repo owner/project` 限定仓库。
+- **补救（glab）**：分支已 push、需补 MR 且 glab 已认证时（**`--auto-merge` 与 `--remove-source-branch` 必填，不可省略**）：
+
+```zsh
+# admin-be / 火车出票（target master）
+glab mr create --repo global-rail-gds/gds-order-admin-be \
+  --target-branch master \
+  --assignee zhaorun \
+  --remove-source-branch \
+  --auto-merge \
+  --title "GDS-9247 fix: 简短中文标题" \
+  --description "$(cat <<'EOF'
+## Summary
+- ...
+
+## iDev
+- [GDS-9247 ...](https://idev2.ctripcorp.com/issueDetail/GDS-9247)
+
+## Test plan
+- [ ] ...
+
+## Risks & Rollback
+- **风险**：...
+- **回滚**：...
+
+EOF
+)"
+
+# admin-fe / 汽船出票（target main）
+glab mr create --repo global-rail-gds/gds-order-admin-fe \
+  --target-branch main \
+  --assignee zhaorun \
+  --remove-source-branch \
+  --auto-merge \
+  --title "GDS-9247 fix: 简短中文标题" \
+  --description "$(cat <<'EOF'
+## Summary
+- ...
+
+## iDev
+- [GDS-9247 ...](https://idev2.ctripcorp.com/issueDetail/GDS-9247)
+
+## Test plan
+- [ ] ...
+
+## Risks & Rollback
+- **风险**：...
+- **回滚**：...
+
+EOF
+)"
+```
+
+完整 description 模板与飞书链接规范见 **`gitlab-mr-description.mdc`**。建完后执行：`glab mr view <iid> --repo <owner/project>` 确认 auto-merge 与 remove source branch。**glab 仅用于查 MR、看 pipeline、补建 MR**，不作为首选创建方式。
+- **兜底**：普通 `git push` 后使用输出里的 **「To create a merge request, visit: …」** 链接。**Agent 首选 push options**；不得调用 MCP 创建 MR。
+
+### 3. 使用固定 worktree 更新 base
+
+F2B 的 base 合并必须在固定 worktree 中完成，不要在当前 feature 工作区 checkout base。若固定 worktree 已存在，先进入该目录校验；若不存在，再从主仓库创建。
+
+```zsh
+# 1) admin-fe：base 为 develop/base
+repo="/Users/aaron/IdeaProjects/gds-order-admin-fe"
+worktree="/Users/aaron/IdeaProjects/gds-order-admin-fe-f2b-base"
+base="develop/base"
+local_branch="f2b-admin-fe-base"
+if [[ ! -d "$worktree" ]]; then cd "$repo"; git fetch origin; git worktree add -b "$local_branch" "$worktree" "origin/$base"; fi
+cd "$worktree"
+git rev-parse --show-toplevel; git branch --show-current; git status --short --branch
+git fetch origin; git pull origin "$base"
+
+# 2) admin-be：base 为 develop/base_20260421
+repo="/Users/aaron/IdeaProjects/gds-order-admin-be"
+worktree="/Users/aaron/IdeaProjects/gds-order-admin-be-f2b-base"
+base="develop/base_20260421"
+local_branch="f2b-admin-be-base"
+if [[ ! -d "$worktree" ]]; then cd "$repo"; git fetch origin; git worktree add -b "$local_branch" "$worktree" "origin/$base"; fi
+cd "$worktree"
+git rev-parse --show-toplevel; git branch --show-current; git status --short --branch
+git fetch origin; git pull origin "$base"
+
+# 3) 火车出票：base 为 develop/base_20260528_bt3（勿在 F2B 此步操作 master）
+#    固定 base worktree：gds-ticketing-system-develop-base（禁止在此目录直接改业务代码，仅做 F2B merge）
+repo="/Users/aaron/IdeaProjects/gds-ticketing-system"
+worktree="/Users/aaron/IdeaProjects/gds-ticketing-system-develop-base"
+base="develop/base_20260528_bt3"
+if [[ ! -d "$worktree" ]]; then cd "$repo"; git fetch origin; git worktree add "$worktree" "origin/$base"; fi
+cd "$worktree"
+git rev-parse --show-toplevel; git branch --show-current; git status --short --branch
+git fetch origin; git pull origin "$base"
+
+# 4) 汽船出票：base 为 feature/base_v1（勿在 F2B 此步操作 main）
+#    固定 base worktree：gds-bus-ticketing-system-base-v1（禁止在此目录直接改业务代码，仅做 F2B merge/cherry-pick）
+repo="/Users/aaron/IdeaProjects/gds-bus-ticketing-system"
+worktree="/Users/aaron/IdeaProjects/gds-bus-ticketing-system-base-v1"
+base="feature/base_v1"
+if [[ ! -d "$worktree" ]]; then cd "$repo"; git fetch origin; git worktree add "$worktree" "origin/$base"; fi
+cd "$worktree"
+git rev-parse --show-toplevel; git branch --show-current; git status --short --branch
+git fetch origin; git pull origin "$base"
+```
+
+### 4. 在 worktree 中 merge 功能分支到 base
+
+执行 merge 前必须确认当前目录、当前分支、工作区状态；确认无误后合并远端 feature 分支。
+
+```zsh
+feature="<FEATURE_BRANCH>"
+
+# 1) admin-fe
+cd /Users/aaron/IdeaProjects/gds-order-admin-fe-f2b-base
+git branch --show-current; git status --short --branch
+git fetch origin; git merge "origin/$feature"
+
+# 2) admin-be
+cd /Users/aaron/IdeaProjects/gds-order-admin-be-f2b-base
+git branch --show-current; git status --short --branch
+git fetch origin; git merge "origin/$feature"
+
+# 3) 火车出票（merge 到测试分支 base，不是 master；仅在 develop-base worktree 执行）
+cd /Users/aaron/IdeaProjects/gds-ticketing-system-develop-base
+git branch --show-current; git status --short --branch
+git fetch origin; git merge "origin/$feature"
+
+# 4) 汽船出票（merge/cherry-pick 到 feature/base_v1，不是 main；仅在 base-v1 worktree 执行）
+cd /Users/aaron/IdeaProjects/gds-bus-ticketing-system-base-v1
+git branch --show-current; git status --short --branch
+git fetch origin; git merge "origin/$feature"
+# 若全量 merge 冲突过多，可改为：git cherry-pick <COMMIT>（仅功能相关提交）
+```
+
+### 5. 在 worktree 中 push base
+
+push 前必须再次确认当前目录、当前分支、工作区状态；使用 `HEAD:<base>` 推送，避免误把本地临时分支名推到远端。
+
+```zsh
+# 1) admin-fe
+cd /Users/aaron/IdeaProjects/gds-order-admin-fe-f2b-base
+git branch --show-current; git status --short --branch
+git push origin HEAD:develop/base
+
+# 2) admin-be
+cd /Users/aaron/IdeaProjects/gds-order-admin-be-f2b-base
+git branch --show-current; git status --short --branch
+git push origin HEAD:develop/base_20260421
+
+# 3) 火车出票（推送测试分支 base）
+cd /Users/aaron/IdeaProjects/gds-ticketing-system-develop-base
+git branch --show-current; git status --short --branch
+git push origin HEAD:develop/base_20260528_bt3
+
+# 4) 汽船出票（推送测试分支 base_v1）
+cd /Users/aaron/IdeaProjects/gds-bus-ticketing-system-base-v1
+git branch --show-current; git status --short --branch
+git push origin HEAD:feature/base_v1
+```
+
+---
+
+## 四、执行顺序与注意点
+
+- 按 **admin-fe → admin-be → 火车出票 → 汽船出票** 顺序执行，避免漏项目。
+- **第一次 push** 不自动创建 MR，只执行 `git push -u origin <FEATURE_BRANCH>`；用户要求创建 MR 时按 **§2.1 命令行**（禁止 MCP 建 MR）。
+- 若某项目无改动，可跳过该项目的 commit，但 push 功能分支、checkout base、merge、push base 仍建议按上表执行，保证各端一致。
+- 合并冲突时：在对应项目内解决冲突后 `git add`、`git commit`，再执行该项目的 `git push origin <base 分支>`（火车出票为 `develop/base_20260528_bt3`，汽船为 `feature/base_v1`）。**不要**在此流程里 push 主分支。
+- `git commit -m "..."` 使用**中文**，简短单行；多行说明可用 `-m "feat: 标题" -m "补充说明"`。命令链用分号 `;` 连接，不用 `&&`。
+
+### Worktree 安全执行经验
+
+- F2B 合并到 base **必须**使用独立 base worktree；主工作区保持在 feature 分支，避免来回切分支污染当前开发现场。
+- **禁止**在 base worktree（如 `gds-ticketing-system-develop-base`）直接修改业务代码；功能改动只能在主工作区 feature 分支完成，再通过 F2B merge 进入 base。
+- worktree 路径使用固定且可识别的目录名，例如 `/Users/aaron/IdeaProjects/gds-ticketing-system-develop-base`（与主仓库同级），不要临时随意命名导致误判目录。
+- 每次执行 `pull`、`merge`、`push base` 前，必须先在目标目录运行 `git branch --show-current; git status --short --branch`，确认当前目录和分支就是目标 base。
+- 若分支或目录不符合预期，立即停止并说明，不继续执行后续 git 命令。
+- 合并前先 `git fetch origin` 并更新目标 base；火车出票只合并到 `develop/base_20260528_bt3`；汽船只合并到 `feature/base_v1`；不要在 F2B 中操作各自主分支。
+- 如果固定 worktree 已存在，不要盲目 `git worktree add`；先进入该目录校验 `git rev-parse --show-toplevel`、`git branch --show-current`、`git status --short --branch`。
+- 若 `git worktree add` 基于 `origin/<base>` 造成 detached HEAD，应停止并改用本地临时 base 分支，不要在 detached HEAD 上 merge 后直接 push。
+- 不要对共享分支执行 `reset --hard`；只有功能分支发生误操作且用户明确同意时，才允许处理本地功能分支状态。
+
+### 测试与验证执行经验
+
+- 本项目根 `pom.xml` 的 surefire 默认 `skipTests=true`；不要反复尝试同一个会被跳过的测试命令。
+- gateway 模块 `testCompile` 会编译大量历史测试，且部分历史测试依赖可能缺失；若确认是既有 blocker，记录一次即可，不要重复长时间跑。
+- gateway 的 `@SpringBootTest` 会拉起完整上下文和外部组件，验证 mapper/util 等纯逻辑时优先放到轻量模块或使用不依赖 Spring 的测试。
+- 修复 mapper/util 这类低风险逻辑时，优先执行受影响模块编译，例如 `mvn -pl gds-ticketing-infrastructure,gds-ticketing-business -am "-DskipTests" compile`。
+- 写测试前先确认测试载体能独立编译/执行；如果测试环境本身不可执行，要说明 blocker，并用编译、lint、diff review 作为可验证证据。
+- 对已知失败命令不重复跑；一次确认失败原因后，转向更小范围、更确定的验证方式。
+
+---
+
+## 五、一键脚本参考（zsh，替换 `<FEATURE_BRANCH>`）
+
+```zsh
+branch="feature/20250128_adminOptimization"  # 改为实际分支名
+
+f2b_merge() {
+  local repo="$1"
+  local worktree="$2"
+  local base="$3"
+  local local_branch="$4"
+  local feature="$5"
+  local use_direct_base="${6:-false}"
+
+  cd "$repo" || return 1
+  git push origin "$feature"
+  git fetch origin
+  if [[ ! -d "$worktree" ]]; then
+    if [[ "$use_direct_base" == "true" ]]; then
+      git worktree add "$worktree" "origin/$base"
+    else
+      git worktree add -b "$local_branch" "$worktree" "origin/$base"
+    fi
+  fi
+
+  cd "$worktree" || return 1
+  git rev-parse --show-toplevel; git branch --show-current; git status --short --branch
+  git fetch origin; git pull origin "$base"
+  git branch --show-current; git status --short --branch
+  git merge "origin/$feature"
+  git branch --show-current; git status --short --branch
+  git push origin "HEAD:$base"
+}
+
+f2b_merge "/Users/aaron/IdeaProjects/gds-order-admin-fe" "/Users/aaron/IdeaProjects/gds-order-admin-fe-f2b-base" "develop/base" "f2b-admin-fe-base" "$branch"
+f2b_merge "/Users/aaron/IdeaProjects/gds-order-admin-be" "/Users/aaron/IdeaProjects/gds-order-admin-be-f2b-base" "develop/base_20260421" "f2b-admin-be-base" "$branch"
+# 火车出票：直接 checkout 远端 base 分支到 develop-base worktree（禁止在此目录直接改业务代码）
+f2b_merge "/Users/aaron/IdeaProjects/gds-ticketing-system" "/Users/aaron/IdeaProjects/gds-ticketing-system-develop-base" "develop/base_20260528_bt3" "" "$branch" "true"
+# 汽船出票：checkout 远端 feature/base_v1 到 base-v1 worktree（禁止在此目录直接改业务代码）
+f2b_merge "/Users/aaron/IdeaProjects/gds-bus-ticketing-system" "/Users/aaron/IdeaProjects/gds-bus-ticketing-system-base-v1" "feature/base_v1" "" "$branch" "true"
+```
+
+（执行前请先在各项目功能分支上完成 `git add` 与 `git commit`。火车出票 **`master`**、汽船 **`main`** 均仅通过 GitLab MR 合入；本脚本只做功能分支推送与 **base** 合并推送；MR 需用户主动要求后按 **§2.1 命令行** 创建，**禁止 MCP 建 MR**。）
+
+---
+
+## 六、MR Code Review（GitLab MCP：仅读 MR 与发评论）
+
+本节与 **F2B**、**§2.1 创建 MR** 正交：**创建 MR** 一律 **§2.1 命令行**；本节 **GitLab MCP 仅用于** 拉取 MR/diff、以及在 MR **讨论区发评审意见**。不得用 MCP 代替「用户在网页点合并」；**也不得**只用对话输出长篇评审而不写入 GitLab。
+
+### 1. 触发用语（示例）
+
+用户表达包含以下意图时，适用本节：**MR 评审**、**Code Review**、**给 MR 提意见**、**把评审发到 GitLab**、**用 MCP 评论 MR**、**MRCC**（其中「创建 MR」部分仍走 §2.1）等。
+
+### 2. 必须遵守的行为
+
+| 要求 | 说明 |
+|------|------|
+| **禁止 MCP 创建 MR** | **不得**调用 GitLab MCP 的 **`create_merge_request`**；创建 MR 见 **§2.1**。 |
+| **使用 MCP（读与评）** | 通过 Cursor 已配置的 **GitLab MCP**（如 `user-gitlab-mcp`）调用工具，**读取** MR 与 diff，并向 MR **创建讨论或添加评论**（Note / discussion）。 |
+| **不自动建 MR** | 普通 F2B、提交、首次 push 不创建 MR；用户要求创建 MR 时执行 **§2.1**，不是 MCP。 |
+| **提交到 MR** | 生成评审内容后，须调用 MCP 中适用于「Merge Request 讨论 / Note」的工具，**将评审落到 GitLab MR**，不应只在对话里给出长篇评审。 |
+| **参数来源** | `project_id` 使用 **`owner/project` 路径**（如 `global-rail-gds/gds-ticketing-system`）或 GitLab 数字项目 ID；`merge_request_iid` 为 MR 页面上的 **iid**。用户若只给链接，从中解析项目路径与 `/-/merge_requests/<iid>`。 |
+| **先读后评** | 优先用 MCP 拉取 MR 元数据、diff 或变更文件列表，再生成评审。 |
+
+### 3. 与 F2B、主分支约定
+
+- **火车出票**：MR 目标分支通常为 **`master`**（与 §2 Push 中 `merge_request.target=master` 一致）；评审针对该 MR，不改变「**master 仅通过 MR 合入**」的规则。
+- **汽船出票**：MR 目标分支通常为 **`main`**（`merge_request.target=main`）；F2B 测试 base 为 **`feature/base_v1`**，与 MR 目标不同。
+- **admin-fe / admin-be**：MR 目标分支分别为 **`main`** / **`master`**，与 `git-f2b-branch-policy.mdc` 各项目约定一致。
+- **合并到 base**、**push base** 仍按 §三～§五执行；Code Review **不替代** F2B。
+
+### 4. 评论展示身份与文案
+
+- MCP 使用的 Token 若绑定 **项目 Bot**，GitLab 上评论者将显示为该 Bot，而非个人账号；若需以个人名义评审，应在 GitLab 侧使用个人 Token 配置 MCP（由用户自行调整）。
+- **评审意见的正文语言**：按团队习惯使用中文或英文均可；与仓库「日志与代码中对外字面量使用英文」的规范无冲突。
+
+### 5. 日志（若实现中需打日志）
+
+代理或脚本若在业务代码外打印日志，日志内容使用 **英文**（与 `no-chinese-in-logs-and-code.mdc` 一致）。

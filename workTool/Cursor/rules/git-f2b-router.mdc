@@ -1,0 +1,33 @@
+---
+description: F2B 规则调度。Plan 模式必读 git-f2b-branch-policy；F2B/提交/合 base/MR 时必读 git-f2b-workflow。
+alwaysApply: true
+---
+
+# F2B 规则调度
+
+## Plan 模式（必须）
+
+系统处于 **Plan 模式**，或正在 `CreatePlan` 制定涉及代码交付、多仓库、分支、测试环境合入的计划时：
+
+- **必须先 Read** `.cursor/rules/git-f2b-branch-policy.mdc`（分支规则、F2B 五步、FAT 测试路线参考）。
+- **不要** Read `git-f2b-workflow.mdc`（除非计划本身在设计 MR 命令细节）。
+- 计划中须体现：feature 命名、目标仓库、主分支 vs base 分支、F2B 五步、base worktree merge、单项目还是四项目顺序。
+- 涉及 FAT 验收时，计划中**建议**含测试路线（捞单 → 改造 → 造单，见 branch-policy §三）。
+- **首轮仍须** `rename_chat` 设简体中文标题，见 [`chat-title.mdc`](chat-title.mdc)（与调研/产出计划并行，Plan 模式不豁免）。
+
+## Agent / 执行（按需）
+
+用户意图含 **F2B**、**按 rules 提交**、**提交**、**推送**、**合 base**、**合并到 base**、**创建 MR**、**MRCC**、**Code Review** 等时：
+
+- **必须先 Read** `.cursor/rules/git-f2b-workflow.mdc`（操作手册）。
+- 若分支上下文不清，**同时 Read** `git-f2b-branch-policy.mdc`。
+- 若涉及 **MR 描述**、**补 iDev/飞书链接**、**自动合入/删源分支**、**更新 MR**，**同时 Read** `gitlab-mr-description.mdc`。
+
+纯编码、排障、问答：**两者都不读**。
+
+## 核心禁止项（未 Read 全文时亦须遵守）
+
+- 禁止 **rebase**、**force push**（含 `--force-with-lease`）。
+- 禁止 **MCP 创建 MR**；建 MR 见 `git-f2b-workflow.mdc` §2.1 + `gitlab-mr-description.mdc`（**标题须含 iDev Key**、**description 须答三问**、**须开 auto-merge 与删源分支**）。
+- 禁止在 **base worktree** 写业务代码；禁止火车误合 **master**、汽船误合 **main** 或 **`develop/base`**。
+- 主分支合入一律通过 **GitLab MR**；F2B 合入对象是各项目 **base 测试分支**。

@@ -1,0 +1,17 @@
+---
+description: FAT 测试环境快速生单并成功出票。用户要测试生单、造单、全流程出票、FAT 联调下单、动态搜方案生单时使用；Read 后按 ../skills/fat-create-order/SKILL.md 执行。
+alwaysApply: false
+---
+
+# FAT 快速生单出票
+
+用户在 **FAT/测试环境** 要 **生单、造单、出票全流程、动态搜方案下单** 时：
+
+1. Read `/Users/aaron/IdeaProjects/.cursor/skills/fat-create-order/SKILL.md`
+2. **先 DOT 捞近 2h 子单 status=200** → 抄 supplier / 线路 / channel，方案 ID 现搜
+3. **search → searchDetail → createOrder**；`ticketingOptionSelected` 跟 searchDetail
+4. 全流程用 **TripTrain** 等真实 channel；`local` 仅 IDEA 手动驱动 Processor
+5. 验收：子单 **200** + 可选 completeOrder；测入库查 `supplier_order_passenger`
+6. 失败换 supplier 或克隆成功单参数；供应商细节见 skill 内 `supplier-routes.md`
+
+默认优先 **treit 罗马→米兰**；cerca 不作首测出票首选。

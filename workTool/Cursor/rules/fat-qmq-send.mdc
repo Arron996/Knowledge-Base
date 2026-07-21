@@ -1,0 +1,16 @@
+---
+description: FAT/FWS 测试发 Q（抛 Q、联调 MQ）。用户要发 Q、投 MQ、测 Consumer 时 Read ../skills/fat-qmq-send/SKILL.md 执行；发前检查 topic 白名单与 100051894 producer 权限。
+alwaysApply: false
+---
+
+# FAT 测试环境发 Q
+
+用户要 **发 Q / 抛 Q / 投 MQ / 联调 Consumer**（含 GDPR `del.sync`）时：
+
+1. Read `/Users/aaron/IdeaProjects/.cursor/skills/fat-qmq-send/SKILL.md`
+2. **发前**：确认 topic 在 `InternalQmqSendService` 白名单；**100051894** 已申请该 subject **producer**
+3. **发 Q（首选）**：Captain MCP `get_groups` + `get_pods` → `curl http://<pod-ip>:8080/internal/qmq/health` → `POST /internal/qmq/send`
+4. **禁止默认**尝试未部署的 `qmq-send-function` FaaS 或本地 jar
+5. **发后**：等 5～10s → DOT 查业务表 + bat-clog（appId=100051894）；深度排查 Read `auto-test-log-triage` skill
+
+新 topic：先 QMQ 申请 producer + 代码加白名单 + 发布测试环境，再发 Q。

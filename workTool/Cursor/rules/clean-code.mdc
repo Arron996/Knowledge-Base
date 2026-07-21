@@ -1,0 +1,131 @@
+---
+description: Clean Code — 可读性、结构、命名与行为等价重构规范
+alwaysApply: false
+globs: **/*.java
+---
+
+# Clean Code — 代码生成与修改
+
+本规则侧重**可读性、结构清晰、目录/包与模块化、命名语义化**；**不**以 SonarQube 式静态指标或 Java 版本/语法炫技为主。
+
+## 侧重与排除
+
+- **多体现**：职责与模块边界、包与目录组织、卫语句与提取方法、减嵌套、DRY、语义化封装。
+- **少体现**：「方法不得超过 N 行」「圈复杂度不得超过 M」等数值教条；主动建议升级 Java、`var`/switch 表达式等**与整洁度无关**的语法偏好。
+
+## 修改现有代码时的边界（必须）
+
+- 改动限于**可读性、结构、命名、职责划分**；**不得**改变业务逻辑、分支含义、边界行为、返回值语义、副作用范围与发生时机。
+- **可做**：提取方法、重命名、卫语句/早返回、拆类拆方法、依赖注入与接口抽取、合并重复代码等**行为等价**重构。
+- **不可做**：改条件判断含义、增删分支、改空值/异常处理策略、改执行顺序、在用户未要求下「修」你认为的 bug。
+- 若某原则落地会改变可观测行为：只以注释或对话说明「需与业务确认」，**不要**直接写进代码。
+
+## 核心认识
+
+- 代码主要供**维护**；清晰优于技巧。
+- **自描述**：命名与流程即文档；注释救不了混乱逻辑。
+- **设计模式是手段**：读不懂即失败；抽象只有一个实现时警惕过度设计。
+
+## 通用技巧
+
+- **单一职责**：方法一件事（警惕 `get()` 里改数据）；类职责单一；模块/包边界清晰。
+- **整体框架优先**：先层次与主流程，再填实现；每层职能一眼能懂。
+- **命名**：无歧义、自描述；避免 `temp`、`a`、`b`。
+- **参数**：超过约 4 个警惕；用参数对象 / Value Object / Builder。
+- **方法与类**：按职责或维度拆细，避免臃肿。
+- **主流程粒度一致**：避免「一行调用 + 大段内联」；用 private 方法拉齐粒度。
+- **副作用**：方法可预测；`getXxx` 不改状态；命令（如 `saveUser`）与查询（如 `findById`）分离。
+- **早失败 / 卫语句**：非法参数与边界先校验，立即 return 或抛异常；早返回优于强行单出口。
+- **嵌套**：超过 2～3 层警惕；卫语句、Extract Method、正向条件、小布尔方法或策略扁平化，**纵向展开**。
+- **集合处理：Stream + Util（不偏好 for / for-i 嵌套 if）**：
+  - 对 `List`/`Collection` 做**过滤、校验、映射、分组、汇总、去重、取首/末**时，**不偏好** `for` / `for (int i …)` 里套多层 `if/continue/break`、边遍历边改多个局部变量。
+  - **优先** `stream` 表达数据流（`map` / `filter` / `flatMap` / `collect` / `reduce` / `groupingBy` / `findFirst` 等），业务方法只保留**主流程骨架**。
+  - **可复用、带语义的判断与转换**抽到 **Util**（或同领域已有 Util），Util 内用**卫语句早返回** + `stream().anyMatch/allMatch`；业务侧一行 `if (!XxxUtil.check…)` 或 `XxxUtil.xxx(list)` 即可。
+  - **复用**项目已有 Util 方法，不要另写语义相近的平行 API，避免两套标准并存。
+  - **日志**打在 Util 里、按失败原因区分；业务层不要对所有失败统一打误导性文案。
+  - **例外**：性能热点、必须 `break` 的早停、或 stream 明显更难读时可用 `for`；须能说明理由，且仍避免深嵌套 if。
+
+```java
+// ❌ BAD — for 嵌套 if，校验/过滤/汇总缠在一起
+BigDecimal total = BigDecimal.ZERO;
+String currency = null;
+for (Item item : items) {
+    if (item == null || item.getAmount() == null) {
+        continue;
+    }
+    if (currency == null) {
+        currency = item.getCurrency();
+    } else if (!Objects.equals(currency, item.getCurrency())) {
+        log.warn("mixed currency");
+    }
+    total = total.add(item.getAmount().getPrice());
+}
+
+// ✅ GOOD — stream 取数 + Util 校验，业务只负责聚合赋值
+List<InnerTicketAmount> amounts = items.stream().map(Item::getAmount).toList();
+if (!AmountUtil.checkAmountsValid(amounts)) {
+    return;
+}
+BigDecimal total = amounts.stream().map(InnerTicketAmount::getPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
+String currency = AmountUtil.getCurrency(amounts);
+```
+
+```java
+// ❌ BAD — for-i 嵌套 if 过滤
+List<Order> matched = new ArrayList<>();
+for (int i = 0; i < orders.size(); i++) {
+    Order order = orders.get(i);
+    if (order != null && order.isActive() && order.getStatus() == targetStatus) {
+        matched.add(order);
+    }
+}
+
+// ✅ GOOD — stream 过滤；复杂条件可抽 Util
+List<Order> matched = orders.stream()
+    .filter(OrderUtil::isActiveWithStatus)
+    .filter(order -> order.getStatus() == targetStatus)
+    .toList();
+```
+
+- **DRY**：提取前确认语义与变更原因一致。
+- **命令与查询分离**：同一方法不要既改状态又返回有业务含义的结果。
+- **错误处理**：失败用异常而非含糊错误码；在合适层 catch 并补充上下文；不吞异常。
+- **复杂分支**：用卫语句、提取方法、多态或策略摊薄；用**是否更易懂**判断，而非凑复杂度数值。
+- **依赖**：构造/setter 注入；依赖接口；避免方法内 `new` 协作对象；URL/开关/超时等进配置或命名常量。
+
+## 面向对象与设计
+
+- **数据与行为在一起**：方法若总在操作别类对象，反思归属；模型行为归模型。
+- **static**：留给工具，不承载核心业务。
+- **复杂逻辑**：参数多、分支多可考虑 Method Object，用字段减负参列表。
+- **面向接口**：接口职责清晰；依赖接口类型，实现外置注入。
+- **继承与组合**：继承为扩展；为复用优先组合。
+
+## 复用与结构
+
+- **Extract Method**：重复或相似逻辑 → private 方法。
+- **模板方法**：公共流程上提，差异点抽象方法。
+- **责任链**：相似行为统一接口，多实现放集合。
+- **集合语义化**：有明确语义的 Map/集合封装为类（如 Config、Cache），提供表意方法。
+
+## 执行时底线
+
+- 重构须**行为一致**；不可用「方法行数/圈复杂度必须低于某值」替代思考。
+- 说明问题从**可读性、结构、语义、目录化**出发，避免罗列 Sonar 式条文。
+
+## Java 相关
+
+- **线程池**：使用 `ThreadPoolExecutor`（或等价、配置明确的封装），显式队列上限、`RejectedExecutionHandler`、线程命名与生命周期；**不要** `Executors.newFixedThreadPool` / `newCachedThreadPool` / `newSingleThreadExecutor` 等工厂方法。JDK21版本少用线程池，多用虚拟线程。
+- **简洁**：代码需清晰简洁，非必要不判空，非必要不try-catch，避免过度防御性编码导致代码臃肿。
+- **泛型擦除与重载**：擦除后签名相同的方法**不能**仅靠 `List<实体A>` / `List<实体B>` 区分重载；须用**不同方法名**（如 `filterByBlockInterval`、`filterXByBlockInterval`），公共入口委托到私有泛型实现（如 `applyBlockIntervalFilter`），**不要**与 public 入口同名。
+
+```java
+// ❌ 编译失败：擦除后均为 filterByBlockInterval(List, BlockAlertMethodEnum)
+List<SupplierSubOrder> filterByBlockInterval(List<SupplierSubOrder> items, BlockAlertMethodEnum method);
+List<SupplierSubXOrder> filterByBlockInterval(List<SupplierSubXOrder> items, BlockAlertMethodEnum method);
+
+// ✅ 按实体类型区分方法名，内部共用 private <T> applyXxx(...)
+List<SupplierSubOrder> filterByBlockInterval(...);
+List<SupplierSubXOrder> filterXByBlockInterval(...);
+private <T> List<T> applyBlockIntervalFilter(List<T> items, ...);
+```

@@ -1,0 +1,45 @@
+---
+description: 改大文件/存量类时禁止全文件格式化；须从主分支检出后做最小 diff。编辑火车/汽船出票或 admin-be 的 Java 存量类时遵守。
+alwaysApply: false
+globs:
+  - gds-ticketing-system/**/*.java
+  - gds-bus-ticketing-system/**/*.java
+  - gds-order-admin-be/**/*.java
+---
+
+# 大文件最小 diff
+
+修改**存量大类**（尤其业务 Logic/Service，单文件数百行以上）时，交付物必须是**最小业务 diff**，不得夹带全文件格式化、import 重排、无关重构。
+
+## 必须遵守
+
+1. **从主分支还原后再改**
+   - 火车出票：`git checkout origin/master -- <path>`
+   - 汽船出票：`git checkout origin/main -- <path>`
+   - admin-be：`git checkout origin/master -- <path>`
+   - 仅打本次需求补丁；**不要**在已漂移的工作区版本上继续改。
+
+2. **禁止全文件格式化**
+   - 禁止为「对齐风格」重排整个文件、批量改换行、统一 import 顺序、顺手重构无关方法。
+   - 禁止依赖 IDE 全文件 Format / Optimize Imports 后整文件提交。
+   - 若 pre-commit hook 会对 staged `.java` 全文件跑 formatter 并放大 diff：提交前用 `git diff origin/master --stat <file>` 自检；异常时**先恢复文件再提交**，必要时与用户确认是否 `--no-verify`（不得默认跳过 hook）。
+
+3. **提交前自检**
+
+```zsh
+git diff origin/master --stat -- <file>
+git diff origin/master -- <file>
+```
+
+- 变更行数应与业务改动量级一致（通常数十行内，而非数百行级 import/格式噪声）。
+- 若 stat 出现大量 `+/-` 但业务只改了几处 → **停止提交**，从主分支重新检出再打补丁。
+
+## 允许的最小改动范围
+
+- 本次需求涉及的逻辑块、必要 import、紧邻的 1～2 行上下文调整。
+- 用户**明确要求**的全文件重构或格式化除外。
+
+## 反例（禁止）
+
+- `RefundLogic.java` 改 10 行逻辑，diff 却 +300/-280（全文件格式化）。
+- 未从 `origin/master` 检出，在 feature 分支旧格式版本上修改并带入历史格式漂移。

@@ -1,0 +1,127 @@
+---
+description: F2B 分支规则与交付计划要点。Plan 模式制定交付计划时必须 Read。含分支表、F2B 五步、worktree 约束、FAT 测试路线参考。
+alwaysApply: false
+---
+
+# F2B 分支规则与开发分支流程
+
+本文档由 `git-f2b-router.mdc` 调度；Plan 模式出计划时 Read 本文；执行 git 命令见 `git-f2b-workflow.mdc`。
+
+**标准名称**：**F2B 流程**（Feature to Base，功能分支到测试分支）
+
+**五步标准叫法**：
+
+| 步骤 | 标准名称     | 说明 |
+|------|--------------|------|
+| 1    | 新建分支     | 从主分支拉取 `feature/yyyyMMdd_功能简述` |
+| 2    | 开发/修复    | 在功能分支上改代码（feat / fix） |
+| 3    | 提交推送     | `git add`、`git commit`、`git push`，首次 push 只推送功能分支，不自动创建 MR |
+| 4    | 创建 MR      | 指向主分支的 Merge Request；**标题须含 iDev Key**；仅在用户主动要求创建 MR 时执行 |
+| 5    | 合并到 base  | 本地将功能分支 merge 进测试分支并 push |
+
+默认对 **各相关项目** 依次执行（admin-fe → admin-be → 火车出票 → 汽船出票）。执行细节见 `git-f2b-workflow.mdc` §四。
+
+**MR 与 F2B 的关系（原则）**：F2B 默认只提交、推送功能分支并合入测试分支；MR 用于评审与合入主干，只有用户主动要求创建 MR 或 **MRCC** 时才创建。**禁止**用 GitLab MCP 创建 MR。创建 MR 时 **标题必须包含 iDev issue Key**（格式见 `git-f2b-workflow.mdc` §2.1）。Code Review 发 GitLab 讨论区见 `git-f2b-workflow.mdc` 第六章。
+
+若用户明确 **只对火车出票（gds-ticketing-system）** 执行 F2B：跳过 admin-fe、admin-be、汽船；**§3～§5 操作测试分支 `develop/base_20260528_bt3`，不是 `master`**。
+
+若用户明确 **只对汽船出票（gds-bus-ticketing-system）** 执行 F2B：跳过 admin-fe、admin-be、火车出票；**§3～§5 操作测试分支 `feature/base_v1`，不是 `main`**。**禁止**合入 `develop/base`（旧分叉，DAO 架构与 main/base_v1 不一致）。
+
+## 一、项目与分支约定
+
+| 项目 | 仓库路径（macOS） | 主分支 | Base/测试分支 | 新功能从主分支拉取 |
+|------|-------------------|--------|----------------|---------------------|
+| admin 前端 | `/Users/aaron/IdeaProjects/gds-order-admin-fe` | `main` | `develop/base` | 从 main 创建 feature |
+| admin 后端 | `/Users/aaron/IdeaProjects/gds-order-admin-be` | `master` | `develop/base_20260421` | 从 master 创建 feature |
+| 火车出票 | `/Users/aaron/IdeaProjects/gds-ticketing-system` | `master` | `develop/base_20260528_bt3` | 从 master 创建 feature |
+| 汽船出票 | `/Users/aaron/IdeaProjects/gds-bus-ticketing-system` | `main` | `feature/base_v1` | 从 main 创建 feature |
+
+- **功能分支命名（必须遵守）**：`feature/yyyyMMdd_功能简述`，例如 `feature/20250128_adminOptimization`；不得随意命名。
+- **FE 新功能分支必须从 main 创建，不要从 develop/base 创建。**
+
+### admin 后端（gds-order-admin-be）：`master` 与 base 的分工
+
+| 分支 | 用途 |
+|------|------|
+| **`master`** | 主分支；**合入只通过 GitLab Merge Request**（`feature/*` → `master`）。**禁止**本地 merge 进 `master` 再 `git push origin master`。 |
+| **`develop/base_20260421`** | **Base / 测试分支**；F2B 第 5 步把功能分支 merge 进该分支并 push。 |
+| **`develop/base_260316`** | **旧测试分支**；**禁止**再用于 F2B 合入测试环境。 |
+
+**MR 与 F2B**：测试环境合入 **`develop/base_20260421`**；主干合入走 MR → **`master`**。二者不互相替代。
+
+### 火车出票（gds-ticketing-system）：`master` 与 base 的分工
+
+| 分支 | 用途 |
+|------|------|
+| **`master`** | 主分支；**合入只通过 GitLab Merge Request**（`feature/*` → `master`）。**禁止**本地 merge 进 `master` 再 `git push origin master`。 |
+| **`develop/base_20260528_bt3`** | **Base / 测试分支**；F2B 第 5 步把功能分支 merge 进该分支并 push。 |
+
+**MR 与 F2B**：测试环境合入 **`develop/base_20260528_bt3`**；主干合入走 MR → **`master`**。二者不互相替代。
+
+### 汽船出票（gds-bus-ticketing-system）：`main` 与 `feature/base_v1` 的分工
+
+| 分支 | 用途 |
+|------|------|
+| **`main`** | 主分支；**合入只通过 GitLab Merge Request**（`feature/*` → `main`）。**禁止**本地 merge 进 `main` 再 push。 |
+| **`feature/base_v1`** | **Base / 测试分支**；F2B 第 5 步 merge/cherry-pick 进该分支并 push。 |
+| **`develop/base`** | **非测试分支**；**禁止**用于 F2B 合入测试环境。 |
+
+**MR 与 F2B**：测试环境合入 **`feature/base_v1`**；主干合入走 MR → **`main`**。全量 merge 冲突多时可 cherry-pick 功能相关 commit 到 base_v1 worktree。
+
+### 禁止直接修改 base worktree（必须遵守）
+
+**base worktree** 是独立于主工作区的专用目录，**不是日常开发目录**。功能改动只能通过 **F2B merge** 进入 base，**禁止**在 base worktree 里直接改代码。
+
+| 项目 | base worktree 路径（macOS） | 对应远端 base 分支 |
+|------|----------------------------|-------------------|
+| admin 前端 | `/Users/aaron/IdeaProjects/gds-order-admin-fe-f2b-base` | `develop/base` |
+| admin 后端 | `/Users/aaron/IdeaProjects/gds-order-admin-be-f2b-base` | `develop/base_20260421` |
+| 火车出票 | `/Users/aaron/IdeaProjects/gds-ticketing-system-develop-base` | `develop/base_20260528_bt3` |
+| 汽船出票 | `/Users/aaron/IdeaProjects/gds-bus-ticketing-system-base-v1` | `feature/base_v1` |
+
+**禁止**在 base worktree 中：直接修改业务代码、checkout `feature/*` 做开发、提交功能改动（merge 冲突解决除外）、把 base worktree 当主工作区。
+
+**base worktree 唯一合法用途**（F2B 第 3～5 步）：`fetch`/`pull` base → `merge origin/<FEATURE_BRANCH>` → 冲突解决 commit → `push` base。
+
+**正确流程**：主工作区 `feature/*` 开发并 commit/push → base worktree merge → push base。
+
+## 二、流程概览
+
+1. **Commit**：在各项目功能分支上提交当前更改。
+2. **Push**：推送功能分支；**第一次 push** 只设远程跟踪，不自动创建 MR。
+3. **Checkout base**：更新各项目 base（admin-be **`develop/base_20260421`**，火车 **`develop/base_20260528_bt3`**，汽船 **`feature/base_v1`**，均不是主分支）。
+4. **Merge to base**：将功能分支合并到 base。
+5. **Push base**：推送 base 到远程。
+
+- **分支命名**：`feature/yyyyMMdd_功能简述`。
+- **Git commit**：`commit message` 使用**中文**，简短说明；可加 `feat:` / `fix:` 前缀。
+- **命令连接**：多条 git 命令用**分号 `;`** 连接，不要用 `&&`。
+
+**必须禁用的操作**：
+
+| 禁止操作 | 说明 |
+|----------|------|
+| **git rebase**（含已 push 分支） | 一律使用 **merge**，不用 rebase。 |
+| **git push --force / -f / --force-with-lease** | 禁止改写远程历史。 |
+| **直接向 main / master 推送** | 主分支合入一律通过 GitLab MR。 |
+| **火车本地 merge 进 `master` 再 push** | F2B 合并对象是 **`develop/base_20260528_bt3`**。 |
+| **汽船本地 merge 进 `main` 再 push** | F2B 合并对象是 **`feature/base_v1`**。 |
+| **汽船 F2B 合入 `develop/base`** | 测试 base 为 **`feature/base_v1`**。 |
+| **用 MCP 创建 MR** | 创建 MR 仅用 `git-f2b-workflow.mdc` §2.1 命令行。 |
+| **删除或重置共享分支** | 禁止对 main/master/develop/base 等 `reset --hard`。 |
+| **已 push 分支 amend 后 force push** | 有新修改请新 commit 再 push。 |
+| **直接修改 base worktree 业务代码** | 功能开发必须在主工作区 feature 分支完成。 |
+
+## 三、交付计划 · FAT 测试路线（参考）
+
+涉及代码交付、FAT 验收的计划，除上文 F2B 分支约定外，**建议**写明测试路线（不必写死模板，按场景取舍）：
+
+**测试订单来源（优先级）**：
+
+1. **捞单** — FAT 已有、状态/场景接近的订单（DOT + Admin MCP）
+2. **改造** — 用 refundEvent / Admin 等把接近条件的单推到可测态
+3. **造单** — 前两者不可行时，再写用户新下单
+
+避免未尝试捞单/改造，计划里直接默认「请用户下单」。
+
+计划里可简要写：推荐 `orderId`、主验步骤、断言（DB / 日志 / VC）、1 条回归。捞单细节见 `fat-order-lookup` skill；排障见 `gds-rail-triage` skill。

@@ -1,0 +1,37 @@
+---
+description: 日志与业务代码字符串禁用中文（注释与 Javadoc 可用中文）
+alwaysApply: false
+globs: **/*.java
+---
+
+# 日志与代码文案语言（开发规范）
+
+## 必须使用英文的场景
+
+- **日志**：`log.info` / `log.warn` / `log.error` / `log.debug` 及 `@Slf4j`、`CLogger` 等输出的**消息模板与说明**一律使用英文。
+- **运行时代码中的字符串**：会进入日志、MQ、HTTP、异常信息、监控等的字符串字面量使用英文，例如：
+  - `String.format(...)`、`JsonUtil.toJson` 以外的拼接文案
+  - `throw new BusinessException(...)` / `ErrorCodeEnum` 搭配的用户可见 message（若走英文链路）
+  - 发往下游的消息 `msg`、错误提示常量等
+
+## 允许使用中文的场景
+
+- **单行注释 `//`、块注释、Javadoc**：可使用中文；**方法、类的 Javadoc 说明正文优先使用中文**（与 `ticketing-system-project-conventions.mdc` 一致）。
+
+## 示例
+
+```java
+// Bad
+log.warn("订单不存在，orderId={}", orderId);
+
+// Good
+log.warn("order not found, orderId={}", orderId);
+```
+
+```java
+// Bad — user-facing / MQ body
+String body = String.format("订单号=%s", orderId);
+
+// Good
+String body = String.format("orderId=%s", orderId);
+```

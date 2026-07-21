@@ -1,0 +1,133 @@
+---
+description: 出票系统（Ticketing System）项目概述、模块结构、开发规范与约定
+alwaysApply: false
+globs:
+  - gds-ticketing-system/**
+  - gds-bus-ticketing-system/**
+  - gds-order-admin-be/**
+  - gds-order-admin-fe/**
+---
+
+# 出票系统（Ticketing System）项目规则
+
+## 一、项目概述
+
+- **gds-ticketing-system**：火车出票系统（GDS 出票）。
+- **四个相关项目**：
+  - **admin fe**：admin 操作的前端，调用 admin be。主分支 `main`，测试分支 `develop/base`。
+  - **admin be**：admin 操作的后端，调用出票系统。主分支 `master`，测试分支 `develop/base_20260421`。
+  - **ticketing system**（火车出票）：主分支 `master`，测试分支 `develop/base_20260528_bt3`。
+  - **bus ticketing system**（汽船出票）：`gds-bus-ticketing-system`。主分支 `main`，测试分支 `feature/base_v1`（**不是** `develop/base`）。
+- **命令行**：在 **macOS** 上使用 **zsh** 语法；仓库根目录为 `/Users/aaron/IdeaProjects/`。
+
+---
+
+## 二、项目结构（分层架构）
+
+根包名：`com.ctrip.train.global.rail.gds.ticketing`。
+
+| 模块 | 职责 | 主要目录/包 |
+|------|------|-------------|
+| **gds-ticketing-gateway** | 顶层入口：RPC 实现、HTTP 回调、MQ 消费、请求/响应映射 | `controller`、`rpc`、`mq`、`mapping`、`bean` |
+| **gds-ticketing-business** | 业务逻辑：编排、策略、事件处理、Helper | `logic`、`strategy`、`processor`、`helper`、`event`、`service`、`cache` |
+| **gds-ticketing-domain** | 领域模型与接口：POJO、常量、仓储接口、请求/响应 | `pojo`、`constant`、`repository`、`request`、`response`、`exception`、`metric` |
+| **gds-ticketing-api** | 对外 API 定义：服务接口、请求/响应/常量/回调 | `pojo`、`request`、`response`、`constant`、`callback`、`common` |
+| **gds-ticketing-infrastructure** | 基础设施：配置、仓储实现、代理、MyBatis、状态机、存储、工具 | `config`、`impl`、`repository`、`proxy`、`mybatis`、`statemachine`、`storage`、`utils` |
+| **gds-ticketing-dal** | 数据访问层 | DAL 配置与实现 |
+
+**依赖关系**：gateway → business → domain；business 依赖 api、infrastructure；infrastructure 依赖 domain、dal。API 与 domain 尽量被上层依赖，不依赖其他业务模块。
+
+**各层常见子包**：
+- **config**：QConfig/配置读取类。
+- **constant(s)**：常量类。
+- **metric**：监控与打点。
+- **util(s)**：工具类。
+- **beans**：Spring 配置（如使用）。
+- 启动类：各模块根包下 `*Application.java`（如 `GdsTicketingSystemGatewayApplication`）。
+
+---
+
+## 三、开发规范
+
+### 1. 代码复用与注释
+
+- **优先复用**：编写代码时尽可能复用已有函数、流程，不要重复造轮子。
+- **注释**：类、公开方法需添加注释，使用 **Javadoc** 格式；**方法说明、类说明等注释正文使用中文**（日志与代码中的用户可见英文字符串仍按「日志与字面量英文」规则，见 `no-chinese-in-logs-and-code.mdc`）。
+- **枚举常量**：枚举类型**每个常量**须有 Javadoc，用中文说明用途（对齐《阿里巴巴 Java 开发手册》）；类级注释说明枚举整体职责即可。
+- **注释从简**：优先靠命名、方法拆分和清晰流程表达语义；不要用大段注释解释本可通过重构说清的代码。
+- **只写必要注释**：仅在业务背景、边界条件、约束原因、兼容性处理等“代码本身看不出来”的地方补充说明。
+- **Javadoc 简单直接**：类和方法注释用 1～3 句话说明“做什么、为什么需要”，不要写成长篇设计说明。
+- **少用标签**：非必要不要堆砌 `@param`、`@return`、`@throws`、`@see` 等标签；只有确实能补充关键信息时再写。
+- **不使用 `{@code}`**：Javadoc 正文中禁止使用 `{@code ...}`；需要突出代码字面量时改用 plain 文本或中文表述，避免格式标签堆砌。
+- **少用 `{@link}`**：Javadoc 正文优先用**纯文本**写类名、方法名、枚举名，不要用 `{@link}` / `{@linkplain}`；链接会干扰 IDE「查找引用」「重命名」等判断。确需指向某类型成员字段时，才在极少数场景使用 `{@link 类名#字段名}`，且不要写在枚举常量注释里。
+- **少用格式标签**：非必要不要引入 `<p>`、`<ul>`、`<li>`、`<pre>` 等格式标签，避免把普通注释写成文档页面。
+- **避免重复代码**：不要写“给变量赋值”“判空后返回”这类复述代码表面的注释。
+- **复杂逻辑先重构再注释**：如果注释已经很长，优先考虑提取方法、重命名或拆分流程，而不是继续加注释。
+- **Git 提交**：`commit message` 使用**中文**，简短说明本次改动；各仓库合并到测试分支的流程见 **`git-f2b-branch-policy.mdc`** / 执行见 **`git-f2b-workflow.mdc`**。
+
+### 2. 日志
+
+- 在条件判断、分支、异常处理等**关键节点**插入日志。
+- 使用 **@Slf4j** 或 **CLogger**，与项目现有用法保持一致。
+- **方法入口**：方法开始处打 **log.info**，需包含**方法名**和**入参**（便于排查与追踪）。
+- **方法出口**：方法正常结束处打日志，输出**结果**（如返回值摘要、成功标识等）；异常分支已在关键节点打日志即可，避免敏感信息泄露。
+
+### 3. 隔离规范（README 约定）
+
+- **简单业务**（如透传）：可以不做隔离，Request 层可使用 API 中的 Module，Response 给外部也可不做隔离。
+- **复杂业务**：需要使用 **domain 层**进行隔离，避免把下层结构（如 VC 等）透传到业务内部；内部方法逻辑应使用 domain 层（领域模型、仓储接口等），不直接依赖 dal/api，防止业务结构被下层绑架。
+
+### 4. 测试
+
+- **单测/测试代码**：放在 **gateway 模块** 的 **test 目录** 下（`gds-ticketing-gateway/src/test`）。
+- **测试类写法**：参考同项目下已有测试类，如 gateway 下的 `SupplierConfigProcessorTest`、`OrderDetailSwitchTest`（`@SpringBootTest`、`@RunWith(SpringJUnit4ClassRunner.class)` 等）。
+- **多次测试放一个方法**：同一类场景的多次校验尽量放在**一个测试方法**里，在同一方法内多次调用并断言，避免拆成多个 `@Test` 方法。
+- **依赖直接注入**：使用 **@Resource** 或 **@Autowired** 注入 Bean（如 `AppSettingConfig`），不要手动 `new` 或通过反射注入。
+- **生成单元测试的规则**（为某次改动补单测时遵循）：
+  - 使用 **@SpringBootTest**：测试类加 `@SpringBootTest(classes = GdsTicketingSystemGatewayApplication.class)` 和 `@RunWith(SpringJUnit4ClassRunner.class)`，不强制要求 mock。
+  - **只测变动部分**：单测只覆盖本次新增或修改的逻辑（例如新增的一段过滤、分支判断），不展开测整个类或整条链路。
+  - **尽量简单**：能不用 mock 就不 mock；用真实类型构造入参、执行与 Job/Processor 一致的逻辑片段并断言结果即可（参考 `QueryXTicketResultJobTest` 只测过滤逻辑的写法）。
+
+### 5. 分支与功能开发
+
+- 新功能需**单独建分支**，分支命名：`feature/yyyyMMdd_功能简述`（例如 `feature/20250128_adminOptimization`）。
+- 新功能分支应从**主分支**创建，不要从开发/测试分支创建。
+- 功能开发完成并自测通过后，按 F2B 执行：提交 → push → 在 **base worktree** merge 到测试分支并 push。分支约定见 **`git-f2b-branch-policy.mdc`**，命令见 **`git-f2b-workflow.mdc`**。
+- **禁止**在 base worktree 直接修改业务代码；功能改动只能在主工作区 feature 分支完成，再通过 F2B merge 进入测试 base。
+
+- 创建或更新 MR：**Assignee `zhaorun`**、**标题含 iDev Key**、description **须答三问**（改了什么 / 怎么验证 / 风险与回滚），见 **`gitlab-mr-description.mdc`**；创建流程见 **`git-f2b-workflow.mdc` §2.1**（禁止 MCP 建 MR）。
+
+### 6. 内部逻辑方法的封装与分层依赖
+
+- **内部逻辑封装**：业务内部逻辑方法的封装，**尽量不要直接依赖 DAL 层和 API 层**，而应优先使用项目的 **domain 层**（领域模型、仓储接口、领域服务等）。
+- **原因**：domain 层承载领域概念与接口，便于复用、测试和分层清晰；直接依赖 dal/api 会使业务逻辑与数据访问、对外契约耦合，不利于维护与演进。
+- **实践**：在 business、infrastructure 等模块中编写可复用的内部方法时，入参/出参与依赖尽量基于 domain 的 POJO、repository 接口；对 dal 的访问、对 api 的暴露应集中在边界（如 gateway 或明确的 facade），内部逻辑通过 domain 层编排。
+
+### 7. 阿里巴巴开发手册（必须遵守）
+
+- **总体要求**：开发规范遵循 **《阿里巴巴 Java 开发手册》**（及泰山版等后续版本）的约定，包括命名、格式、异常、并发、注释等。
+- **修改影响其他流程时**：若本次修改**干涉到其他流程或已有逻辑**，应**优先新增**（新方法、新分支、新策略/处理器），而不是在原有流程上直接大改；必要时通过开关或策略路由区分新旧行为，避免牵一发而动全身、回归风险不可控。
+- **示例**：新增一种退款场景时，可新增独立方法或策略类，在入口处按条件分发，而不是在现有退款主流程里堆叠大量 if-else 或直接改通用逻辑。
+
+### 8. 集合处理：Stream + Util（见 `clean-code.mdc`）
+
+- **不偏好** `for` / `for (int i …)` 嵌套多层 `if/continue`，边遍历边改多个局部变量。
+- **优先** `stream` 表达过滤、映射、汇总、分组等数据流；**可复用语义**抽到 Util（卫语句 + `anyMatch/allMatch`），业务方法只保留主流程。
+- **复用**已有 Util，校验/日志在 Util 内按原因区分，业务层不重复打误导性 warn。
+- 金额场景示例：`AmountUtil.checkAmountsValid` + `reduce`；详细正反例见 **`clean-code.mdc`**「集合处理：Stream + Util」小节。
+
+### 9. 对象拷贝与 MapStruct（见 `java-mapstruct-over-beanutils.mdc`）
+
+- DTO / Entity / API 对象之间的**同构字段拷贝**优先简单 **MapStruct**，不用 `BeanUtils.copyProperties`。
+- **新代码**：仅 **单入参 → 单出参**；禁止多参转换、`expression = "java(...)"`、在 `@Mapper` interface 内写 `default`/辅助方法。
+- **复杂转换**（枚举/日期/嵌套组装、需额外上下文）：用 **Assembler / Util**，Mapper 只做简单字段映射；详细正反例见 **`java-mapstruct-over-beanutils.mdc`**。
+
+---
+
+## 四、与 Cursor 协作时的注意点
+
+- 修改或新增逻辑时，先确认模块归属；分支约定见 **`git-f2b-branch-policy.mdc`**，执行 F2B/MR 见 **`git-f2b-workflow.mdc`**。
+- 创建 MR：Assignee `zhaorun`、标题含 iDev Key、description **须答三问**，见 **`gitlab-mr-description.mdc`**；流程见 `git-f2b-workflow.mdc` §2.1。
+- 涉及 Request/Response 与外部或下层系统对接时，遵守上述**隔离规范**，避免直接透传底层结构。
+- 新增或修改 DTO/Entity 拷贝与 `mapping` 包代码时，遵守 **`java-mapstruct-over-beanutils.mdc`**（简单单参 MapStruct，复杂逻辑放 Assembler/Util）。
+- 需要跑测试时，使用 **gateway** 模块下的 test 目录；命令行使用 **zsh**（macOS）。

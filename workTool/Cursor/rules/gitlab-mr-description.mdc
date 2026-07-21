@@ -1,0 +1,222 @@
+---
+description: GitLab MR 完整规范：AI 变更「三问」、标题/description 模板、assignee、自动合入、删源分支、建后核对。创建/更新 MR 时 Read；F2B 命令细节见 git-f2b-workflow.mdc §2.1。
+alwaysApply: false
+---
+
+# GitLab MR 规范
+
+与 **`git-f2b-workflow.mdc` §2.1** 配合：§2.1 含完整 zsh 命令与 F2B 流程；本文是 **MR 必选项 + description 模板** 的速查。
+
+适用仓库：`global-rail-gds` 下四项目（admin-fe、admin-be、火车出票、汽船出票）。
+
+---
+
+## AI 变更「三问」（description 必答）
+
+每次 **AI 辅助变更** 建/更新 MR 时，description 须让 Reviewer **照着看**，不必逐行猜意图。零成本纯约定，章节与三问一一对应：
+
+| 三问 | 对应章节 | 写什么 |
+|------|----------|--------|
+| **1. 改了什么、为什么改**（目标与影响面） | Summary（+ iDev / 飞书技改） | 业务结果、解决什么问题、影响哪些流程；不写文件路径堆砌 |
+| **2. 怎么验证** | Test plan | 已跑命令 / CI / 单测 / FAT 订单号或 URL / 截图路径 |
+| **3. 还有什么遗留风险、怎么回滚** | Risks & Rollback | 未覆盖场景、配置或开关依赖、回滚步骤（revert / 关开关 / 配回退） |
+
+**Agent 行为**：写 description 前先自问三问是否都有答案；缺一项则补全后再建/更新 MR。
+
+---
+
+## 〇、创建 MR 必选项（与 description 同级，均不可省略）
+
+| 项 | 规范 | glab | push options |
+|----|------|------|----------------|
+| **Assignee** | 必须为 **`zhaorun`**（User ID `21135`），否则无法合并 | `--assignee zhaorun` | `-o merge_request.assign=zhaorun` |
+| **删源分支** | 合入后自动删除 feature 分支 | `--remove-source-branch` | `-o merge_request.remove_source_branch` |
+| **自动合入** | CI 通过 **且** 审批满足后自动 merge，无需手点 | `--auto-merge` | `-o merge_request.merge_when_pipeline_succeeds` |
+| **标题 iDev** | 标题最前含 iDev Key，见下文 §一 | `--title "GDS-xxxx feat: ..."` | `-o merge_request.title=...` |
+
+**行为**：GitLab 在 pipeline success + approve 就绪后 **自动合入并删源分支**。
+
+### 建 MR 后必须核对
+
+```zsh
+glab mr view <iid> --repo global-rail-gds/<project>
+```
+
+确认三项均已开启：
+
+- Assignee = `zhaorun`
+- **Remove source branch**（或 `force_remove_source_branch`）
+- **Merge when pipeline succeeds**（auto-merge）
+
+缺一项按下方补救，**不要**为补 flag 删 MR 重建（除非 push options 建 MR 时就没带 flag）。
+
+### 自动合入常见 405
+
+`glab mr create --auto-merge` 或刚建完就 `glab mr merge --auto-merge` 可能 **405 Method Not Allowed**：
+
+- MR **通常已创建成功**，只是 `merge_when_pipeline_succeeds` 仍为 false
+- 根因：当时 **CI 未 success** 或 **审批未满足**
+- **勿反复重试**；等 CI + 审批就绪后再：
+
+```zsh
+glab mr merge <iid> --auto-merge -y --repo global-rail-gds/<project>
+```
+
+或跑 **`.cursor/scripts/mr-auto-merge-approved.sh`**（先 `--dry-run`）：扫描已 approve、CI success、mergeable 的 MR 并 `glab mr merge -d`。
+
+### 禁止项
+
+- **禁止** GitLab MCP **`create_merge_request`** 建 MR（Bot 建的可能无合并权限）
+- 更新 description / assignee 可用 MCP **`edit_merge_request`** 或 `glab mr update`
+
+---
+
+## 一、标题（必须）
+
+| 项 | 规范 |
+|----|------|
+| **iDev Key** | **必须**出现在标题最前，不能只在 description 里写 |
+| **格式** | `{iDevKey} {type}: {简短中文说明}` |
+| **type** | `feat` / `fix` / `refactor` 等，与改动性质一致 |
+| **示例** | `GDS-9552 feat: 退票对齐优化与异常配置默认错误码` |
+
+**iDev Key 来源**（与 §2.1 一致）：① 对话 / 用户指定；② iDev MCP 搜索；③ 无法确定时**先问用户**。
+
+**Assignee**：见上文 **§〇**，必须为 `zhaorun`。
+
+---
+
+## 二、Description 结构（按顺序）
+
+使用 **GitLab Flavored Markdown**。章节名固定；**Summary、Test plan、Risks & Rollback 三节必填**（三问对应节不可省略）；iDev / 飞书技改按有无内容取舍。
+
+```markdown
+## Summary
+- （bullet）本次改动的**业务结果**，按功能点拆分，一句一条
+- 写「做了什么、为什么改、影响哪些流程」，不写文件路径堆砌
+
+## iDev
+- [{iDevKey} {卡标题}]({iDev链接})（父需求 {父Key}，无父卡则省略括号）
+
+## 飞书技改
+- [{文档标题}]({飞书 wiki 链接})
+
+## Test plan
+- [x] 已验证项（环境 + 订单号 / 页面路径 + 预期）
+- [ ] 待审批合入后验证项
+
+## Risks & Rollback
+- **风险**：未覆盖场景、配置/开关依赖；确无额外风险写「无额外风险」
+- **回滚**：revert 本 MR / 关 QConfig 开关 / 配置回退步骤（写可执行的一句）
+```
+
+### 各节说明
+
+| 章节 | 必填 | 内容要点 |
+|------|------|----------|
+| **Summary** | 是（三问 ①） | 评审人 30 秒内能看懂的范围；多项改动用 bullet，含后续补丁（如 bugfix）也补一条 |
+| **iDev** | 有卡则必填 | **Markdown 链接**，不要只写裸 Key；链接形如 `https://idev2.ctripcorp.com/issueDetail/{Key}` |
+| **飞书技改** | 技改类建议写 | 对话里已建飞书文档则挂上；纯 hotfix 无文档可省略整节 |
+| **Test plan** | 是（三问 ②） | 勾选清单；FAT 写订单号或 URL；单测写 `npm test` / `mvn test`；有截图注明路径或贴图 |
+| **Risks & Rollback** | 是（三问 ③） | **风险** + **回滚** 各至少一条；纯逻辑修复可写「无额外风险」+「revert 本 MR」 |
+
+### 不要写什么
+
+- 不要把 commit hash 列表当 Summary（除非解释「补回被覆盖的 fix」等背景）
+- 不要用 description 替代标题里的 iDev Key
+- 不要堆无关历史 MR / 分支说明
+
+---
+
+## 三、完整示例（admin-fe）
+
+**标题：** `GDS-9552 feat: 退票对齐优化与异常配置默认错误码`
+
+**Description：**
+
+```markdown
+## Summary
+- Ticket Log 退票对齐四项优化：uktis admin 跳过对齐、自动关分页、refundFlowType 标签、过滤 refundEvent（排除 type=4）
+- 有效行程同 OD 多乘客合并
+- 异常配置新建时标准错误码默认 100007
+- 大整数预处理修复：不破坏字符串内逗号拼接 ticketId，修复退票对齐 Apply response 解析失败
+
+## iDev
+- [GDS-9552 Ticket Log 退票对齐四项优化](https://idev2.ctripcorp.com/issueDetail/GDS-9552)（父需求 GDS-9247）
+
+## 飞书技改
+- [票台7月技改 - Ticket Log 退票对齐四项优化](https://www.feishu.cn/wiki/ZjMaw2KntikM0KkuLeocZp0fnac)
+
+## Test plan
+- [x] FAT Ticket Log：`1134745943499604` 退票对齐跳过 uktis admin
+- [x] FAT：`1691118896081539` Normal 退票对齐
+- [x] FAT：`1359066729525601` 过滤退票 + 退票对齐 Apply 解析
+- [x] 异常配置新建默认 100007
+- [x] npm test 通过
+
+## Risks & Rollback
+- **风险**：uktis admin 以外渠道退票对齐行为未改；大整数修复仅覆盖 ticketId 逗号拼接场景
+- **回滚**：revert 本 MR；异常配置默认值仅影响新建草稿，已发布配置不受影响
+```
+
+---
+
+## 四、创建 / 更新命令
+
+### 创建（glab，分支已 push）
+
+description 用 **HEREDOC**，结构与上文一致：
+
+```zsh
+glab mr create --repo global-rail-gds/gds-order-admin-fe \
+  --target-branch main \
+  --assignee zhaorun \
+  --remove-source-branch \
+  --auto-merge \
+  --title "GDS-9552 feat: 简短中文标题" \
+  --description "$(cat <<'EOF'
+## Summary
+- ...
+
+## iDev
+- [GDS-9552 ...](https://idev2.ctripcorp.com/issueDetail/GDS-9552)
+
+## 飞书技改
+- [...](https://www.feishu.cn/wiki/...)
+
+## Test plan
+- [ ] ...
+
+## Risks & Rollback
+- **风险**：...
+- **回滚**：...
+
+EOF
+)"
+```
+
+火车 / admin-be 将 `--target-branch` 改为 **`master`**，`--repo` 换对应项目。`--remove-source-branch` 与 `--auto-merge` **不可省略**。建完后 `glab mr view` 核对，见 **§〇**。
+
+### 更新已有 MR
+
+```zsh
+glab mr update <iid> --repo global-rail-gds/gds-order-admin-fe \
+  --description "$(cat <<'EOF'
+...同上结构...
+EOF
+)"
+```
+
+仅改标题：`glab mr update <iid> --title "GDS-xxxx fix: ..."`。  
+也可用 GitLab MCP **`edit_merge_request`** 更新 `description`（**禁止**用 MCP **创建** MR）。
+
+---
+
+## 五、与 F2B 的分工
+
+| 动作 | 分支 | 文档 |
+|------|------|------|
+| FAT 测试合入 | 各项目 **base 测试分支** | `git-f2b-workflow.mdc` §3～§5 |
+| 主分支合入 | **main / master** | 本文 + §2.1 **MR** |
+
+同一功能可先 F2B 到 base 验证，再建 MR 合 main/master；MR description 的 Test plan 应区分 FAT 已测与合 main 后待办；**Risks & Rollback** 须写清 base 与主分支合入后的差异风险（如有）。
