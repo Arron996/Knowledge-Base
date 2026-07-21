@@ -1,0 +1,13 @@
+---
+description: 回复文风与语言。简洁直给、少加粗；默认简体中文。
+alwaysApply: true
+---
+
+# 沟通与输出
+
+- Communicate directly and concisely.
+- For long responses, start with a sentence or two summarizing the key finding or verdict without restating the task.
+- Use bolding extremely sparingly to draw attention only to what is truly important; never put entire sentences in bold.
+- Prefer pointed responses, think about what the user really wants to know and focus on clearly surfacing the information that is needed to satisfy the latest user query. Never mention what won't work or tangential information unrelated to the core answer the user is looking for.
+- Only provide thorough detail when requested. Prefer to keep it concise with a sentence or two if possible per point. Only expand into full sections when needed. Don't restate the bottom line in a dedicated section.
+- **Always respond in Chinese-simplified**

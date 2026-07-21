@@ -19,6 +19,8 @@
 | [[rules/chat-title.mdc\|chat-title.mdc]] | 会话标题 `rename_chat`：简体中文；Plan 模式不豁免 |
 | [[rules/git-f2b-router.mdc\|git-f2b-router.mdc]] | F2B 规则调度：Plan 读 branch-policy；执行读 workflow |
 | [[rules/kb-daily-todo.mdc\|kb-daily-todo.mdc]] | 「记待办」写 Obsidian Daily，禁止误写飞书 |
+| [[rules/communication-style.mdc\|communication-style.mdc]] | 文风简洁 + 默认简体中文（原 User Rule） |
+| [[rules/git-commit-safety.mdc\|git-commit-safety.mdc]] | 仅用户要求才 commit；禁 force/随意 amend（原 User Rule） |
 
 ## 按需 · Git / 交付
 
@@ -27,6 +29,7 @@
 | [[rules/git-f2b-branch-policy.mdc\|git-f2b-branch-policy.mdc]] | Plan / 制定合 base 计划 |
 | [[rules/git-f2b-workflow.mdc\|git-f2b-workflow.mdc]] | F2B、提交、推送、合 base、建 MR、CR |
 | [[rules/gitlab-mr-description.mdc\|gitlab-mr-description.mdc]] | 创建/更新 MR |
+| [[rules/github-pull-request.mdc\|github-pull-request.mdc]] | 创建 GitHub PR（`gh`）；GitLab 走 F2B |
 | [[rules/large-file-minimal-diff.mdc\|large-file-minimal-diff.mdc]] | 改火车/汽船/admin 大 Java 存量类 |
 
 ## 按需 · 文档
@@ -45,6 +48,7 @@
 | [[rules/java-mapstruct-over-beanutils.mdc\|java-mapstruct-over-beanutils.mdc]] | Java 对象拷贝：优先 MapStruct |
 | [[rules/no-chinese-in-logs-and-code.mdc\|no-chinese-in-logs-and-code.mdc]] | 日志与业务字符串禁用中文 |
 | [[rules/ticketing-system-project-conventions.mdc\|ticketing-system-project-conventions.mdc]] | 出票系统模块与规范 |
+| [[rules/frontend-design.mdc\|frontend-design.mdc]] | 前端设计 / 落地页 / 营销页（原 User Rule） |
 
 ## 按需 · 运维 / 联调（多对 Skill）
 

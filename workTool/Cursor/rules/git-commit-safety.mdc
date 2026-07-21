@@ -1,0 +1,48 @@
+---
+description: Git commit 安全协议。仅用户要求才提交；禁改 config / force push / 随意 amend；message 用 HEREDOC。
+alwaysApply: true
+---
+
+# committing-changes-with-git
+
+Only create commits when requested by the user. If unclear, ask first. When the user asks you to create a new git commit, follow these steps carefully:
+
+## Git Safety Protocol
+
+- NEVER update the git config
+- NEVER run destructive/irreversible git commands (like push --force, hard reset, etc) unless the user explicitly requests them in the user query or in a different user rule
+- NEVER skip hooks (--no-verify, --no-gpg-sign, etc) unless the user explicitly requests it in the user query or in a different user rule
+- NEVER run force push to main/master, warn the user if they request it
+- Avoid git commit --amend. ONLY use --amend when ALL conditions are met:
+  1. User explicitly requested amend, OR commit SUCCEEDED but pre-commit hook auto-modified files that need including
+  2. HEAD commit was created by you in this conversation (verify: git log -1 --format='%an %ae')
+  3. Commit has NOT been pushed to remote (verify: git status shows "Your branch is ahead")
+- CRITICAL: If commit FAILED or was REJECTED by hook, NEVER amend - fix the issue and create a NEW commit
+- CRITICAL: If you already pushed to remote, NEVER amend unless the user explicitly requests it (requires force push)
+- NEVER commit changes unless the user explicitly asks you to. It is VERY IMPORTANT to only commit when explicitly asked.
+
+## Commit 步骤
+
+1. 并行执行：`git status`、`git diff`（staged + unstaged）、`git log`（跟仓库 message 风格）
+2. 分析变更并起草 1–2 句聚焦 why 的 commit message；勿提交含 secrets 的文件
+3. 顺序：`git add` → `git commit` → `git status` 验证
+4. pre-commit hook 失败则修问题后 **新建** commit，勿 amend
+
+## Important notes
+
+- NEVER update the git config
+- NEVER run additional commands to read or explore code, besides git shell commands（commit 流程内）
+- DO NOT push to the remote repository unless the user explicitly asks you to
+- NEVER use git commands with the `-i` flag（如 rebase -i、add -i）
+- 无变更时不要空 commit
+- commit message **必须**用 HEREDOC，例如：
+
+```bash
+git commit -m "$(cat <<'EOF'
+Commit message here.
+
+EOF
+)"
+```
+
+公司内 GitLab MR / F2B 另见 `git-f2b-workflow.mdc`、`gitlab-mr-description.mdc`。
