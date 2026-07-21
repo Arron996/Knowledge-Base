@@ -1,0 +1,32 @@
+workTool/Cursor/rules/github-pull-request.mdc
+  ai_agent 1-34
+workTool/Cursor/rules/communication-style.mdc
+  ai_agent 1-13
+workTool/Cursor/UserRules.md
+  s_f35473992b9c95::t_5d2a7b369a0e49 1,3-5,9,11-18,20,22
+workTool/Cursor/rules/git-commit-safety.mdc
+  ai_agent 1-48
+workTool/Cursor/rules/frontend-design.mdc
+  ai_agent 1-29
+workTool/Cursor/rules/idev2-mcp.mdc
+  ai_agent 36-40,51-52
+workTool/Cursor/Rules.md
+  s_f35473992b9c95::t_0fc2ff723b5285 22-23,32
+  s_f35473992b9c95::t_453d1e729af0d2 51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.35-trip",
+  "base_commit_sha": "cf7e8e98b73c8136c6e5be1a7635bb1a05b33579",
+  "prompts": {},
+  "sessions": {
+    "s_f35473992b9c95": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8960a32a-7990-4e7b-a770-e242d94f835e",
+        "model": "default"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
