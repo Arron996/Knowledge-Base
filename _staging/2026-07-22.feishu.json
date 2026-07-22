@@ -1,0 +1,72 @@
+{
+  "date": "2026-07-22",
+  "collectedAt": "2026-07-22T19:27:19+08:00",
+  "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+  "createdToday": [
+    {
+      "id": "TnsBw1bdViZig4k6WNEciBD4nlh",
+      "title": "二期：Decide 横切门禁与范围",
+      "url": "https://trip.larkenterprise.com/wiki/TnsBw1bdViZig4k6WNEciBD4nlh",
+      "docType": "DOCX",
+      "createTime": "2026-07-22T11:00+08:00",
+      "updateTime": "2026-07-22T11:03+08:00"
+    }
+  ],
+  "editedTodayOnly": [
+    {
+      "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "title": "异常配置智能助手（Baiji SOA + Skill）",
+      "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T10:35+08:00",
+      "updateTime": "2026-07-22T17:13+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "title": "票台 Arex 覆盖进度",
+      "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "docType": "DOCX",
+      "createTime": "2026-07-10T15:19+08:00",
+      "updateTime": "2026-07-22T10:04+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "touchedToday": [
+    {
+      "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "title": "异常配置智能助手（Baiji SOA + Skill）",
+      "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+      "docType": "DOCX",
+      "createTime": "2026-07-20T10:35+08:00",
+      "updateTime": "2026-07-22T17:13+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    },
+    {
+      "id": "TnsBw1bdViZig4k6WNEciBD4nlh",
+      "title": "二期：Decide 横切门禁与范围",
+      "url": "https://trip.larkenterprise.com/wiki/TnsBw1bdViZig4k6WNEciBD4nlh",
+      "docType": "DOCX",
+      "createTime": "2026-07-22T11:00+08:00",
+      "updateTime": "2026-07-22T11:03+08:00"
+    },
+    {
+      "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "title": "票台 Arex 覆盖进度",
+      "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+      "docType": "DOCX",
+      "createTime": "2026-07-10T15:19+08:00",
+      "updateTime": "2026-07-22T10:04+08:00",
+      "note": "非今日创建，今日编辑/校订"
+    }
+  ],
+  "summary": {
+    "createdCount": 1,
+    "editedOnlyCount": 2,
+    "touchedCount": 3
+  },
+  "queryNotes": {
+    "createdFilter": "create_time=[2026-07-22, 2026-07-22]",
+    "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-22"
+  }
+}
