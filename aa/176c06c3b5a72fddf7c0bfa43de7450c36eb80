@@ -1,0 +1,19 @@
+Daily/2026-07-22.md
+  s_1def61f15301c3::t_e8fcb77842fb6f 13,17-23,25,29,38-41,57-121,123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.35-trip",
+  "base_commit_sha": "aa176c06c3b5a72fddf7c0bfa43de7450c36eb80",
+  "prompts": {},
+  "sessions": {
+    "s_1def61f15301c3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f8986-7e71-70e0-a00c-4ef7dbd91d34",
+        "model": "gpt-5.4"
+      },
+      "human_author": "zhaorun <zhaorun@trip.com>"
+    }
+  }
+}
