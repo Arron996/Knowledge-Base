@@ -1,0 +1,357 @@
+{
+  "date": "2026-07-23",
+  "collectedAt": "2026-07-23T19:14:47+08:00",
+  "cursorChats": [
+    {
+      "chatId": "78cdbd11-406c-4529-9194-1229c2387fd0",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/S47DwiEc7iC4k7kj5dacW1KYnZb 这个缺陷你能修下吗",
+      "modifiedAt": "2026-07-23T19:11:14+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/78cdbd11-406c-4529-9194-1229c2387fd0/78cdbd11-406c-4529-9194-1229c2387fd0.jsonl"
+    },
+    {
+      "chatId": "669cbb0d-aff6-4c38-9ab5-8e34c4fe66a6",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "这个会话开始ti 的delayRepay 需求https://idev2.ctripcorp.com/team/10002849/issue/1152?issueKey=GDS-9172 这是供应的契约 https://trip.lark…",
+      "modifiedAt": "2026-07-23T18:51:18+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/669cbb0d-aff6-4c38-9ab5-8e34c4fe66a6/669cbb0d-aff6-4c38-9ab5-8e34c4fe66a6.jsonl"
+    },
+    {
+      "chatId": "3514ab74-16e7-4e0e-9f90-980a1947c215",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "https://trip.larkenterprise.com/wiki/WgLPwWy4Pi9A1XkbkfGcNDt1nje?from=space_search 看下会这个 之前不是说要做个异常配置+供应商配置 火车票+汽船的 ai工…",
+      "modifiedAt": "2026-07-23T17:17:08+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/3514ab74-16e7-4e0e-9f90-980a1947c215/3514ab74-16e7-4e0e-9f90-980a1947c215.jsonl"
+    },
+    {
+      "chatId": "d251e380-cdf6-4c64-8179-ea6dad35f24e",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "你好",
+      "modifiedAt": "2026-07-23T16:45:56+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/d251e380-cdf6-4c64-8179-ea6dad35f24e/d251e380-cdf6-4c64-8179-ea6dad35f24e.jsonl"
+    },
+    {
+      "chatId": "a47c1a20-e0b0-4d14-9e60-46ffb8e60ee5",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "https://trip.larkenterprise.com/wiki/WgLPwWy4Pi9A1XkbkfGcNDt1nje?from=space_search 看下会这个 之前不是说要做个异常配置+供应商配置 火车票+汽船的 ai工…",
+      "modifiedAt": "2026-07-23T16:44:16+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/a47c1a20-e0b0-4d14-9e60-46ffb8e60ee5/a47c1a20-e0b0-4d14-9e60-46ffb8e60ee5.jsonl"
+    },
+    {
+      "chatId": "c155c3da-2877-4d72-a555-38026c911aff",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc 你把规则相关的章节 和 测试相关的单独抽出来作为子文档 后面很多章节不要放主文档",
+      "modifiedAt": "2026-07-23T14:32:48+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/c155c3da-2877-4d72-a555-38026c911aff/c155c3da-2877-4d72-a555-38026c911aff.jsonl"
+    },
+    {
+      "chatId": "c8e4119e-bbf7-4b02-9b16-be3e4f28e152",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "票台-vc契约改造 -- X 产品部分 现在有个技改需求，vc契约改造， x产品 生单出票 就是走的CreateX那一套，先帮我分析一下 因为p2p也契约改造差不多完了，",
+      "modifiedAt": "2026-07-23T14:16:38+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/c8e4119e-bbf7-4b02-9b16-be3e4f28e152/c8e4119e-bbf7-4b02-9b16-be3e4f28e152.jsonl"
+    },
+    {
+      "chatId": "3534efcd-a7bb-4c48-901f-0b091636abd1",
+      "project": "Users-aaron-IdeaProjects",
+      "title": "帮我看飞书文档，我记得有个教给应用开arex 流量回放功能的文档，好像是我写的，在票台文档里面 arex",
+      "modifiedAt": "2026-07-23T13:50:30+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects/agent-transcripts/3534efcd-a7bb-4c48-901f-0b091636abd1/3534efcd-a7bb-4c48-901f-0b091636abd1.jsonl"
+    },
+    {
+      "chatId": "d982a87f-d563-4e9a-ac12-704fd1534f38",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "33805286 skyEye eventId 你能查到指定的空指针trace吗",
+      "modifiedAt": "2026-07-23T11:24:40+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/d982a87f-d563-4e9a-ac12-704fd1534f38/d982a87f-d563-4e9a-ac12-704fd1534f38.jsonl"
+    },
+    {
+      "chatId": "bbf6c9db-bee0-4306-8b33-1fc9985c6190",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "obtainTicket 有个问题 要修，就是orderdetail 异常码没能正确抛出来导致走不到指定的异常 https://bat.fx.ctripcorp.com/trace/100051894-0a0e422a-495770-37…",
+      "modifiedAt": "2026-07-23T11:12:32+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/bbf6c9db-bee0-4306-8b33-1fc9985c6190/bbf6c9db-bee0-4306-8b33-1fc9985c6190.jsonl"
+    },
+    {
+      "chatId": "827bb0dc-081a-45e1-af10-73dd392b1e37",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "https://agentark.release.ctripcorp.com/mcps/7c47500f-0806-4857-9fed-740febe15f38配置一下这个mcp",
+      "modifiedAt": "2026-07-23T10:34:24+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/827bb0dc-081a-45e1-af10-73dd392b1e37/827bb0dc-081a-45e1-af10-73dd392b1e37.jsonl"
+    },
+    {
+      "chatId": "3484dbe0-379d-402e-b224-1fde15dbe08c",
+      "project": "Users-aaron-IdeaProjects-gds-ticketing-system",
+      "title": "https://trip.larkenterprise.com/wiki/WgLPwWy4Pi9A1XkbkfGcNDt1nje?from=space_search 看下会这个 之前不是说要做个异常配置+供应商配置 火车票+汽船的 ai工…",
+      "modifiedAt": "2026-07-23T10:13:08+08:00",
+      "transcript": "/Users/aaron/.cursor/projects/Users-aaron-IdeaProjects-gds-ticketing-system/agent-transcripts/3484dbe0-379d-402e-b224-1fde15dbe08c/3484dbe0-379d-402e-b224-1fde15dbe08c.jsonl"
+    }
+  ],
+  "plans": [
+    {
+      "file": "异常配置fat全修_c3bfe9e0.plan.md",
+      "title": "异常配置fat全修",
+      "modifiedAt": "2026-07-23T19:10:45+08:00"
+    }
+  ],
+  "git": [
+    {
+      "repo": "gds-order-admin-be",
+      "commits": [
+        {
+          "hash": "e2e7210f",
+          "message": "fix: RETRY 仅强制 maxRetryTimes+retryInterval，finalProcessType 可选"
+        },
+        {
+          "hash": "19e9bb71",
+          "message": "fix: 对齐 larkbot decide（preferred 标准码 + 宽行不挡 CREATE）"
+        },
+        {
+          "hash": "2b899c7a",
+          "message": "refactor: bizLine 解析统一到 BizLineType.fromCode"
+        },
+        {
+          "hash": "b4daa2fb",
+          "message": "feat: 异常配置 Baiji SOA 合产（仅 list/decide/saveDraft/submit）"
+        }
+      ]
+    },
+    {
+      "repo": "gds-ticketing-system",
+      "commits": [
+        {
+          "hash": "ca2e181881",
+          "message": "fix: orderDetail 空响应默认 CALL_SUPPLIER_ERROR(100007)"
+        },
+        {
+          "hash": "f8a6ac16f6",
+          "message": "fix: getCode 为 int，去掉错误的 null 判断"
+        },
+        {
+          "hash": "6a05cd4125",
+          "message": "fix: obtainTicket 透传 orderDetail 失败异常码"
+        }
+      ]
+    }
+  ],
+  "idev2": {
+    "date": "2026-07-23",
+    "collectedAt": "2026-07-23T19:14:24+08:00",
+    "query": {
+      "employeeId": "TR043507",
+      "createdTimeStart": 1784736000000,
+      "createdTimeEnd": 1784822399999,
+      "strategy": "myIssue=executiveObj.id=employee; createdToday(今日创建且指派给我); delegatedToday(我创建指派他人,排除); assignedTodayOnly(他人创建今日指派给我); updatedTodayOnly(指派给我且今日lastUpdatedTime)"
+    },
+    "createdToday": [],
+    "delegatedToday": [],
+    "assignedTodayOnly": [
+      {
+        "key": "GDS-10065",
+        "title": "英铁LNER-Delay Repay自动赔款--票台",
+        "status": "DOING",
+        "parent": "GDS-9891",
+        "note": "他人创建，今日指派 TR043507"
+      }
+    ],
+    "updatedTodayOnly": [
+      {
+        "key": "GDS-10173",
+        "title": "GDS-10173 BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+        "status": "DONE",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日有进展（指派给我）"
+      },
+      {
+        "key": "GDS-10236",
+        "title": "异常配置智能助手：Baiji SOA + Skill（一期）",
+        "status": "开发中",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日有进展（指派给我）"
+      },
+      {
+        "key": "GDS-9787",
+        "title": "票台项目增加 arex 覆盖",
+        "status": "DONE",
+        "parent": "GDS-9247",
+        "note": "非今日创建，今日有进展（指派给我）"
+      },
+      {
+        "key": "GDS-10174",
+        "title": "BlockAlert 卡单告警增强 DELAY_REPAY Pass退票",
+        "status": "DONE",
+        "parent": "GDS-10173",
+        "note": "非今日创建，今日有进展（指派给我）"
+      },
+      {
+        "key": "GDS-10181",
+        "title": "【GDPR】X通票+汽船删除通知补充",
+        "status": "DONE",
+        "parent": "GDS-8745",
+        "note": "非今日创建，今日有进展（指派给我）"
+      },
+      {
+        "key": "GDS-10237",
+        "title": "异常配置智能助手：Baiji SOA + Skill（一期只读已落地）",
+        "status": "DOING",
+        "parent": "GDS-10236",
+        "note": "非今日创建，今日有进展（指派给我）"
+      }
+    ],
+    "summary": {
+      "createdCount": 0,
+      "delegatedCount": 0,
+      "assignedOnlyCount": 1,
+      "updatedOnlyCount": 6,
+      "totalDistinct": 7
+    }
+  },
+  "feishu": {
+    "date": "2026-07-23",
+    "collectedAt": "2026-07-23T19:14:17+08:00",
+    "ownerOpenId": "ou_e9ac034797f74c9a496ed81ecae20d03",
+    "createdToday": [
+      {
+        "id": "S47DwiEc7iC4k7kj5dacW1KYnZb",
+        "title": "FAT 缺陷清单（2026-07-23）",
+        "url": "https://trip.larkenterprise.com/wiki/S47DwiEc7iC4k7kj5dacW1KYnZb",
+        "docType": "DOCX",
+        "createTime": "2026-07-23T17:08+08:00",
+        "updateTime": "2026-07-23T18:59+08:00"
+      },
+      {
+        "id": "PGPuwahx4i5pv2kL73GcOKCBnDg",
+        "title": "FAT 测试用例与样例",
+        "url": "https://trip.larkenterprise.com/wiki/PGPuwahx4i5pv2kL73GcOKCBnDg",
+        "docType": "DOCX",
+        "createTime": "2026-07-23T14:23+08:00",
+        "updateTime": "2026-07-23T17:09+08:00"
+      },
+      {
+        "id": "VCZwwfLwViOl2ukNMA1cxXbenjh",
+        "title": "配置与编排规则",
+        "url": "https://trip.larkenterprise.com/wiki/VCZwwfLwViOl2ukNMA1cxXbenjh",
+        "docType": "DOCX",
+        "createTime": "2026-07-23T14:22+08:00",
+        "updateTime": "2026-07-23T15:28+08:00"
+      }
+    ],
+    "editedTodayOnly": [
+      {
+        "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "title": "异常配置智能助手（Baiji SOA + Skill）",
+        "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "docType": "DOCX",
+        "createTime": "2026-07-20T10:35+08:00",
+        "updateTime": "2026-07-23T17:09+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "TnsBw1bdViZig4k6WNEciBD4nlh",
+        "title": "二期：Decide 横切门禁与范围",
+        "url": "https://trip.larkenterprise.com/wiki/TnsBw1bdViZig4k6WNEciBD4nlh",
+        "docType": "DOCX",
+        "createTime": "2026-07-22T11:00+08:00",
+        "updateTime": "2026-07-23T14:43+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-23T13:50+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "touchedToday": [
+      {
+        "id": "S47DwiEc7iC4k7kj5dacW1KYnZb",
+        "title": "FAT 缺陷清单（2026-07-23）",
+        "url": "https://trip.larkenterprise.com/wiki/S47DwiEc7iC4k7kj5dacW1KYnZb",
+        "docType": "DOCX",
+        "createTime": "2026-07-23T17:08+08:00",
+        "updateTime": "2026-07-23T18:59+08:00"
+      },
+      {
+        "id": "PGPuwahx4i5pv2kL73GcOKCBnDg",
+        "title": "FAT 测试用例与样例",
+        "url": "https://trip.larkenterprise.com/wiki/PGPuwahx4i5pv2kL73GcOKCBnDg",
+        "docType": "DOCX",
+        "createTime": "2026-07-23T14:23+08:00",
+        "updateTime": "2026-07-23T17:09+08:00"
+      },
+      {
+        "id": "EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "title": "异常配置智能助手（Baiji SOA + Skill）",
+        "url": "https://trip.larkenterprise.com/wiki/EXE3wLfLbi6qlTkxb5ccyQREnoc",
+        "docType": "DOCX",
+        "createTime": "2026-07-20T10:35+08:00",
+        "updateTime": "2026-07-23T17:09+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "VCZwwfLwViOl2ukNMA1cxXbenjh",
+        "title": "配置与编排规则",
+        "url": "https://trip.larkenterprise.com/wiki/VCZwwfLwViOl2ukNMA1cxXbenjh",
+        "docType": "DOCX",
+        "createTime": "2026-07-23T14:22+08:00",
+        "updateTime": "2026-07-23T15:28+08:00"
+      },
+      {
+        "id": "TnsBw1bdViZig4k6WNEciBD4nlh",
+        "title": "二期：Decide 横切门禁与范围",
+        "url": "https://trip.larkenterprise.com/wiki/TnsBw1bdViZig4k6WNEciBD4nlh",
+        "docType": "DOCX",
+        "createTime": "2026-07-22T11:00+08:00",
+        "updateTime": "2026-07-23T14:43+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      },
+      {
+        "id": "AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "title": "票台 Arex 覆盖进度",
+        "url": "https://trip.larkenterprise.com/wiki/AcHMwJrpHi2gZvkrNXncQUGIn1b",
+        "docType": "DOCX",
+        "createTime": "2026-07-10T15:19+08:00",
+        "updateTime": "2026-07-23T13:50+08:00",
+        "note": "非今日创建，今日编辑/校订"
+      }
+    ],
+    "summary": {
+      "createdCount": 3,
+      "editedOnlyCount": 3,
+      "touchedCount": 6
+    },
+    "queryNotes": {
+      "createdFilter": "create_time=[2026-07-23, 2026-07-23]",
+      "editedFilter": "sort_rule=EDIT_TIME + update_time 落在 2026-07-23"
+    }
+  },
+  "gitlab": {
+    "date": "2026-07-23",
+    "collectedAt": "2026-07-23T19:14:23+08:00",
+    "username": "zhaorun",
+    "mergedToday": [],
+    "summary": {
+      "mergedCount": 0
+    },
+    "queryNotes": {
+      "source": "list_user_merge_requests(role=author,state=merged)",
+      "filter": "merged_at 落在 2026-07-23（Asia/Shanghai）"
+    }
+  },
+  "queryHints": {
+    "timezone": "Asia/Shanghai",
+    "idev2EmployeeId": "TR043507",
+    "idev2CreatedTimeStart": 1784736000000,
+    "idev2CreatedTimeEnd": 1784822399999,
+    "idev2EditField": "lastUpdatedTime",
+    "idev2Sidecar": "_staging/2026-07-23.idev2.json",
+    "feishuSidecar": "_staging/2026-07-23.feishu.json",
+    "gitlabSidecar": "_staging/2026-07-23.gitlab.json",
+    "idev2SidecarHint": "三路：creator 今日创建 + related 宽查(今日指派/指派给我今日更新)",
+    "feishuSidecarHint": "createdToday + editedTodayOnly（update_time 当日且非当日创建）",
+    "gitlabSidecarHint": "list_user_merge_requests(author,merged) → merged_at 当日"
+  }
+}
